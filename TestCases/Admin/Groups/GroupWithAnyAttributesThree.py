@@ -1,5 +1,5 @@
 '''
-Created on 14-May-2018
+Created on 15-May-2018
 
 @author: dattatraya
 '''
@@ -12,17 +12,19 @@ from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
 from openpyxl.reader.excel import load_workbook
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import xlrd
 
+from CreateUserWithRole import CreateUserWithRole
 from GroupsPageElements import GroupsPageElements
 from UsersPageElements import UsersPageElements
-from CreateUserWithRole import CreateUserWithRole
 from BaseTestClass import projectPath
-class GroupWithAllAttributes:
-    def create(self,FirstName,LastName,Email,EmployeeId,Password,cityName,attributeName1,countryName,attributeName2,deptName,attributeName3,
-               dayOfCurrentmonth,attributeName4,jobtitle,attributeName5,location,attributeName6,region,attributeName7,reportsTo,attributeName8,state,attributeName9):
+
+class GroupWithAnyAttributesThree:
+    
+    def createOne(self,FirstName,LastName,Email,EmployeeId,Password,reportsTo,attributeName1):
         wait=WebDriverWait(driver, 60)
         driver.refresh()
         user=UsersPageElements()
@@ -98,75 +100,127 @@ class GroupWithAllAttributes:
         
         
         print "Creating Option for city"
-        user.CityAttributeFieldEnterData(cityName)
-        print "Selecting Option"
-        user.SelectCreateOption(attributeName1)
-        print "Option Selected "+attributeName1
-        
-        
-        
-        print "Creating Option for Country"
-        user.CountryAttributeFieldEnterData(countryName)
-        print "Selecting Option"
-        user.SelectCreateOption(attributeName2)
-        print "Option Selected :"+attributeName2
-        
-        
-        
-        print "Creating Option for Department"
-        user.DepartmentAttributeFieldEnterData(deptName)
-        print "Selecting Option"
-        user.SelectCreateOption(attributeName3)
-        print "Option Selected :"+attributeName3
-        
-        
-        
-        print "Creating Option for Hiredate"
-        user.HireDateAttributeFieldSelectDay(dayOfCurrentmonth)
-        print "Selecting Option"
-               
-        
-        print "Creating Option for Job Title"
-        user.jobTitleAttributeFieldEnterData(jobtitle)
-        print "Selecting Option"
-        user.SelectCreateOption(attributeName5)
-        print "Option Selected :"+attributeName5
-        
-        
-        
-        print "Creating Option for Location"
-        user.LocationAttributeFieldEnterData(location)
-        print "Selecting Option"
-        user.SelectCreateOption(attributeName6)
-        print "Option Selected :"+attributeName6
-        
-        
-        
-        print "Creating Option for Region"
-        user.RegionAttributeFieldEnterData(region)
-        print "Selecting Option"
-        user.SelectCreateOption(attributeName7)
-        print "Option Selected :"+attributeName7
-        
-        
-        
-        print "Creating Option for Reports to"
         user.ReportsToAttributeFieldEnterData(reportsTo)
-        print "Selecting Option"
-        user.SelectCreateOption(attributeName8)
-        print "Option Selected :"+attributeName8
+        print "Selcting Option"
+        user.SelectCreateOption(attributeName1)
+        print "Option Selected"
         
         
         
-        print "Creating Option for State"
+        print "Inherited Role Verifying"
+        if driver.find_element_by_xpath(user.InHeritedRoleFieldXpath()).is_displayed():
+            print("Inherited Role field displayed")
+        else:
+            print ""
+            raise Exception
+        
+        print "Password Field is Verifying"
+        if driver.find_element_by_id(user.PassWordFieldID()).is_displayed():
+            print("Password field displayed")
+        else:
+            print ""
+            raise Exception
+        driver.find_element_by_id(user.PassWordFieldID()).send_keys(Password)
+        print "Password is Entered ::"+Password
+        
+        
+        user.AddButtonClick()
+        print "Clicked on add button"
+        time.sleep(2)
+
+        user.SaveButtonClick()        
+        print "Clicked on Save"
+        
+        wait.until(EC.visibility_of_element_located((By.XPATH,user.UsersPageHeader())))
+        
+        
+        print "Searching for the Created User"
+        user.SearchForUserInGrid(FirstName)
+        
+        
+        user.CheckUserDisplayedInGrid(FirstName) 
+    
+    
+    def createTwo(self,FirstName,LastName,Email,EmployeeId,Password,state,attributeName2):
+        wait=WebDriverWait(driver, 60)
+        driver.refresh()
+        user=UsersPageElements()
+        
+        user.AdminFromSideMenuClick()
+        print "Clicked on Admin"
+        
+        user.UsersFromSideMenuClick()
+        print "clicked on Users"
+        
+        user.AddOrEditUserButtonClick()
+        print "Clicked on Add or editUser"
+
+        
+        user.AddAnIndividualUserButtonClick()
+        print "Clicked on Add An individual User"
+        time.sleep(1)
+        wait.until(EC.visibility_of_element_located((By.XPATH,user.AddUserPageHeaderXpath())))
+        
+        print "Verifying Add user Page"
+        if driver.find_element_by_xpath(user.AddUserPageHeaderXpath()).is_displayed():
+            print("Add user Page is displayed")
+        else:
+            print ""
+            raise Exception
+        
+        
+        print "Verifying First Name field"
+        fn=wait.until(EC.visibility_of_element_located((By.ID,user.FirstNameFieldID())))
+        if fn.is_displayed():
+            print(" First Name field displayed")
+        else:
+            print ""
+            raise Exception
+        fn.send_keys(FirstName)
+        print "FirstName is Entered ::"+FirstName
+        
+        
+        
+        print "Last NAme verifying"
+        if driver.find_element_by_id(user.LastNameFieldID()).is_displayed():
+            print(" Last Name field displayed")
+        else:
+            print ""
+            raise Exception
+        driver.find_element_by_id(user.LastNameFieldID()).send_keys(LastName)
+        print "Last Name is Entered ::"+LastName
+        
+        
+        print "Email verifying"
+        if driver.find_element_by_id(user.EmailFieldID()).is_displayed():
+            print("Email field displayed")
+        else:
+            print ""
+            raise Exception
+        driver.find_element_by_id(user.EmailFieldID()).send_keys(Email)
+        print "Email is Entered ::"+Email
+        
+        
+        print "Employee ID verifying"
+        if driver.find_element_by_id(user.EmployeeIDFieldID()).is_displayed():
+            print("Employee ID field displayed")
+        else:
+            print ""
+            raise Exception
+        driver.find_element_by_id(user.EmployeeIDFieldID()).send_keys(EmployeeId)
+        print "Employee ID  is Entered ::"+EmployeeId
+        
+        
+        print "Adding additional Attribute"
+        user.AdditionalAttributesViewClick()
+        
+        
+        
+        print "Creating Option for city"
         user.StateAttributeFieldEnterData(state)
         print "Selecting Option"
-        user.SelectCreateOption(attributeName9)
-        print "Option Selected :"+attributeName9
-        
-        
-        
-        
+        user.SelectCreateOption(attributeName2)
+        print "Option Selected "+attributeName2
         
         
         
@@ -203,10 +257,9 @@ class GroupWithAllAttributes:
         
         user.CheckUserDisplayedInGrid(FirstName) 
         
-        
-        
-    def groupCreateForCampaign(self,groupName,FirstName,cityName,attributeName1,countryName,attributeName2,deptName,attributeName3,
-               dayOfCurrentmonth,attributeName4,jobtitle,attributeName5,location,attributeName6,region,attributeName7,reportsTo,attributeName8,state,attributeName9):
+    
+    
+    def groupCreateForCampaign(self,groupName,FirstName,FirstName1,attributeName1,reportsTo,state,attributeName2):
         driver.refresh()
         wait=WebDriverWait(driver, 60)
         
@@ -263,82 +316,34 @@ class GroupWithAllAttributes:
             raise Exception
         
         
+        print "Changing user match to 'Any'"
+        group.SelectAnyOFTheFollowingOption()
+        
+        
+        
         print "Adding User by attribute"
         group.AttributeNameEnter(attributeName1)
-        group.ValueSelect(cityName)
+        group.ValueSelect(reportsTo)
         print "Selected "+attributeName1
         
-        
-        
         group.addAttributePopupButtonClick()
-        print "Adding User by attribute"
+        print "Adding user by attribute"
         group.AttributeNameEnter(attributeName2)
-        group.ValueSelect(countryName)
-        print "Selected "+attributeName2
-        
-        
-        group.addAttributePopupButtonClick()
-        print "Adding User by attribute"
-        group.AttributeNameEnter(attributeName3)
-        group.ValueSelect(deptName)
-        print "Selected "+attributeName3
-        
-        
-        group.addAttributePopupButtonClick()
-        print "Adding User by attribute"
-        group.AttributeNameEnter(attributeName4)
-        group.DateSelect(dayOfCurrentmonth)
-        print "Selected "+attributeName4
-        
-        
-        group.addAttributePopupButtonClick()
-        print "Adding User by attribute"
-        group.AttributeNameEnter(attributeName5)
-        group.ValueSelect(jobtitle)
-        print "Selected "+attributeName5
-        
-        
-        group.addAttributePopupButtonClick()
-        print "Adding User by attribute"
-        group.AttributeNameEnter(attributeName6)
-        group.ValueSelect(location)
-        print "Selected "+attributeName6
-        
-        
-        group.addAttributePopupButtonClick()
-        print "Adding User by attribute"
-        group.AttributeNameEnter(attributeName7)
-        group.ValueSelect(region)
-        print "Selected "+attributeName7
-        
-        
-        group.addAttributePopupButtonClick()
-        print "Adding User by attribute"
-        group.AttributeNameEnter(attributeName8)
-        group.ValueSelect(reportsTo)
-        print "Selected "+attributeName8
-        
-        
-        group.addAttributePopupButtonClick()
-        print "Adding User by attribute"
-        group.AttributeNameEnter(attributeName9)
         group.ValueSelect(state)
-        print "Selected "+attributeName9
-        
-        
-        
-        
-        
+        print "Selected "+attributeName2
         
         
         
         print "Clicking on Preview button"
         group.PreviewGroupButtonClick()
         
-               
+        print "Checking Filter is applied"
+        group.OverViewContainer(reportsTo)
+        
         
         print "Verifying user is added to group"
         group.groupAddedInList(FirstName)
+        group.groupAddedInList(FirstName1)
         
         group.saveButton()
         print "Clicked on Save button"
@@ -355,13 +360,14 @@ class GroupWithAllAttributes:
          
         
         driver.refresh()
-    
-    
-    def CreateGroupWithAllAttributes(self):
+        
+        
+        
+    def CreateGroupWithAnyAttributeThree(self):
         book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet = book.sheet_by_name('Groups')
         
-        cell = first_sheet.cell(105,1)
+        cell = first_sheet.cell(176,1)
         FirstName = cell.value
         
         FirstNameId = FirstName.split("_")
@@ -370,7 +376,7 @@ class GroupWithAllAttributes:
         empId = int(ids)+1
         FirstNameUpdated= emp+str(empId)
         
-        cell = first_sheet.cell(106,1)
+        cell = first_sheet.cell(177,1)
         LastName = cell.value
         
         LastNameID = LastName.split("_")
@@ -379,9 +385,7 @@ class GroupWithAllAttributes:
         empId = int(ids)+1
         LastNameUpdated= emp+str(empId)
         
-        
-        
-        cell = first_sheet.cell(107,1)
+        cell = first_sheet.cell(178,1)
         Email = cell.value
         
         EmailId = Email.split("_")
@@ -391,7 +395,7 @@ class GroupWithAllAttributes:
         empId = int(ids)+1
         EmailIdUpdated= emp+str(empId)+remaining
         
-        cell = first_sheet.cell(108,1)
+        cell = first_sheet.cell(179,1)
         EmployeeId = cell.value
         
         Employee = EmployeeId.split("_")
@@ -400,12 +404,18 @@ class GroupWithAllAttributes:
         empId = int(ids)+1
         EmployeeIdUpdated= emp+str(empId)
         
-        cell1 = first_sheet.cell(109,1)
+        cell1 = first_sheet.cell(180,1)
         Password = cell1.value
         
+        cell1 = first_sheet.cell(192,1)
+        reportsTo = cell1.value
+        cell1 = first_sheet.cell(182,1)
+        attributeName1 = cell1.value
         
         
-        cell1 = first_sheet.cell(110,1)
+        
+        
+        cell1 = first_sheet.cell(183,1)
         groupName = cell1.value
         groupNameId = groupName.split("_")
         emp = groupNameId[0]+"_"
@@ -414,88 +424,7 @@ class GroupWithAllAttributes:
         groupNameUpdated= emp+str(empId)
         
         
-        #Attributes
-        
-        cell1 = first_sheet.cell(112,1)
-        cityName = cell1.value
-        cityNameId = cityName.split("_")
-        emp = cityNameId[0]+"_"
-        ids = cityNameId[1]
-        empId = int(ids)+1
-        cityNameIdUpdated= emp+str(empId)
-        
-        cell1 = first_sheet.cell(113,1)
-        attributeName1 = cell1.value
-        
-        cell1 = first_sheet.cell(114,1)
-        countryName = cell1.value
-        countryNameId = countryName.split("_")
-        emp = countryNameId[0]+"_"
-        ids = countryNameId[1]
-        empId = int(ids)+1
-        countryNameUpdated= emp+str(empId)
-        cell1 = first_sheet.cell(115,1)
-        attributeName2 = cell1.value
-        
-        cell1 = first_sheet.cell(116,1)
-        deptName = cell1.value
-        deptNameId = deptName.split("_")
-        emp = deptNameId[0]+"_"
-        ids = deptNameId[1]
-        empId = int(ids)+1
-        deptNameIdUpdated= emp+str(empId)
-        cell1 = first_sheet.cell(117,1)
-        attributeName3 = cell1.value
-        
-        cell1 = first_sheet.cell(118,1)
-        dayOfCurrentmonth = cell1.value
-        cell1 = first_sheet.cell(119,1)
-        attributeName4 = cell1.value
-
-        
-        cell1 = first_sheet.cell(120,1)
-        jobtitle = cell1.value
-        jobtitleId = jobtitle.split("_")
-        emp = jobtitleId[0]+"_"
-        ids = jobtitleId[1]
-        empId = int(ids)+1
-        jobtitleIdUpdated= emp+str(empId)
-        cell1 = first_sheet.cell(121,1)
-        attributeName5 = cell1.value
-        
-        cell1 = first_sheet.cell(122,1)
-        location = cell1.value
-        locationId = location.split("_")
-        emp = locationId[0]+"_"
-        ids = locationId[1]
-        empId = int(ids)+1
-        locationIdUpdated= emp+str(empId)
-        cell1 = first_sheet.cell(123,1)
-        attributeName6 = cell1.value
-        
-        cell1 = first_sheet.cell(124,1)
-        region = cell1.value
-        regionId = region.split("_")
-        emp = regionId[0]+"_"
-        ids = regionId[1]
-        empId = int(ids)+1
-        regionIdUpdated= emp+str(empId)
-        cell1 = first_sheet.cell(125,1)
-        attributeName7 = cell1.value
-        
-        
-        cell1 = first_sheet.cell(126,1)
-        state = cell1.value
-        stateId = state.split("_")
-        emp = stateId[0]+"_"
-        ids = stateId[1]
-        empId = int(ids)+1
-        stateIdUpdated= emp+str(empId)
-        cell1 = first_sheet.cell(127,1)
-        attributeName9 = cell1.value
-        
-        #For Reports to
-        cell = first_sheet.cell(128,1)
+        cell = first_sheet.cell(185,1)
         FirstName1 = cell.value
         FirstNameId = FirstName1.split("_")
         emp = FirstNameId[0]+"_"
@@ -503,7 +432,7 @@ class GroupWithAllAttributes:
         empId = int(ids)+1
         FirstNameUpdated1= emp+str(empId)
         
-        cell = first_sheet.cell(129,1)
+        cell = first_sheet.cell(186,1)
         LastName1 = cell.value
         LastNameID = LastName1.split("_")
         emp = LastNameID[0]+"_"
@@ -511,7 +440,7 @@ class GroupWithAllAttributes:
         empId = int(ids)+1
         LastNameUpdated1= emp+str(empId)
         
-        cell = first_sheet.cell(130,1)
+        cell = first_sheet.cell(187,1)
         Email1 = cell.value
         EmailId = Email1.split("_")
         emp = EmailId[0]+"_"
@@ -520,7 +449,7 @@ class GroupWithAllAttributes:
         empId = int(ids)+1
         EmailIdUpdated1= emp+str(empId)+remaining
         
-        cell = first_sheet.cell(131,1)
+        cell = first_sheet.cell(188,1)
         EmployeeId1 = cell.value
         Employee = EmployeeId1.split("_")
         emp = Employee[0]+"_"
@@ -528,25 +457,80 @@ class GroupWithAllAttributes:
         empId = int(ids)+1
         EmployeeIdUpdated1= emp+str(empId)
         
-        cell1 = first_sheet.cell(132,1)
+        cell1 = first_sheet.cell(189,1)
         Password1 = cell1.value
         
-        cell1 = first_sheet.cell(133,1)
+        cell1 = first_sheet.cell(190,1)
+        state = cell1.value
+        stateId = state.split("_")
+        emp = stateId[0]+"_"
+        ids = stateId[1]
+        empId = int(ids)+1
+        stateIdUpdated= emp+str(empId)
+        cell1 = first_sheet.cell(191,1)
+        attributeName2 = cell1.value
+        
+        
+        
+        
+        
+        cell = first_sheet.cell(192,1)
+        FirstName2 = cell.value
+        
+        FirstNameId = FirstName2.split("_")
+        emp = FirstNameId[0]+"_"
+        ids = FirstNameId[1]
+        empId = int(ids)+1
+        FirstNameUpdated2= emp+str(empId)
+        
+        cell = first_sheet.cell(193,1)
+        LastName2 = cell.value
+        
+        LastNameID = LastName2.split("_")
+        emp = LastNameID[0]+"_"
+        ids = LastNameID[1]
+        empId = int(ids)+1
+        LastNameUpdated2= emp+str(empId)
+        
+        
+        
+        cell = first_sheet.cell(194,1)
+        Email2 = cell.value
+        
+        EmailId = Email2.split("_")
+        emp = EmailId[0]+"_"
+        ids = EmailId[1]
+        remaining="_"+EmailId[2]
+        empId = int(ids)+1
+        EmailIdUpdated2= emp+str(empId)+remaining
+        
+        cell = first_sheet.cell(195,1)
+        EmployeeId2 = cell.value
+        
+        Employee = EmployeeId2.split("_")
+        emp = Employee[0]+"_"
+        ids = Employee[1]
+        empId = int(ids)+1
+        EmployeeIdUpdated2= emp+str(empId)
+        
+        cell1 = first_sheet.cell(196,1)
+        Password2 = cell1.value
+        
+        cell1 = first_sheet.cell(197,1)
         role = cell1.value
         
-        cell1 = first_sheet.cell(132,1)
+        cell1 = first_sheet.cell(196,1)
         NewPassword = cell1.value
-        
-        cell1 = first_sheet.cell(134,1)
-        attributeName8 = cell1.value
-        
         
         book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         s_sheet = book.sheet_by_name('Login_Credentials')
+        
         cell = s_sheet.cell(1,1)
         url = cell.value
+        
         cell = s_sheet.cell(3,1)
         username = cell.value
+        
         cell = s_sheet.cell(3,2)
         password = cell.value
         
@@ -555,8 +539,6 @@ class GroupWithAllAttributes:
         
         
         
-       
-        
         
         #updating user values
         wb = load_workbook(os.path.join('Test_Data/TestData.xlsx'))
@@ -564,25 +546,23 @@ class GroupWithAllAttributes:
         
         sheet = wb['Groups']
         
-        sheet.cell(row=106, column=2).value = FirstNameUpdated
-        sheet.cell(row=107, column=2).value = LastNameUpdated
-        sheet.cell(row=108, column=2).value = EmailIdUpdated
-        sheet.cell(row=109, column=2).value = EmployeeIdUpdated
-        sheet.cell(row=111, column=2).value = groupNameUpdated
+        sheet.cell(row=177, column=2).value = FirstNameUpdated
+        sheet.cell(row=178, column=2).value = LastNameUpdated
+        sheet.cell(row=179, column=2).value = EmailIdUpdated
+        sheet.cell(row=180, column=2).value = EmployeeIdUpdated
         
-        sheet.cell(row=113, column=2).value = cityNameIdUpdated
-        sheet.cell(row=115, column=2).value = countryNameUpdated
-        sheet.cell(row=117, column=2).value = deptNameIdUpdated
-        sheet.cell(row=121, column=2).value = jobtitleIdUpdated
-        sheet.cell(row=123, column=2).value = locationIdUpdated
-        sheet.cell(row=125, column=2).value = regionIdUpdated
-        sheet.cell(row=127, column=2).value = stateIdUpdated
+        sheet.cell(row=184, column=2).value = groupNameUpdated
         
-        sheet.cell(row=129, column=2).value = FirstNameUpdated1
-        sheet.cell(row=130, column=2).value = LastNameUpdated1
-        sheet.cell(row=131, column=2).value = EmailIdUpdated1
-        sheet.cell(row=132, column=2).value = EmployeeIdUpdated1
+        sheet.cell(row=186, column=2).value = FirstNameUpdated1
+        sheet.cell(row=187, column=2).value = LastNameUpdated1
+        sheet.cell(row=188, column=2).value = EmailIdUpdated1
+        sheet.cell(row=189, column=2).value = EmployeeIdUpdated1
+        sheet.cell(row=191, column=2).value = stateIdUpdated
         
+        sheet.cell(row=193, column=2).value = FirstNameUpdated2
+        sheet.cell(row=194, column=2).value = LastNameUpdated2
+        sheet.cell(row=195, column=2).value = EmailIdUpdated2
+        sheet.cell(row=196, column=2).value = EmployeeIdUpdated2
         
         
         
@@ -590,19 +570,15 @@ class GroupWithAllAttributes:
        
         
         try:
-            t=GroupWithAllAttributes()
             
             cr=CreateUserWithRole()
-            cr.createUserWithRoleMain(FirstName1, LastName1, Email1, EmployeeId1, Password1, role, NewPassword, url, username, password)
-            
+            cr.createUserWithRoleMain(FirstName2, LastName2, Email2, EmployeeId2, Password2, role, NewPassword, url, username, password)
+            t=GroupWithAnyAttributesThree()
             print "\nCreating New User\n"
-            t.create(FirstName, LastName, Email, EmployeeId, Password, cityName, attributeName1, countryName, attributeName2, deptName, attributeName3, dayOfCurrentmonth, 
-                     attributeName4, jobtitle, attributeName5, location, attributeName6, region, attributeName7, FirstName1, attributeName8, state, attributeName9)
+            t.createOne(FirstName, LastName, Email, EmployeeId, Password, reportsTo, attributeName1)
+            t.createTwo(FirstName1, LastName1, Email1, EmployeeId1, Password1, state, attributeName2)
             
-            
-            print "\nCreating Group with '"+region+"' Attribute\n"
-            t.groupCreateForCampaign(groupName, FirstName, cityName, attributeName1, countryName, attributeName2, deptName, attributeName3, dayOfCurrentmonth, attributeName4, 
-                                     jobtitle, attributeName5, location, attributeName6, region, attributeName7, FirstName1, attributeName8, state, attributeName9)
+            t.groupCreateForCampaign(groupName, FirstName, FirstName1, attributeName1, reportsTo, state, attributeName2)
             
             
         except Exception as e:
@@ -623,6 +599,39 @@ class GroupWithAllAttributes:
                 print("alert accepted")
             except Exception:
                 print("no alert")
+                
+                
+            wait=WebDriverWait(driver, 60)
+            unDropDown=wait.until(EC.visibility_of_element_located((By.XPATH,".//*[@id='content']/div/div[1]/div[1]/nav/div[2]/a/span[3]")))
+            driver.execute_script('arguments[0].click()',unDropDown)
+            
+            signOut=driver.find_element_by_xpath("html/body/div/div/div[1]/div[2]/div[2]/a")
+            driver.execute_script('arguments[0].click()',signOut)
+            
+            
+            
+            element = wait.until(EC.presence_of_element_located((By.ID, "password")))
+            
+            if driver.title == "Grovo":
+                print("Grovo Application URL Opened")
+            else:
+                raise Exception.message
+    
+            print "Grovo Sign-In page is displayed"
+            
+            print "Entering User name"
+            driver.find_element_by_xpath(".//*[@id='username']").send_keys(username)
+           
+            print "Entering Password"
+            element.send_keys(password)
+            
+            element.send_keys(Keys.TAB)
+            print "Clicking on Sign_In button"
+            driver.find_element_by_xpath("//*[@id='submitButton']").click()
+            
+            print "Successfully Logged Into Users account"
+            time.sleep(3)
+            
     
         
         
@@ -632,12 +641,8 @@ if __name__=='__main__':
     btc=BaseTestClass()
     btc.UserLogin() 
 
-    gr=GroupWithAllAttributes()
-    gr.CreateGroupWithAllAttributes()
+    gr=GroupWithAnyAttributesThree()
+    gr.CreateGroupWithAnyAttributeThree()
 
-    
-
-    
-    
 
 
