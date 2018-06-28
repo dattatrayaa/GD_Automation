@@ -20,7 +20,7 @@ class APIUserDeactivate:
     def deactivateuserAPI(self):
         for i in range(15):
             print "Reading data from excel "
-            book=xlrd.open_workbook(os.path.join('TestData.xlsx'))
+            book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet1=book.sheet_by_name('API testing')
             #Read from Excel to search
             cell1 = sheet1.cell(i+1,1)
@@ -49,7 +49,7 @@ class APIUserDeactivate:
             d=APIUserDeactivate()
             d.deactivateuser()
         finally:
-            book=xlrd.open_workbook(os.path.join('TestData.xlsx'))
+            book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             second_sheet = book.sheet_by_name('Login_Credentials')
             cell = second_sheet.cell(1,1)
             url = cell.value
