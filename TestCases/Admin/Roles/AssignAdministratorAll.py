@@ -1,5 +1,5 @@
 '''
-Created on 26-Mar-2018
+Created on 30-Mar-2018
 
 @author: Sheethu C
 '''
@@ -15,26 +15,32 @@ from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
 from DeleteRole import DeleteRole
 from RoleXpathElements import RoleXpathElements
-class AdministratorAll():
-    def createAdministratorAllRole(self,RoleName,Description):
+from BaseTestClass import projectPath
+class AssignAdministratorAll():
+    def createAssignAdministratorAllRole(self,RoleName,Description):
         createrole =RoleXpathElements()
         wait=WebDriverWait(driver, 80)
         driver.refresh()
         wait.until(EC.visibility_of_element_located((By.XPATH,createrole.adminSideMenu())))
         driver.find_element_by_xpath(createrole.adminSideMenu()).click()
         print "Clicked on admin page"
+        print "Clicked on Role icon"
         wait.until(EC.visibility_of_element_located((By.XPATH,createrole.roleSideMenu())))
         driver.find_element_by_xpath(createrole.roleSideMenu()).click()
-        print "Clicked on Role icon"
         wait.until(EC.visibility_of_element_located((By.XPATH,createrole.createRole())))
         driver.find_element_by_xpath(createrole.createRole()).click()
-        print "Clicked on Create role Button"
         time.sleep(4)
+        print "Clicked on Create role Button"
         createrole.roleCreation(RoleName,Description)
-        print "Creating Role with Description"
+        print "clicked on Next Button"
+        #Assign click
+        createrole.assignClick()
+        #administrator click
         createrole.adminClick()
-        print "Clicked on Administrator "
+        print "Verifying assign and administrator selected"
         ch=RoleXpathElements()
+        ch.checkAssign()
+        time.sleep(4)
         ch.checkAdministrator()
         time.sleep(4)
         print "Checking Check box selection"
@@ -51,40 +57,39 @@ class AdministratorAll():
         print "Branding is selected"
         chk.checkboxIntegration()
         print "Integration is selected"
+        
         createrole.roleSave()
         print "Clicked on Save Role Button"
         print "Searching for the Created Role in the List"
+        time.sleep(4)
         createrole.roleSearch(RoleName)
-    def createAdministratorAllMain(self):  
+    def createAssignAdministratorAllMain(self):  
         try:   
-            book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
+            book=xlrd.open_workbook(os.path.join('Test_DataTestData.xlsx'))
             sheet=book.sheet_by_name('Role')
-            cell = sheet.cell(187,1)
+            cell = sheet.cell(210,1)
             RoleName = cell.value
-            cell = sheet.cell(188,1)
+            cell = sheet.cell(211,1)
             Description = cell.value
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             first_sheet = book.sheet_by_name('UserAssignToRole')
             cell = first_sheet.cell(1,1)
             FirstName = cell.value
-            obj2= AdministratorAll()
-            obj2.createAdministratorAllRole(RoleName,Description)  
+            obj2= AssignAdministratorAll()
+            obj2.createAssignAdministratorAllRole(RoleName,Description)
             User=RoleXpathElements()
             User.CreateUserAssign()
-            
             User.searchRole(RoleName,FirstName)
             User.deactivateUser(FirstName)
             rolede=DeleteRole()
-            rolede.roleDelete(RoleName)
+            rolede.roleDelete(RoleName)  
         except Exception as e:
             traceback.print_exc()
             print (e)
-            raise Exception
-            #if any alert box occurs it will accept the alert
-            #if any alert box occurs it will accept the alert
+            raise Exception   
         finally: 
             User=RoleXpathElements() 
-            User.updateUserAssign()
+            User.updateUserAssign() 
             second_sheet = book.sheet_by_name('Login_Credentials')
             cell = second_sheet.cell(1,1)
             url = cell.value
@@ -100,7 +105,7 @@ class AdministratorAll():
                 print("no alert")
 if __name__ == '__main__':
     
-    obj11= AdministratorAll()
+    obj11= AssignAdministratorAll()
     obj12= BaseTestClass()
     obj12.UserLogin()
-    obj11.createAdministratorAllMain()
+    obj11.createAssignAdministratorAllMain()
