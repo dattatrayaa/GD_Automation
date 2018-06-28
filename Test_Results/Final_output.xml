@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180627 05:07:52.916" generator="Rebot 3.0.2 (Python 2.7.14 on darwin)">
+<suite id="s1" name="TestSuiteCampaigns &amp; TestSuiteLessons">
+<suite source="/Users/automation/Desktop/Grovo_Automation/Test_Suite/TestSuiteCampaigns.robot" id="s1-s1" name="TestSuiteCampaigns">
+<test id="s1-s1-t1" name="TC0 - User Login">
+<kw name="User Login" library="BaseTestClass">
+<msg timestamp="20180627 05:07:16.651" level="INFO">Opening Browser
+Reading Login Credentials from excel sheet
+Fetching Sheet Name
+
+Fetching the URL, username and password from Excel Sheet
+
+Grovo URL is : https://offshore-qa-playpen.grovo.net/.
+User Name is : jibim@grovo.com.
+Password is : Data@123.
+Redirecting to specified URL
+
+Grovo Application URL Opened
+Grovo Sign-In page is displayed
+Entering User name
+Entering Password
+Clicking on Sign_In button
+
+Successfully LogIn to Grovo Application</msg>
+<status status="PASS" endtime="20180627 05:07:16.651" starttime="20180627 05:07:09.886"></status>
+</kw>
+<tags>
+<tag>Campaign</tag>
+</tags>
+<status status="PASS" endtime="20180627 05:07:16.652" critical="yes" starttime="20180627 05:07:09.885"></status>
+</test>
+<test id="s1-s1-t2" name="TC1 - CreateCampaignForTextLesson">
+<kw name="Create Campaign Text Lesson" library="CreateCampaignForTextLesson">
+<msg timestamp="20180627 05:07:52.681" level="INFO">----This test case creates campaign with----
+1. Text lesson
+
+
+Creating lesson with one card
+Clicking on Lessons button from side menu
+Click on Create lesson button
+Verifying Create new lesson tab is displayed
+Create a new lesson tab is displayed
+Clicked on Blank lesson
+Creating New lesson
+Entered lesson name ::Lesson_for_1Campaign_with_TextCard1
+Text card
+Click on (+) icon
+Clicked on Text Card
+Entering Text in Text card
+Verifying entered text is displaying text card
+Verified Text 'This is for Campaign' is displayed in Text Card
+Publishing lesson
+Clicked on publish button
+Lesson published
+
+Lesson is displayed in Grid ::Lesson_for_1Campaign_with_TextCard1
+
+
+Creating Campaign
+Campaigns page displayed
+Clicking on Create Campaign button
+Create Campaign page is displayed
+Title entered ::campTitle
+Description entered ::campDescription
+Adding Lesson
+
+Verifying Added lesson is displayed in Grid
+Lesson displayed in grid
+Clicking on save &amp; exit button
+
+Verifying campaign detail page is displayed
+Campaign detail page is displayed
+Campaign 'Campaign_For_Text_Lesson' displayed in Grid
+
+----Text Execution Completed----
+
+Clicking on Lessons button from side menu
+1</msg>
+<status status="PASS" endtime="20180627 05:07:52.681" starttime="20180627 05:07:16.653"></status>
+</kw>
+<tags>
+<tag>Campaign</tag>
+</tags>
+<status status="PASS" endtime="20180627 05:07:52.681" critical="yes" starttime="20180627 05:07:16.652"></status>
+</test>
+<status status="PASS" endtime="20180627 05:07:52.683" starttime="20180627 05:07:08.235"></status>
+</suite>
+<suite source="/Users/automation/Desktop/Grovo_Automation/Test_Suite/TestSuiteLessons.robot" id="s1-s2" name="TestSuiteLessons">
+<test id="s1-s2-t1" name="TC0 - User Login">
+<kw name="User Login" library="BaseTestClass">
+<msg timestamp="20180627 05:06:53.047" level="INFO">Opening Browser
+Reading Login Credentials from excel sheet
+Fetching Sheet Name
+
+Fetching the URL, username and password from Excel Sheet
+
+Grovo URL is : https://offshore-qa-playpen.grovo.net/.
+User Name is : jibim@grovo.com.
+Password is : Data@123.
+Redirecting to specified URL
+
+Grovo Application URL Opened
+Grovo Sign-In page is displayed
+Entering User name
+Entering Password
+Clicking on Sign_In button
+
+Successfully LogIn to Grovo Application</msg>
+<status status="PASS" endtime="20180627 05:06:53.047" starttime="20180627 05:06:46.208"></status>
+</kw>
+<tags>
+<tag>Lesson</tag>
+</tags>
+<status status="PASS" endtime="20180627 05:06:53.048" critical="yes" starttime="20180627 05:06:46.204"></status>
+</test>
+<test id="s1-s2-t2" name="TC12 - LessonCreateText">
+<kw name="Lesson With Text Card" library="LessonCreateText">
+<msg timestamp="20180627 05:07:07.854" level="INFO">Creating lesson with one card
+Clicking on Lessons button from side menu
+Click on Create lesson button
+Verifying Create new lesson tab is displayed
+Create a new lesson tab is displayed
+Clicked on Blank lesson
+Creating New lesson
+Entered lesson name ::Lesson_to_test_Text_Card1
+Text card
+Click on (+) icon
+Clicked on Text Card
+Entering Text in Text card
+Verifying entered text is displaying text card
+Verified Text 'This lesson has Text Card' is displayed in Text Card
+Publishing lesson
+Clicked on publish button
+Lesson published
+
+Lesson is displayed in Grid ::Lesson_to_test_Text_Card1</msg>
+<status status="PASS" endtime="20180627 05:07:07.854" starttime="20180627 05:06:53.049"></status>
+</kw>
+<tags>
+<tag>Lesson</tag>
+</tags>
+<status status="PASS" endtime="20180627 05:07:07.854" critical="yes" starttime="20180627 05:06:53.048"></status>
+</test>
+<test id="s1-s2-t3" name="Close Browser">
+<kw name="Close Browser Suite" library="CloseBrowser">
+<status status="PASS" endtime="20180627 05:07:08.014" starttime="20180627 05:07:07.856"></status>
+</kw>
+<tags>
+<tag>Lesson</tag>
+</tags>
+<status status="PASS" endtime="20180627 05:07:08.014" critical="yes" starttime="20180627 05:07:07.855"></status>
+</test>
+<status status="PASS" endtime="20180627 05:07:08.016" starttime="20180627 05:06:44.561"></status>
+</suite>
+<status status="PASS" elapsedtime="67903" endtime="N/A" starttime="N/A"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="5">Critical Tests</stat>
+<stat fail="0" pass="5">All Tests</stat>
+</total>
+<tag>
+<stat fail="0" pass="2">Campaign</stat>
+<stat fail="0" pass="3">Lesson</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TestSuiteCampaigns &amp; TestSuiteLessons" pass="5">TestSuiteCampaigns &amp; TestSuiteLessons</stat>
+<stat fail="0" id="s1-s1" name="TestSuiteCampaigns" pass="2">TestSuiteCampaigns &amp; TestSuiteLessons.TestSuiteCampaigns</stat>
+<stat fail="0" id="s1-s2" name="TestSuiteLessons" pass="3">TestSuiteCampaigns &amp; TestSuiteLessons.TestSuiteLessons</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

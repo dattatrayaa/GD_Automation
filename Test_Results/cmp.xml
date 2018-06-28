@@ -1,1 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20180627 05:07:08.233" generator="Robot 3.0.2 (Python 2.7.14 on darwin)">
+<suite source="/Users/automation/Desktop/Grovo_Automation/Test_Suite/TestSuiteCampaigns.robot" id="s1" name="TestSuiteCampaigns">
+<test id="s1-t1" name="TC0 - User Login">
+<kw name="User Login" library="BaseTestClass">
+<msg timestamp="20180627 05:07:16.651" level="INFO">Opening Browser
+Reading Login Credentials from excel sheet
+Fetching Sheet Name
 
+Fetching the URL, username and password from Excel Sheet
+
+Grovo URL is : https://offshore-qa-playpen.grovo.net/.
+User Name is : jibim@grovo.com.
+Password is : Data@123.
+Redirecting to specified URL
+
+Grovo Application URL Opened
+Grovo Sign-In page is displayed
+Entering User name
+Entering Password
+Clicking on Sign_In button
+
+Successfully LogIn to Grovo Application</msg>
+<status status="PASS" endtime="20180627 05:07:16.651" starttime="20180627 05:07:09.886"></status>
+</kw>
+<tags>
+<tag>Campaign</tag>
+</tags>
+<status status="PASS" endtime="20180627 05:07:16.652" critical="yes" starttime="20180627 05:07:09.885"></status>
+</test>
+<test id="s1-t2" name="TC1 - CreateCampaignForTextLesson">
+<kw name="Create Campaign Text Lesson" library="CreateCampaignForTextLesson">
+<msg timestamp="20180627 05:07:52.681" level="INFO">----This test case creates campaign with----
+1. Text lesson
+
+
+Creating lesson with one card
+Clicking on Lessons button from side menu
+Click on Create lesson button
+Verifying Create new lesson tab is displayed
+Create a new lesson tab is displayed
+Clicked on Blank lesson
+Creating New lesson
+Entered lesson name ::Lesson_for_1Campaign_with_TextCard1
+Text card
+Click on (+) icon
+Clicked on Text Card
+Entering Text in Text card
+Verifying entered text is displaying text card
+Verified Text 'This is for Campaign' is displayed in Text Card
+Publishing lesson
+Clicked on publish button
+Lesson published
+
+Lesson is displayed in Grid ::Lesson_for_1Campaign_with_TextCard1
+
+
+Creating Campaign
+Campaigns page displayed
+Clicking on Create Campaign button
+Create Campaign page is displayed
+Title entered ::campTitle
+Description entered ::campDescription
+Adding Lesson
+
+Verifying Added lesson is displayed in Grid
+Lesson displayed in grid
+Clicking on save &amp; exit button
+
+Verifying campaign detail page is displayed
+Campaign detail page is displayed
+Campaign 'Campaign_For_Text_Lesson' displayed in Grid
+
+----Text Execution Completed----
+
+Clicking on Lessons button from side menu
+1</msg>
+<status status="PASS" endtime="20180627 05:07:52.681" starttime="20180627 05:07:16.653"></status>
+</kw>
+<tags>
+<tag>Campaign</tag>
+</tags>
+<status status="PASS" endtime="20180627 05:07:52.681" critical="yes" starttime="20180627 05:07:16.652"></status>
+</test>
+<status status="PASS" endtime="20180627 05:07:52.683" starttime="20180627 05:07:08.235"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="2">Critical Tests</stat>
+<stat fail="0" pass="2">All Tests</stat>
+</total>
+<tag>
+<stat info="non-critical" fail="0" pass="0">non-critical</stat>
+<stat fail="0" pass="2">Campaign</stat>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="TestSuiteCampaigns" pass="2">TestSuiteCampaigns</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
