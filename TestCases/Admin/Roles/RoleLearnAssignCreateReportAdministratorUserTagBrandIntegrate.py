@@ -82,7 +82,7 @@ class RoleLearnAssignCreateReportAdministratorUserTagBrandIntegrate():
             first_sheet = book.sheet_by_name('UserAssignToRole')
             cell = first_sheet.cell(3,1)
             FirstName = cell.value
-            obj2= https://github.com/robotframework/robotframework/blob/master/doc/userguide/src/Appendices/CommandLineOptions.rstLearnAssignCreateReportAdministratorUserTagBrandIntegrate()
+            obj2=RoleLearnAssignCreateReportAdministratorUserTagBrandIntegrate()
             obj2.createLearnAssignCreateReportAdministratorUserTagBrandIntegrate(RoleName,Description)  
             User=RoleXpathElements()
             User.CreateUserLearn()
