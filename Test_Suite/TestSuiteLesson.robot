@@ -5,11 +5,11 @@ Force Tags      Lesson
 Library   ../Master/BaseTestClass.py
 
 #Functions to create Lessons
-Library   ../TestCases/Create/Lesson/BlankLessonFive.py
-Library   ../TestCases/Create/Lesson/BlankLessonFiveTwo.py
-Library   ../TestCases/Create/Lesson/BlankLessonOne.py
-Library   ../TestCases/Create/Lesson/BlankLessonTen.py
-Library   ../TestCases/Create/Lesson/BlankLessonTwo.py
+Library   ../TestCases/Create/Lesson/LessonTextQueVidTenTime.py
+Library   ../TestCases/Create/Lesson/LessonTextQueImgFiveTime.py
+Library   ../TestCases/Create/Lesson/LessonTextDocQueImgVidTwoTime.py
+Library   ../TestCases/Create/Lesson/LessonTextDocQueImgVid.py
+Library   ../TestCases/Create/Lesson/LessonQueVidDocFiveTime.py
 Library    ../TestCases/Create/Lesson/LessonExplainAConcept.py
 
 Library   ../TestCases/Create/Lesson/TeachASkill.py

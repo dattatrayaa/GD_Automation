@@ -5,31 +5,31 @@ Force Tags      API
 Library   ../Master/BaseTestClass.py
 
 #Functions for API
-Library   ,,/TestCases/Admin/API/BasicInformationWithDirectRole_28.py
-Library   ,,/TestCases/Admin/API/BasicInformationValidData_27.py
-Library   ,,/TestCases/Admin/API/BasicInforWithMultipleRoles_33.py
-Library   ,,/TestCases/Admin/API/BasicInfoPasswordCreation_35.py
-Library   ,,/TestCases/Admin/API/BasicInfoWithDifferentDataType_45.py
-Library   ,,/TestCases/Admin/API/AdditionalAttributeWithValidData_48.py
-Library   ,,/TestCases/Admin/API/AdditionalAttributeWithBlankValues_49.py
-Library   ,,/TestCases/Admin/API/BasicInformationWithoutRole_29.py
-Library   ,,/TestCases/Admin/API/BasicInformationInvalidKeyAttriRole_30.py
-Library   ,,/TestCases/Admin/API/BasicInformationInvalidValueAttriRole_31.py
-Library   ,,/TestCases/Admin/API/BasicInformationInvalidValueAttriRole_32.py
-Library   ,,/TestCases/Admin/API/BasicInformationInvalidAttributesRole_34.py
-Library   ,,/TestCases/Admin/API/AdditionalAttributeWithInvalidValues_50.py
-Library   ,,/TestCases/Admin/API/AdditionalAttriWithoutNodeRegion_53.py
-Library   ,,/TestCases/Admin/API/CreateUserWithInvalidDirectRoles_47.py
-Library   ,,/TestCases/Admin/API/CustomAttributeWithValidValues_60.py
-Library   ,,/TestCases/Admin/API/DirectRoleMasterAdmin_39.py
-Library   ,,/TestCases/Admin/API/UserCreationAlreadyExistingEmail_37.py
-Library   ,,/TestCases/Admin/API/UserCreationwithBlankEmail_43.py
-Library   ,,/TestCases/Admin/API/UserCreationWithBlankHireDate_51.py
-Library   ,,/TestCases/Admin/API/UserCreationwithInvalidEmail_44.py
-Library   ,,/TestCases/Admin/API/UserCreationWithInvalidEmpId_42.py
-Library   ,,/TestCases/Admin/API/UserCreationWithInvalidHireDate_52.py
-Library   ,,/TestCases/Admin/API/UserUpdationWithExistingEmp_38.py 
-Library   ,,/TestCases/Admin/API/CreateUserBlankFMLN_46.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationWithDirectRole_28.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationValidData_27.py
+Library   ,,/TestCases/Admin/API/APIBasicInforWithMultipleRoles_33.py
+Library   ,,/TestCases/Admin/API/APIBasicInfoPasswordCreation_35.py
+Library   ,,/TestCases/Admin/API/APIBasicInfoWithDifferentDataType_45.py
+Library   ,,/TestCases/Admin/API/APIAdditionalAttributeWithValidData_48.py
+Library   ,,/TestCases/Admin/API/APIAdditionalAttributeWithBlankValues_49.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationWithoutRole_29.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidKeyAttriRole_30.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidValueAttriRole_31.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidValueAttriRole_32.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidAttributesRole_34.py
+Library   ,,/TestCases/Admin/API/APIAdditionalAttributeWithInvalidValues_50.py
+Library   ,,/TestCases/Admin/API/APIAdditionalAttriWithoutNodeRegion_53.py
+Library   ,,/TestCases/Admin/API/APICreateUserWithInvalidDirectRoles_47.py
+Library   ,,/TestCases/Admin/API/APICustomAttributeWithValidValues_60.py
+Library   ,,/TestCases/Admin/API/APIDirectRoleMasterAdmin_39.py
+Library   ,,/TestCases/Admin/API/APIUserCreationAlreadyExistingEmail_37.py
+Library   ,,/TestCases/Admin/API/APIUserCreationwithBlankEmail_43.py
+Library   ,,/TestCases/Admin/API/APIUserCreationWithBlankHireDate_51.py
+Library   ,,/TestCases/Admin/API/APIUserCreationwithInvalidEmail_44.py
+Library   ,,/TestCases/Admin/API/APIUserCreationWithInvalidEmpId_42.py
+Library   ,,/TestCases/Admin/API/APIUserCreationWithInvalidHireDate_52.py
+Library   ,,/TestCases/Admin/API/APIUserUpdationWithExistingEmp_38.py 
+Library   ,,/TestCases/Admin/API/APICreateUserBlankFMLN_46.py
 Library   ../Master/APIUserDeactivate.py
 
 

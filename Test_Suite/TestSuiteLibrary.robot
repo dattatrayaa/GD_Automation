@@ -5,26 +5,26 @@ Force Tags      Library
 Library   ../Master/BaseTestClass.py
 
 #Functions to Assign Tags
-Library   ../TestCases/Library/TagDocLesson.py
-Library   ../TestCases/Library/TagLessonCombinedLesson.py
-Library   ../TestCases/Library/TagLessonImage.py
-Library   ../TestCases/Library/TagLessonTextLesson.py
-Library   ../TestCases/Library/TagQuesLesson.py
-Library   ../TestCases/Library/TagTrackLessonDocument.py
-Library   ../TestCases/Library/TagTracklessonFiveTextImageQuestion.py
-Library   ../TestCases/Library/TagTrackLessonImage.py
-Library   ../TestCases/Library/TagTrackLessonOneTextImageVideoDocumentQuestion.py
-Library   ../TestCases/Library/TagTrackLessonQuestion.py
-Library   ../TestCases/Library/TagTrackLessonText.py
-Library   ../TestCases/Library/TagTrackLessonTwoTextImageVideoDocumentQuestion.py
-Library   ../TestCases/Library/TagTrackLessonVideo.py
-Library   ../TestCases/Library/TagTrackWithfourlessonsFourFiveSixSeven.py
-Library   ../TestCases/Library/TagTrackWithfourlessonsSevenEightNineTen.py
-Library   ../TestCases/Library/TagTrackWithfourlessonsTenTwelveThree.py
-Library   ../TestCases/Library/TagTrackWiththreelessons_Five_Six_Seven.py
-Library   ../TestCases/Library/TagTrackWiththreelessonsThreeFourFive.py
-Library   ../TestCases/Library/TagTrackWithTwolessonsOneTwo.py
-Library   ../TestCases/Library/TagTrackWithTwolessons_Two_Three.py
+Library   ../TestCases/Library/LibraryDocLessonDocLesson.py
+Library   ../TestCases/Library/LibraryLessonCombinedLesson.py
+Library   ../TestCases/Library/LibraryLessonImage.py
+Library   ../TestCases/Library/LibraryLessonTextLesson.py
+Library   ../TestCases/Library/LibraryQuesLesson.py
+Library   ../TestCases/Library/LibraryTrackLessonDocument.py
+Library   ../TestCases/Library/LibraryTracklessonFiveTextImageQuestion.py
+Library   ../TestCases/Library/LibraryTrackLessonImage.py
+Library   ../TestCases/Library/LibraryTrackLessonOneTextImageVideoDocumentQuestion.py
+Library   ../TestCases/Library/LibraryTrackLessonQuestion.py
+Library   ../TestCases/Library/LibraryTrackLessonText.py
+Library   ../TestCases/Library/LibraryTrackLessonTwoTextImageVideoDocumentQuestion.py
+Library   ../TestCases/Library/LibraryTrackLessonVideo.py
+Library   ../TestCases/Library/LibraryTrackWithfourlessonsFourFiveSixSeven.py
+Library   ../TestCases/Library/LibraryTrackWithfourlessonsSevenEightNineTen.py
+Library   ../TestCases/Library/LibraryTrackWithfourlessonsTenTwelveThree.py
+Library   ../TestCases/Library/LibraryTrackWiththreelessons_Five_Six_Seven.py
+Library   ../TestCases/Library/LibraryTrackWiththreelessonsThreeFourFive.py
+Library   ../TestCases/Library/LibraryTrackWithTwolessonsOneTwo.py
+Library   ../TestCases/Library/LibraryTrackWithTwolessons_Two_Three.py
 
 Library   ../Master/CloseBrowser.py
 *** Test Cases ***

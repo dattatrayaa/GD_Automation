@@ -4,10 +4,10 @@ Force Tags      Admin
 Library   ../Master/BaseTestClass.py
 
 #Functions for User Creation with standard roles
-Library   ../TestCases/Admin/Users/CreateCreator.py
-Library   ../TestCases/Admin/Users/CreateLearner.py
-Library   ../TestCases/Admin/Users/CreateLearnerAdministrator.py
-Library   ../TestCases/Admin/Users/CreateMasterAdmin.py
+Library   ../TestCases/Admin/Users/UserCreateCreator.py
+Library   ../TestCases/Admin/Users/UserCreateLearner.py
+Library   ../TestCases/Admin/Users/UserCreateLearnerAdministrator.py
+Library   ../TestCases/Admin/Users/UserCreateMasterAdmin.py
 
 Library   ../TestCases/Admin/Users/UpdatingUserDetails.py
 
