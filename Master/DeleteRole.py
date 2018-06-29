@@ -15,7 +15,8 @@ from selenium.webdriver.support.ui import WebDriverWait
 import xlrd
 
 from BaseTestClass import driver
-
+from BaseTestClass import projectPath
+from BaseTestClass import excelPath
 
 class DeleteRole:
     def roleDelete(self,RoleName):  
@@ -43,7 +44,7 @@ class DeleteRole:
             driver.find_element_by_xpath("html/body/div[4]/div/div/div[2]/div[2]/button[1]").click()
             time.sleep(4)
         finally:
-            book=xlrd.open_workbook(os.path.join('TestData.xlsx'))
+            book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             second_sheet = book.sheet_by_name('Login_Credentials')
             cell = second_sheet.cell(1,1)
             url = cell.value
