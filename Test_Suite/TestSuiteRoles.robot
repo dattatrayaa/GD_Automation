@@ -4,160 +4,160 @@ Force Tags      Admin
 #Config
 Library   ../Master/BaseTestClass.py
 
-Library   ../TestCases/Admin/Roles/CreateAdministratorAll.py
-Library   ../TestCases/Admin/Roles/CreateAdministratorBranding.py
-Library   ../TestCases/Admin/Roles/CreateAdministratorBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/CreateAdministratorContent.py
-Library   ../TestCases/Admin/Roles/CreateAdministratorContentRoleTagBrand.py
-Library   ../TestCases/Admin/Roles/CreateAdministratorContentRoleTagBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleCreateAdministratorAll.py
+Library   ../TestCases/Admin/Roles/RoleCreateAdministratorBranding.py
+Library   ../TestCases/Admin/Roles/RoleCreateAdministratorBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleCreateAdministratorContent.py
+Library   ../TestCases/Admin/Roles/RoleCreateAdministratorContentRoleTagBrand.py
+Library   ../TestCases/Admin/Roles/RoleCreateAdministratorContentRoleTagBrandIntegrate.py
 
-Library      ../TestCases/Admin/Roles/CreateAdministratorContentTagBrandIntegrate.py
-Library       ../TestCases/Admin/Roles/CreateAdministratorContentTagIntegrate.py
-Library      ../TestCases/Admin/Roles/CreateAdministratorIntegrate.py
-Library     ../TestCases/Admin/Roles/CreateAdministratorRole.py
-Library    ../TestCases/Admin/Roles/CreateAdministratorRoleTag.py
-Library   ../TestCases/Admin/Roles/CreateAdministratorRoleTagBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/CreateAdministratorTag.py
-Library   ../TestCases/Admin/Roles/CreateAdministratorTagBrandIntegrate.py
-Library     ../TestCases/Admin/Roles/CreateAdministratorUser.py
- Library  ../TestCases/Admin/Roles/CreateAdministratorUserBranding.py
- Library  ../TestCases/Admin/Roles/CreateAdministratorUserContent.py
- Library  ../TestCases/Admin/Roles/CreateAdministratorUserContentBrandIntegrate.py
- Library  ../TestCases/Admin/Roles/CreateAdministratorUserContentRole.py
- Library   ../TestCases/Admin/Roles/CreateAdministratorUserContentRoleBrandIntegrate.py
- Library   ../TestCases/Admin/Roles/CreateAdministratorUserContentRoleIntegrate.py
- Library   ../TestCases/Admin/Roles/CreateAdministratorUserContentRoleTag.py
- Library  ../TestCases/Admin/Roles/CreateAdministratorUserContentRoleTagBranding.py
- Library    ../TestCases/Admin/Roles/CreateAdministratorUserContentTagBrand.py
- Library   ../TestCases/Admin/Roles/CreateAdministratorUserContentTagBrandIntegrate.py
- Library    ../TestCases/Admin/Roles/CreateAdministratorUserIntegrate.py
- Library   ../TestCases/Admin/Roles/CreateAdministratorUserRole.py
- Library    ../TestCases/Admin/Roles/CreateAdministratorUserRoleBrand.py
- Library    ../TestCases/Admin/Roles/CreateAdministratorUserTagBrandIntegrate.py
- Library     ../TestCases/Admin/Roles/CreateReporterRole.py
- Library    ../TestCases/Admin/Roles/CreateRole.py
- Library   ../TestCases/Admin/Roles/LearnAdministratorBranding.py
- Library   ../TestCases/Admin/Roles/LearnAdministratorBrandIntegrate.py
- Library   ../TestCases/Admin/Roles/LearnAdministratorContenRoleTagBrand.py
- Library     ../TestCases/Admin/Roles/LearnAdministratorContent.py
- Library    ../TestCases/Admin/Roles/LearnAdministratorContentRoleTagBrandIntegrate.py
- Library   ../TestCases/Admin/Roles/LearnAdministratorContentTagBrandIntegrate.py
- Library   ../TestCases/Admin/Roles/LearnAdministratorContentTagIntegrate.py
- Library   ../TestCases/Admin/Roles/LearnAdministratorIntegrate.py
- Library   ../TestCases/Admin/Roles/LearnAdministratorRole.py
- Library   ../TestCases/Admin/Roles/LearnAdministratorRoleTag.py
- Library    ../TestCases/Admin/Roles/LearnAdministratorRoleTagBrandIntegrate.py
-Library      ../TestCases/Admin/Roles/LearnAdministratorTag.py
- Library   ../TestCases/Admin/Roles/LearnAdministratorTagBrandIntegrate.py
- Library    ../TestCases/Admin/Roles/LearnAdministratorUser.py
-Library    ../TestCases/Admin/Roles/LearnAdministratorUserBranding.py
-Library    ../TestCases/Admin/Roles/LearnAdministratorUserContent.py
-Library    ../TestCases/Admin/Roles/LearnAdministratorUserContentBrandIntegrate.py
-Library     ../TestCases/Admin/Roles/LearnAdministratorUserContentRole.py
-Library   ../TestCases/Admin/Roles/LearnAdministratorUserContentRoleBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/LearnAdministratorUserContentRoleIntegrate.py
-Library     ../TestCases/Admin/Roles/LearnAdministratorUserContentRoleTag.py
-Library   ../TestCases/Admin/Roles/LearnAdministratorUserContentRoleTagBrand.py
-Library    ../TestCases/Admin/Roles/LearnAdministratorUserContentTagBrand.py
-Library    ../TestCases/Admin/Roles/LearnAdministratorUserContentTagBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/LearnAdministratorUserIntegrate.py
-Library     ../TestCases/Admin/Roles/LearnAdministratorUserRole.py
-Library   ../TestCases/Admin/Roles/LearnAdministratorUserRoleBrand.py
-Library    ../TestCases/Admin/Roles/LearnAdministratorUserTagBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/LearnCreateRole.py
-Library    ../TestCases/Admin/Roles/LearnRole.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorAll.py
-Library    ../TestCases/Admin/Roles/ReportRole.py
-Library  ../TestCases/Admin/Roles/AssignReport.py
-Library   ../TestCases/Admin/Roles/AssignRole.py
-Library  ../TestCases/Admin/Roles/AdministratorAll.py
-Library  ../TestCases/Admin/Roles/AssignAdministratorAll.py
+Library      ../TestCases/Admin/Roles/RoleCreateAdministratorContentTagBrandIntegrate.py
+Library       ../TestCases/Admin/Roles/RoleCreateAdministratorContentTagIntegrate.py
+Library      ../TestCases/Admin/Roles/RoleCreateAdministratorIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleCreateAdministratorRole.py
+Library    ../TestCases/Admin/Roles/RoleCreateAdministratorRoleTag.py
+Library   ../TestCases/Admin/Roles/RoleCreateAdministratorRoleTagBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleCreateAdministratorTag.py
+Library   ../TestCases/Admin/Roles/RoleCreateAdministratorTagBrandIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleCreateAdministratorUser.py
+ Library  ../TestCases/Admin/Roles/RoleCreateAdministratorUserBranding.py
+ Library  ../TestCases/Admin/Roles/RoleCreateAdministratorUserContent.py
+ Library  ../TestCases/Admin/Roles/RoleCreateAdministratorUserContentBrandIntegrate.py
+ Library  ../TestCases/Admin/Roles/RoleCreateAdministratorUserContentRole.py
+ Library   ../TestCases/Admin/Roles/RoleCreateAdministratorUserContentRoleBrandIntegrate.py
+ Library   ../TestCases/Admin/Roles/RoleCreateAdministratorUserContentRoleIntegrate.py
+ Library   ../TestCases/Admin/Roles/RoleCreateAdministratorUserContentRoleTag.py
+ Library  ../TestCases/Admin/Roles/RoleCreateAdministratorUserContentRoleTagBranding.py
+ Library    ../TestCases/Admin/Roles/RoleCreateAdministratorUserContentTagBrand.py
+ Library   ../TestCases/Admin/Roles/RoleCreateAdministratorUserContentTagBrandIntegrate.py
+ Library    ../TestCases/Admin/Roles/RoleCreateAdministratorUserIntegrate.py
+ Library   ../TestCases/Admin/Roles/RoleCreateAdministratorUserRole.py
+ Library    ../TestCases/Admin/Roles/RoleCreateAdministratorUserRoleBrand.py
+ Library    ../TestCases/Admin/Roles/RoleCreateAdministratorUserTagBrandIntegrate.py
+ Library     ../TestCases/Admin/Roles/RoleCreateReporterRole.py
+ Library    ../TestCases/Admin/Roles/RoleCreateRole.py
+ Library   ../TestCases/Admin/Roles/RoleLearnAdministratorBranding.py
+ Library   ../TestCases/Admin/Roles/RoleLearnAdministratorBrandIntegrate.py
+ Library   ../TestCases/Admin/Roles/RoleLearnAdministratorContenRoleTagBrand.py
+ Library     ../TestCases/Admin/Roles/RoleLearnAdministratorContent.py
+ Library    ../TestCases/Admin/Roles/RoleLearnAdministratorContentRoleTagBrandIntegrate.py
+ Library   ../TestCases/Admin/Roles/RoleLearnAdministratorContentTagBrandIntegrate.py
+ Library   ../TestCases/Admin/Roles/RoleLearnAdministratorContentTagIntegrate.py
+ Library   ../TestCases/Admin/Roles/RoleLearnAdministratorIntegrate.py
+ Library   ../TestCases/Admin/Roles/RoleLearnAdministratorRole.py
+ Library   ../TestCases/Admin/Roles/RoleLearnAdministratorRoleTag.py
+ Library    ../TestCases/Admin/Roles/RoleLearnAdministratorRoleTagBrandIntegrate.py
+Library      ../TestCases/Admin/Roles/RoleLearnAdministratorTag.py
+ Library   ../TestCases/Admin/Roles/RoleLearnAdministratorTagBrandIntegrate.py
+ Library    ../TestCases/Admin/Roles/RoleLearnAdministratorUser.py
+Library    ../TestCases/Admin/Roles/RoleLearnAdministratorUserBranding.py
+Library    ../TestCases/Admin/Roles/RoleLearnAdministratorUserContent.py
+Library    ../TestCases/Admin/Roles/RoleLearnAdministratorUserContentBrandIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleLearnAdministratorUserContentRole.py
+Library   ../TestCases/Admin/Roles/RoleLearnAdministratorUserContentRoleBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleLearnAdministratorUserContentRoleIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleLearnAdministratorUserContentRoleTag.py
+Library   ../TestCases/Admin/Roles/RoleLearnAdministratorUserContentRoleTagBrand.py
+Library    ../TestCases/Admin/Roles/RoleLearnAdministratorUserContentTagBrand.py
+Library    ../TestCases/Admin/Roles/RoleLearnAdministratorUserContentTagBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleLearnAdministratorUserIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleLearnAdministratorUserRole.py
+Library   ../TestCases/Admin/Roles/RoleLearnAdministratorUserRoleBrand.py
+Library    ../TestCases/Admin/Roles/RoleLearnAdministratorUserTagBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleLearnCreateRole.py
+Library    ../TestCases/Admin/Roles/RoleLearnRole.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorAll.py
+Library    ../TestCases/Admin/Roles/RoleReportRole.py
+Library  ../TestCases/Admin/Roles/RoleAssignReport.py
+Library   ../TestCases/Admin/Roles/RoleAssignRole.py
+Library  ../TestCases/Admin/Roles/RoleAdministratorAll.py
+Library  ../TestCases/Admin/Roles/RoleAssignAdministratorAll.py
 Library   ../TestCases/Admin/Roles/DeleteRole.py
-Library  ../TestCases/Admin/Roles/AssignAdministratorBranding.py
-Library  ../TestCases/Admin/Roles/AssignAdministratorBrandIntegrate.py
-Library  ../TestCases/Admin/Roles/AssignAdministratorContent.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorContentRoleTagBrand.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorContentRoleTagBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/AssignAdministratorContentTagIntegrate.py
-Library    ../TestCases/Admin/Roles/AssignAdministratorContentTagBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorIntegrate.py
-Library     ../TestCases/Admin/Roles/AssignAdministratorRole.py
-Library    ../TestCases/Admin/Roles/AssignAdministratorRoleTag.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorRoleTagBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorTag.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorTagBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorUser.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorUserBranding.py
-Library    ../TestCases/Admin/Roles/AssignAdministratorUserContent.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorUserContentBrandIntegrate.py
-Library  ../TestCases/Admin/Roles/AssignAdministratorUserContentRole.py
-Library  ../TestCases/Admin/Roles/AssignAdministratorUserContentRoleBrandIntegrate.py
-Library  ../TestCases/Admin/Roles/AssignAdministratorUserContentRoleIntegrate.py
-Library     ../TestCases/Admin/Roles/AssignAdministratorUserContentRoleTag.py
-Library  ../TestCases/Admin/Roles/AssignAdministratorUserContentRoleTagBranding.py
-Library  ../TestCases/Admin/Roles/AssignAdministratorUserContentTagBrand.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorUserContentTagBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorUserIntegrate.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorUserRole.py
-Library    ../TestCases/Admin/Roles/AssignAdministratorUserRoleBrand.py
-Library   ../TestCases/Admin/Roles/AssignAdministratorUserTagBrandIntegrate.py
-Library  ../TestCases/Admin/Roles/ReportAdministratorBranding.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorContent.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorContentRoleTagBrand.py
-Library  ../TestCases/Admin/Roles/ReportAdministratorContentRoleTagBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorContentTagIntegrate.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorIntegrate.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorRole.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorRoleTag.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorRoleTagBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/ReportAdministratorTag.py
-Library    ../TestCases/Admin/Roles/ReportAdministratorTagBrandIntegrate.py
-Library  ../TestCases/Admin/Roles/ReportAdministratorUser.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorUserBranding.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorUserContent.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorUserContentBrandIntegrate.py
-Library     ../TestCases/Admin/Roles/ReportAdministratorUserContentRole.py
-Library    ../TestCases/Admin/Roles/ReportAdministratorUserContentRoleIntegrate.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorUserContentRoleBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorUserContentRoleTag.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorUserContentRoleTagBranding.py
-Library    ../TestCases/Admin/Roles/ReportAdministratorUserContentTagBrand.py
-Library   ../TestCases/Admin/Roles/ReportAdministratorUserContentTagBrandIntegrate.py
-Library     ../TestCases/Admin/Roles/ReportAdministratorUserIntegrate.py
-Library     ../TestCases/Admin/Roles/ReportAdministratorUserRole.py
-Library    ../TestCases/Admin/Roles/ReportAdministratorUserRoleBrand.py
-Library    ../TestCases/Admin/Roles/ReportAdministratorUserTagBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorAllRole.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorAllRole.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorBranding.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorContent.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorContentRoleTagBrand.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorContentRoleTagBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorContentTagBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorContentTagIntegrate.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorIntegrate.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorRole.py
-Library     ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorRoleTag.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorRoleTagBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorTag.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorTagBrandIntegrate.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUser.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserBranding.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserContent.py
-Library  ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserContentBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserContentRole.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserContentRoleBrandIntegrate.py
-Library     ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserContentRoleIntegrate.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserContentRoleTag.py
-Library      ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserContentRoleTagBrand.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserContentTagBrand.py
-Library      ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserContentTagBrandIntegrate.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserIntegrate.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserRole.py
-Library   ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserRoleBrand.py
-Library    ../TestCases/Admin/Roles/LearnAssignCreateReportAdministratorUserTagBrandIntegrate.py
+Library  ../TestCases/Admin/Roles/RoleAssignAdministratorBranding.py
+Library  ../TestCases/Admin/Roles/RoleAssignAdministratorBrandIntegrate.py
+Library  ../TestCases/Admin/Roles/RoleAssignAdministratorContent.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorContentRoleTagBrand.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorContentRoleTagBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleAssignAdministratorContentTagIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleAssignAdministratorContentTagBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleAssignAdministratorRole.py
+Library    ../TestCases/Admin/Roles/RoleAssignAdministratorRoleTag.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorRoleTagBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorTag.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorTagBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorUser.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorUserBranding.py
+Library    ../TestCases/Admin/Roles/RoleAssignAdministratorUserContent.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorUserContentBrandIntegrate.py
+Library  ../TestCases/Admin/Roles/RoleAssignAdministratorUserContentRole.py
+Library  ../TestCases/Admin/Roles/RoleAssignAdministratorUserContentRoleBrandIntegrate.py
+Library  ../TestCases/Admin/Roles/RoleAssignAdministratorUserContentRoleIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleAssignAdministratorUserContentRoleTag.py
+Library  ../TestCases/Admin/Roles/RoleAssignAdministratorUserContentRoleTagBranding.py
+Library  ../TestCases/Admin/Roles/RoleAssignAdministratorUserContentTagBrand.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorUserContentTagBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorUserIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorUserRole.py
+Library    ../TestCases/Admin/Roles/RoleAssignAdministratorUserRoleBrand.py
+Library   ../TestCases/Admin/Roles/RoleAssignAdministratorUserTagBrandIntegrate.py
+Library  ../TestCases/Admin/Roles/RoleReportAdministratorBranding.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorContent.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorContentRoleTagBrand.py
+Library  ../TestCases/Admin/Roles/RoleReportAdministratorContentRoleTagBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorContentTagIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorRole.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorRoleTag.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorRoleTagBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleReportAdministratorTag.py
+Library    ../TestCases/Admin/Roles/RoleReportAdministratorTagBrandIntegrate.py
+Library  ../TestCases/Admin/Roles/RoleReportAdministratorUser.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorUserBranding.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorUserContent.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorUserContentBrandIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleReportAdministratorUserContentRole.py
+Library    ../TestCases/Admin/Roles/RoleReportAdministratorUserContentRoleIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorUserContentRoleBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorUserContentRoleTag.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorUserContentRoleTagBranding.py
+Library    ../TestCases/Admin/Roles/RoleReportAdministratorUserContentTagBrand.py
+Library   ../TestCases/Admin/Roles/RoleReportAdministratorUserContentTagBrandIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleReportAdministratorUserIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleReportAdministratorUserRole.py
+Library    ../TestCases/Admin/Roles/RoleReportAdministratorUserRoleBrand.py
+Library    ../TestCases/Admin/Roles/RoleReportAdministratorUserTagBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorAllRole.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorAllRole.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorBranding.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorContent.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorContentRoleTagBrand.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorContentRoleTagBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorContentTagBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorContentTagIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorRole.py
+Library     ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorRoleTag.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorRoleTagBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorTag.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorTagBrandIntegrate.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUser.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserBranding.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserContent.py
+Library  ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserContentBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserContentRole.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserContentRoleBrandIntegrate.py
+Library     ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserContentRoleIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserContentRoleTag.py
+Library      ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserContentRoleTagBrand.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserContentTagBrand.py
+Library      ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserContentTagBrandIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserIntegrate.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserRole.py
+Library   ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserRoleBrand.py
+Library    ../TestCases/Admin/Roles/RoleLearnAssignCreateReportAdministratorUserTagBrandIntegrate.py
 Library          ../Master/CloseBrowser.py
 
 
