@@ -19,7 +19,7 @@ from BaseTestClass import BaseTestClass
 from BaseTestClass import WebDriverWait
 from BaseTestClass import driver
 from BaseTestClass import projectPath
-
+from BaseTestClass import apiPath
 class APIAdditionalAttributeWithInvalidValues:
     def additionalAttributeWithInvalidValues(self):
         book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))

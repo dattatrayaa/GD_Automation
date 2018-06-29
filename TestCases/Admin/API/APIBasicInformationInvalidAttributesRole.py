@@ -18,7 +18,7 @@ from BaseTestClass import BaseTestClass
 from BaseTestClass import WebDriverWait
 from BaseTestClass import driver
 from BaseTestClass import projectPath
-
+from BaseTestClass import apiPath
 class APIBasicInformationInvalidAttributesRole:
     
     def userCreationWithInvalidAttributesRole(self):
@@ -120,11 +120,5 @@ class APIBasicInformationInvalidAttributesRole:
             
         
             
-if __name__ == '__main__':
-    ob= BaseTestClass()
-    ob.UserLogin()
-    obj1= APIBasicInformationInvalidAttributesRole_34()
-    obj1.userCreationWithInvalidAttributesRole()
-    obj1.againuserLogin()
-   
+
     print "Test executed successfully"

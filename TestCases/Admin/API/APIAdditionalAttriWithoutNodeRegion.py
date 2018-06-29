@@ -23,7 +23,7 @@ from BaseTestClass import BaseTestClass
 from BaseTestClass import WebDriverWait
 from BaseTestClass import driver
 from BaseTestClass import projectPath
-
+from BaseTestClass import apiPath
 class APIAdditionalAttriWithoutNodeRegion:
     
     def AdditionalAttriWithoutNodeRegion(self):
@@ -290,12 +290,5 @@ class APIAdditionalAttriWithoutNodeRegion:
             driver.get(url)    
         
         
-if __name__ == '__main__':
-    ob= BaseTestClass()
-    ob.UserLogin()
-    obj1= AdditionalAttriWithoutNodeRegion_53()
-    obj1.AdditionalAttriWithoutNodeRegion() 
-    obj1.Logincreateuser()
-    obj1.againuserLogin()  
-    
+
     print "Test executed successfully"   
