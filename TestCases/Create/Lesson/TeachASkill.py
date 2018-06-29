@@ -558,8 +558,7 @@ class TeachASkill:
             obj1 = TeachASkill()
             obj1.teachASkills()
             obj1.publishLesson()
-            lesdel= DeleteLesson()
-            lesdel.lessonDelete(lesson_title_TeachASkill)
+            
             print "TEST CASE EXECUTION SUCCESSFULLY COMPLETED"
         except Exception as e:
             traceback.print_exc()
@@ -567,6 +566,8 @@ class TeachASkill:
             raise Exception
             
         finally:
+            lesdel= DeleteLesson()
+            lesdel.lessonDelete(lesson_title_TeachASkill)
             #print "clicking on Home"
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             first_sheet = book.sheet_by_name('Login_Credentials')
