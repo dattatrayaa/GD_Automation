@@ -1,12 +1,20 @@
 echo "Starting Robot suite"
-pybot --rerunfailed "robot_results"/output-20180620-033414.xml --output "robot_results"/rerunl1.xml ./TestSuiteLesson.robot
-pybot --rerunfailed "robot_results"/output-20180620-034620.xml --output "robot_results"/reruntr1.xml ./TestSuiteTrack.robot
-pybot --rerunfailed "robot_results"/output-20180620-043234.xml --output "robot_results"/rerunc1.xml ./TestSuiteCampaign.robot
-pybot --rerunfailed "robot_results"/output-20180620-044951.xml --output "robot_results"/rerunac1.xml ./TestSuiteAssignCampaign.robot
-pybot --rerunfailed "robot_results"/output-20180620-052416.xml --output "robot_results"/rerunct1.xml ./TestSuiteCampaignTracks.robot
-pybot --rerunfailed "robot_results"/output-20180620-061926.xml --output "robot_results"/rerung1.xml ./TestSuiteGroup.robot
-pybot --rerunfailed "robot_results"/output-20180620-065135.xml --output "robot_results"/rerunt1.xml ./TestSuiteTag.robot
-pybot --rerunfailed "robot_results"/output-20180620-061423.xml --output "robot_results"/rerunus1.xml ./TestSuiteCreateUser.robot
-pybot --rerunfailed "robot_results"/output-20180620-060138.xml --output "robot_results"/rerunu1.xml ./TestSuiteUserAttributes.robot
+
+#pybot --rerunfailed "Test_Results"/lesson.xml --output "Test_Results"/rerunlesson.xml ./Test_Suite/TestSuiteLesson.robot
+#pybot --rerunfailed "Test_Results"/track.xml --output "robot_results"/reruntrack.xml ./Test_Suite/TestSuiteTrack.robot
+#pybot --rerunfailed "Test_Results"/campaign.xml --output "robot_results"/reruncampaign.xml ./Test_Suite/TestSuiteCampaign.robot
+#pybot --rerunfailed "Test_Results"/assigncampaign.xml --output "robot_results"/rerunassigncampaign.xml ./Test_Suite/TestSuiteAssignCampaign.robot
+#pybot --rerunfailed "Test_Results"/campaigntrack.xml --output "robot_results"/reruncampaigntrack.xml ./Test_Suite/TestSuiteCampaignTracks.robot
+#pybot --rerunfailed "Test_Results"/group.xml --output "robot_results"/rerungroup.xml ./Test_Suite/TestSuiteGroup.robot
+#pybot --rerunfailed "Test_Results"/tag.xml --output "robot_results"/reruntag.xml ./Test_Suite/TestSuiteTag.robot
+#pybot --rerunfailed "Test_Results"/library.xml --output "robot_results"/rerunapi.xml ./Test_Suite/TestSuiteLibrary.robot
+#pybot --rerunfailed "Test_Results"/api.xml --output "robot_results"/rerunuser.xml ./Test_Suite/APITestSuite.robot
+#pybot --rerunfailed "Test_Results"/role.xml --output "robot_results"/rerunrole.xml ./Test_Suite/TestSuiteRoles.robot
+#pybot --rerunfailed "Test_Results"/user.xml --output "robot_results"/rerunrole.xml ./Test_Suite/TestSuiteCreateUser.robot
+#pybot --rerunfailed "Test_Results"/home.xml --output "robot_results"/rerunhome.xml ./Test_Suite/TestSuiteHome.robot
+
+rebot -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/lesson.xml  ./Test_Results/track.xml
+
+robot -v report:finalreport -v log:logfinal -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
 
 echo "Suite ended" 
