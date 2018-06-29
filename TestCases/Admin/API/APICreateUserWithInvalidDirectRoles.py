@@ -113,13 +113,6 @@ class APICreateUserWithInvalidDirectRoles:
             url = cell.value
             driver.get(url) 
             
-            
-            
-if __name__ == '__main__':
-    ob= BaseTestClass()
-    ob.UserLogin()
-    obj1= APICreateUserWithInvalidDirectRoles_47()
-    obj1.createUserWithInvalidDirectRoles()
-    obj1.againuserLogin()
+ 
    
     print "Test executed successfully"

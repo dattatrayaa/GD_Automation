@@ -114,12 +114,5 @@ class APICreateUserBlankFMLN:
             driver.get(url) 
             
             
-            
-if __name__ == '__main__':
-    ob= BaseTestClass()
-    ob.UserLogin()
-    obj1= APICreateUserBlankFMLN_46()
-    obj1.createUserBlankFMLN()
-    obj1.againuserLogin()
-   
+
     print "Test executed successfully"

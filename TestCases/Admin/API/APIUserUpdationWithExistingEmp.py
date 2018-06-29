@@ -198,14 +198,5 @@ class APIUserUpdationWithExistingEmp:
             url = cell.value
             driver.get(url) 
             
-            
-            
-if __name__ == '__main__':
-    ob= BaseTestClass()
-    ob.UserLogin()
-    obj1= UserUpdationWithExistingEmp()
-    obj1.userUpdationWithExistingEmp()
-    obj1.Logincreateuser()
-    obj1.againuserLogin()
-   
+ 
     print "Test executed successfully"

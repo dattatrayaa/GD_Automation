@@ -193,12 +193,6 @@ class APIBasicInfoWithDifferentDataType:
             driver.get(url) 
          
            
-if __name__ == '__main__':
-    ob= BaseTestClass()
-    obj1= APIBasicInfoWithDifferentDataType_45()
-    ob.UserLogin()
-    obj1.userCreationWithDifferentDataType()
-    obj1.Logincreateuser()
-    obj1.againuserLogin()
+
    
     print "Test executed successfully"
