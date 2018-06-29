@@ -22,7 +22,7 @@ import xlrd
 from BaseTestClass import BaseTestClass
 from BaseTestClass import WebDriverWait
 from BaseTestClass import driver
-
+from BaseTestClass import projectPath
 
 class APIAdditionalAttriWithoutNodeRegion:
     
