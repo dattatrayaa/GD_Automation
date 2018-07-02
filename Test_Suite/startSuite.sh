@@ -8,7 +8,7 @@ echo "Starting Robot suite"
 
 pybot -n non-critical -d Test_Results -o lesson.xml -l loglesson.html -r reportlesson.html  ./Test_Suite/TestSuiteLesson.robot 
 
-pybot -n non-critical -d Test_Results -o track.xml -l logtrack.html -r reporttrack.html  ./Test_Suite/TestSuiteTrack.robot
+#pybot -n non-critical -d Test_Results -o track.xml -l logtrack.html -r reporttrack.html  ./Test_Suite/TestSuiteTrack.robot
 
 #pybot -n non-critical -d Test_Results -o campaign.xml -l logcampaign.html -r reportcampaign.html  ./Test_Suite/TestSuiteCampaign.robot
 #pybot -n non-critical -d Test_Results -o assigncampaign.xml -l logassigncampaign.html -r reportassigncampaign.html  ./Test_Suite/TestSuiteAssignCampaign.robot
@@ -21,9 +21,9 @@ pybot -n non-critical -d Test_Results -o track.xml -l logtrack.html -r reporttra
 #pybot -n non-critical -d Test_Results -o role.xml -l logrole.html -r reportrole.html  ./Test_Suite/TestSuiteRoles.robot
 #pybot -n non-critical -d Test_Results -o home.xml -l loghome.html -r reporthome.html  ./Test_Suite/TestSuiteHome.robot
 
-rebot -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/lesson.xml  ./Test_Results/track.xml
+#rebot -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/lesson.xml  ./Test_Results/track.xml
 
-robot -v report:finalreport -v log:logfinal -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
+#robot -v report:finalreport -v log:logfinal -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
 
 
 
