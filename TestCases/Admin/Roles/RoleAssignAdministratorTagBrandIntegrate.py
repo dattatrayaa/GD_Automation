@@ -20,7 +20,7 @@ from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
 from DeleteRole import DeleteRole
 from RoleXpathElements import RoleXpathElements
-from BaseTestClass import excelPath
+
 class RoleAssignAdministratorTagBrandIntegrate():
     
     def createAssignAdministratorTagBrandIntegrate(self,RoleName,Description):
@@ -69,7 +69,8 @@ class RoleAssignAdministratorTagBrandIntegrate():
         print "Clicked on Save Role Button"
         print "Searching for the Created Role in the List"
         createrole.roleSearch(RoleName)
-    def createAssignAdministratorTagBrandIntegrateMain(self):  
+    def createAssignAdministratorTagBrandIntegrateMain(self):
+        from BaseTestClass import excelPath  
         try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')

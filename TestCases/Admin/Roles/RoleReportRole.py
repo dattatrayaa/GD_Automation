@@ -20,7 +20,7 @@ from BaseTestClass import driver
 from DeleteRole import DeleteRole
 from BaseTestClass import projectPath
 from RoleXpathElements import RoleXpathElements
-from BaseTestClass import excelPath
+
 class ReportRole():
     
     def createReportRole(self,RoleName,Description):
@@ -49,7 +49,8 @@ class ReportRole():
         print "Searching for the Created Role in the List"
         createrole.roleSearch(RoleName)
         
-    def reportRoleMain(self):  
+    def reportRoleMain(self): 
+        from BaseTestClass import excelPath 
         try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')

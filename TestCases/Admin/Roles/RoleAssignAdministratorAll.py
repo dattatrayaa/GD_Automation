@@ -16,7 +16,7 @@ from BaseTestClass import driver
 from DeleteRole import DeleteRole
 from RoleXpathElements import RoleXpathElements
 from BaseTestClass import projectPath
-from BaseTestClass import excelPath
+
 class RoleAssignAdministratorAll():
     def createAssignAdministratorAllRole(self,RoleName,Description):
         createrole =RoleXpathElements()
@@ -65,8 +65,9 @@ class RoleAssignAdministratorAll():
         time.sleep(4)
         createrole.roleSearch(RoleName)
     def createAssignAdministratorAllMain(self):  
+        from BaseTestClass import excelPath
         try:   
-            book=xlrd.open_workbook(os.path.join('Test_DataTestData.xlsx'))
+            book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')
             cell = sheet.cell(210,1)
             RoleName = cell.value
@@ -104,9 +105,3 @@ class RoleAssignAdministratorAll():
                 print("alert accepted")
             except Exception:
                 print("no alert")
-if __name__ == '__main__':
-    
-    obj11= AssignAdministratorAll()
-    obj12= BaseTestClass()
-    obj12.UserLogin()
-    obj11.createAssignAdministratorAllMain()
