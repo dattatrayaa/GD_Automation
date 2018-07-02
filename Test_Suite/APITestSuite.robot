@@ -5,31 +5,31 @@ Force Tags      API
 Library   ../Master/BaseTestClass.py
 
 #Functions for API
-Library   ,,/TestCases/Admin/API/APIBasicInformationWithDirectRole_28.py
-Library   ,,/TestCases/Admin/API/APIBasicInformationValidData_27.py
-Library   ,,/TestCases/Admin/API/APIBasicInforWithMultipleRoles_33.py
-Library   ,,/TestCases/Admin/API/APIBasicInfoPasswordCreation_35.py
-Library   ,,/TestCases/Admin/API/APIBasicInfoWithDifferentDataType_45.py
-Library   ,,/TestCases/Admin/API/APIAdditionalAttributeWithValidData_48.py
-Library   ,,/TestCases/Admin/API/APIAdditionalAttributeWithBlankValues_49.py
-Library   ,,/TestCases/Admin/API/APIBasicInformationWithoutRole_29.py
-Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidKeyAttriRole_30.py
-Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidValueAttriRole_31.py
-Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidValueAttriRole_32.py
-Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidAttributesRole_34.py
-Library   ,,/TestCases/Admin/API/APIAdditionalAttributeWithInvalidValues_50.py
-Library   ,,/TestCases/Admin/API/APIAdditionalAttriWithoutNodeRegion_53.py
-Library   ,,/TestCases/Admin/API/APICreateUserWithInvalidDirectRoles_47.py
-Library   ,,/TestCases/Admin/API/APICustomAttributeWithValidValues_60.py
-Library   ,,/TestCases/Admin/API/APIDirectRoleMasterAdmin_39.py
-Library   ,,/TestCases/Admin/API/APIUserCreationAlreadyExistingEmail_37.py
-Library   ,,/TestCases/Admin/API/APIUserCreationwithBlankEmail_43.py
-Library   ,,/TestCases/Admin/API/APIUserCreationWithBlankHireDate_51.py
-Library   ,,/TestCases/Admin/API/APIUserCreationwithInvalidEmail_44.py
-Library   ,,/TestCases/Admin/API/APIUserCreationWithInvalidEmpId_42.py
-Library   ,,/TestCases/Admin/API/APIUserCreationWithInvalidHireDate_52.py
-Library   ,,/TestCases/Admin/API/APIUserUpdationWithExistingEmp_38.py 
-Library   ,,/TestCases/Admin/API/APICreateUserBlankFMLN_46.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationWithDirectRole.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationValidData.py
+Library   ,,/TestCases/Admin/API/APIBasicInforWithMultipleRoles.py
+Library   ,,/TestCases/Admin/API/APIBasicInfoPasswordCreation.py
+Library   ,,/TestCases/Admin/API/APIBasicInfoWithDifferentDataType.py
+Library   ,,/TestCases/Admin/API/APIAdditionalAttributeWithValidData.py
+Library   ,,/TestCases/Admin/API/APIAdditionalAttributeWithBlankValues.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationWithoutRole.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidKeyAttriRole.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidValueAttriRole.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidValueAttriRole.py
+Library   ,,/TestCases/Admin/API/APIBasicInformationInvalidAttributesRole.py
+Library   ,,/TestCases/Admin/API/APIAdditionalAttributeWithInvalidValues.py
+Library   ,,/TestCases/Admin/API/APIAdditionalAttriWithoutNodeRegion.py
+Library   ,,/TestCases/Admin/API/APICreateUserWithInvalidDirectRoles.py
+Library   ,,/TestCases/Admin/API/APICustomAttributeWithValidValues.py
+Library   ,,/TestCases/Admin/API/APIDirectRoleMasterAdmin.py
+Library   ,,/TestCases/Admin/API/APIUserCreationAlreadyExistingEmail.py
+Library   ,,/TestCases/Admin/API/APIUserCreationwithBlankEmail.py
+Library   ,,/TestCases/Admin/API/APIUserCreationWithBlankHireDate.py
+Library   ,,/TestCases/Admin/API/APIUserCreationwithInvalidEmail.py
+Library   ,,/TestCases/Admin/API/APIUserCreationWithInvalidEmpId.py
+Library   ,,/TestCases/Admin/API/APIUserCreationWithInvalidHireDate.py
+Library   ,,/TestCases/Admin/API/APIUserUpdationWithExistingEmp.py 
+Library   ,,/TestCases/Admin/API/APICreateUserBlankFMLN.py
 Library   ../Master/APIUserDeactivate.py
 
 
@@ -38,120 +38,120 @@ TC0 - User Login
     User Login
  
 TC01-BasicInformationValidData_27
-    BasicInformationValidData_27.User Creation With Valid Data
-    BasicInformationValidData_27.Logincreateuser
-    BasicInformationValidData_27.Againuser Login
+    APIBasicInformationValidData.User Creation With Valid Data
+    APIBasicInformationValidData.Logincreateuser
+    APIBasicInformationValidData.Againuser Login
 
 TC02-BasicInformationWithDirectRole_28
-    BasicInformationWithDirectRole_28.User Creation With Direct Role
-    BasicInformationWithDirectRole_28.Logincreateuser
-    BasicInformationWithDirectRole_28.Againuser Login
+    APIBasicInformationWithDirectRole.User Creation With Direct Role
+    APIBasicInformationWithDirectRole.Logincreateuser
+    APIBasicInformationWithDirectRole.Againuser Login
       
 TC03 - BasicInforWithMultipleRoles_33
-    BasicInforWithMultipleRoles_33.user Creation With Multiple Roles
-    BasicInforWithMultipleRoles_33.Logincreateuser 
-    BasicInforWithMultipleRoles_33.Againuser Login
+    APIBasicInforWithMultipleRoles.user Creation With Multiple Roles
+    APIBasicInforWithMultipleRoles.Logincreateuser 
+    APIBasicInforWithMultipleRoles.Againuser Login
 
 TC04 - BasicInfoPasswordCreation_35
-    BasicInfoPasswordCreation_35.test Password Creation For User
-    BasicInfoPasswordCreation_35.Logincreateuser
-    BasicInfoPasswordCreation_35.Againuser Login    
+    APIBasicInfoPasswordCreation.test Password Creation For User
+    APIBasicInfoPasswordCreation.Logincreateuser
+    APIBasicInfoPasswordCreation.Againuser Login    
    
 TC05 - BasicInfoWithDifferentDataType_45
-    BasicInfoWithDifferentDataType_45.user Creation With Different Data Type 
-    BasicInfoWithDifferentDataType_45.Logincreateuser 
-    BasicInfoWithDifferentDataType_45.Againuser Login
+    APIBasicInfoWithDifferentDataType.user Creation With Different Data Type 
+    APIBasicInfoWithDifferentDataType.Logincreateuser 
+    APIBasicInfoWithDifferentDataType.Againuser Login
     
 TC06 - AdditionalAttributeWithValidData_48
-    AdditionalAttributeWithValidData_48.additional Attribute With Valid Data 
-    AdditionalAttributeWithValidData_48.Logincreateuser 
-    AdditionalAttributeWithValidData_48.Againuser Login
+    APIAdditionalAttributeWithValidData.additional Attribute With Valid Data 
+    APIAdditionalAttributeWithValidData.Logincreateuser 
+    APIAdditionalAttributeWithValidData.Againuser Login
 	
 TC07 - AdditionalAttributeWithBlankValues_49
-    AdditionalAttributeWithBlankValues_49.additional Attribute With Blank Values 
-    AdditionalAttributeWithBlankValues_49.Logincreateuser 
-    AdditionalAttributeWithBlankValues_49.Againuser Login
+    APIAdditionalAttributeWithBlankValues.additional Attribute With Blank Values 
+    APIAdditionalAttributeWithBlankValues.Logincreateuser 
+    APIAdditionalAttributeWithBlankValues.Againuser Login
     
  TC08 - BasicInformationWithoutRole_29
-    #BasicInformationWithoutRole_29.user Creation Without Role
-    #BasicInformationWithoutRole_29.Logincreateuser
-    #BasicInformationWithoutRole_29.Againuser Login   
+    APIBasicInformationWithoutRole.user Creation Without Role
+    APIBasicInformationWithoutRole.Logincreateuser
+    APIBasicInformationWithoutRole.Againuser Login   
     
  TC09 - BasicInformationInvalidKeyAttriRole_30
-    BasicInformationInvalidKeyAttriRole_30.user Creation With Invalid Key Attri Role
-    BasicInformationInvalidKeyAttriRole_30.Againuser Login    
+    APIBasicInformationInvalidKeyAttriRole.user Creation With Invalid Key Attri Role
+    APIBasicInformationInvalidKeyAttriRole.Againuser Login    
  
  TC10 - BasicInformationInvalidValueAttriRole_31
-    BasicInformationInvalidValueAttriRole_31.user Creation With Invalid Value Attri Role
-    BasicInformationInvalidValueAttriRole_31.Againuser Login
+    APIBasicInformationInvalidValueAttriRole.user Creation With Invalid Value Attri Role
+    APIBasicInformationInvalidValueAttriRole.Againuser Login
     
  TC11 - BasicInformationInvalidValueAttriRole_32
-    BasicInformationInvalidValueAttriRole_32.user Creation With Invalid Value Attri Role
-     BasicInformationInvalidValueAttriRole_32.Againuser Login
+    APIBasicInformationInvalidValueAttriRole.user Creation With Invalid Value Attri Role
+     APIBasicInformationInvalidValueAttriRole.Againuser Login
  
  TC12 - BasicInformationInvalidAttributesRole_34
-      BasicInformationInvalidAttributesRole_34.user Creation With Invalid Attributes Role
-      BasicInformationInvalidAttributesRole_34.Againuser Login
+      APIBasicInformationInvalidAttributesRole.user Creation With Invalid Attributes Role
+      APIBasicInformationInvalidAttributesRole.Againuser Login
  
  TC13 - AdditionalAttributeWithInvalidValues_50
-      AdditionalAttributeWithInvalidValues_50.additional Attribute With Invalid Values
-      AdditionalAttributeWithInvalidValues_50.Logincreateuser
-      AdditionalAttributeWithInvalidValues_50.Againuser Login
+      APIAdditionalAttributeWithInvalidValues.additional Attribute With Invalid Values
+      APIAdditionalAttributeWithInvalidValues.Logincreateuser
+      APIAdditionalAttributeWithInvalidValues.Againuser Login
       
  TC14 - AdditionalAttriWithoutNodeRegion_53
-      AdditionalAttriWithoutNodeRegion_53.Additional Attri Without Node Region
-      AdditionalAttriWithoutNodeRegion_53.Logincreateuser
-      AdditionalAttriWithoutNodeRegion_53.Againuser Login    
+      APIAdditionalAttriWithoutNodeRegion.Additional Attri Without Node Region
+      APIAdditionalAttriWithoutNodeRegion.Logincreateuser
+      APIAdditionalAttriWithoutNodeRegion.Againuser Login    
       
       
  TC15 - CreateUserWithInvalidDirectRoles_47
-      CreateUserWithInvalidDirectRoles_47.create User With Invalid Direct Roles
-      CreateUserWithInvalidDirectRoles_47.Againuser Login    
+      APICreateUserWithInvalidDirectRoles.create User With Invalid Direct Roles
+      APICreateUserWithInvalidDirectRoles.Againuser Login    
       
  TC16 - CustomAttributeWithValidValues_60
-      CustomAttributeWithValidValues_60.custom Attribute With Valid Data
-      CustomAttributeWithValidValues_60.Logincreateuser
-      CustomAttributeWithValidValues_60.Againuser Login  
+      APICustomAttributeWithValidValues.custom Attribute With Valid Data
+      APICustomAttributeWithValidValues.Logincreateuser
+      APICustomAttributeWithValidValues.Againuser Login  
       
  TC17 - DirectRoleMasterAdmin_39
-      DirectRoleMasterAdmin_39.direct Role Master Admin
-      DirectRoleMasterAdmin_39.Logincreateuser
-      DirectRoleMasterAdmin_39.Againuser Login 
+      APIDirectRoleMasterAdmin.direct Role Master Admin
+      APIDirectRoleMasterAdmin.Logincreateuser
+      APIDirectRoleMasterAdmin.Againuser Login 
       
  TC18 - UserCreationAlreadyExistingEmail_37
-      UserCreationAlreadyExistingEmail_37.user Creation Already Existing Email
-      UserCreationAlreadyExistingEmail_37.Againuser Login 
+      APIUserCreationAlreadyExistingEmail.user Creation Already Existing Email
+      APIUserCreationAlreadyExistingEmail.Againuser Login 
       
  TC19 - CreateUserBlankFMLN_46
-      CreateUserBlankFMLN_46.create User Blank FMLN
-      CreateUserBlankFMLN_46.Againuser Login    
+      APICreateUserBlankFMLN.create User Blank FMLN
+      APICreateUserBlankFMLN.Againuser Login    
         
  TC20 - UserCreationwithBlankEmail_43
-      UserCreationwithBlankEmail_43.user Creationwith Blank Email
-      UserCreationwithBlankEmail_43.Againuser Login   
+      APIUserCreationwithBlankEmail.user Creationwith Blank Email
+      APIUserCreationwithBlankEmail.Againuser Login   
       
  TC21 - UserCreationWithBlankHireDate_51
-      UserCreationWithBlankHireDate_51.user Creation With Blank Hire Date
-      UserCreationWithBlankHireDate_51.Againuser Login 
+      APIUserCreationWithBlankHireDate.user Creation With Blank Hire Date
+      APIUserCreationWithBlankHireDate.Againuser Login 
       
  TC22- UserCreationwithInvalidEmail_44
-      UserCreationwithInvalidEmail_44.user Creationwith Invalid Email
-      UserCreationwithInvalidEmail_44.Againuser Login    
+      APIUserCreationwithInvalidEmail.user Creationwith Invalid Email
+      APIUserCreationwithInvalidEmail.Againuser Login    
  
  TC23 - UserCreationWithInvalidEmpId_42
-      UserCreationWithInvalidEmpId_42.user Creation With Invalid EmpId
-      UserCreationWithInvalidEmpId_42.Logincreateuser
-      UserCreationWithInvalidEmpId_42.Againuser Login  
+      APIUserCreationWithInvalidEmpId.user Creation With Invalid EmpId
+      APIUserCreationWithInvalidEmpId.Logincreateuser
+      APIUserCreationWithInvalidEmpId.Againuser Login  
       
       
  TC24 - UserCreationWithInvalidHireDate_52
-      UserCreationWithInvalidHireDate_52.user Creation With Invalid Hire Date
-      UserCreationWithInvalidHireDate_52.Againuser Login  
+      APIUserCreationWithInvalidHireDate.user Creation With Invalid Hire Date
+      APIUserCreationWithInvalidHireDate.Againuser Login  
     
   TC25 - UserUpdationWithExistingEmp_38
-      UserUpdationWithExistingEmp_38.user Updation With Existing Emp
-      UserUpdationWithExistingEmp_38.Logincreateuser
-      UserUpdationWithExistingEmp_38.Againuser Login   
+      APIUserUpdationWithExistingEmp.user Updation With Existing Emp
+      APIUserUpdationWithExistingEmp.Logincreateuser
+      APIUserUpdationWithExistingEmp.Againuser Login   
 APIUserDeactivate
     APIUserDeactivate.deactivateuser API
     
