@@ -70,7 +70,7 @@ class RoleAssignAdministratorUserContentRoleTag():
         createrole.roleSearch(RoleName)
     def createAssignAdministratorUserContentRoleTagMain(self):
         from BaseTestClass import excelPath  
-         try:   
+        try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')
             cell = sheet.cell(308,1)
@@ -93,11 +93,11 @@ class RoleAssignAdministratorUserContentRoleTag():
      
             #if any alert box occurs it will accept the alert
             #if any alert box occurs it will accept the alert
-         except Exception as e:
+        except Exception as e:
             traceback.print_exc()
             print (e)
             raise Exception   
-         finally: 
+        finally: 
             User=RoleXpathElements() 
             User.updateUserAssign()   
             second_sheet = book.sheet_by_name('Login_Credentials')
