@@ -70,8 +70,8 @@ class UsersPageElements:
     
     def CityAttributeFieldEnterData(self,cityName):
         wait=WebDriverWait(driver, 60)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"(//div[@class='Select-value'])[2]")))
-        city=driver.find_element_by_xpath("(//div[@class='Select-value'])[2]")
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//label[contains(.,'City')]/../div/div/span/div[1]")))
+        city=driver.find_element_by_xpath("//label[contains(.,'City')]/../div/div/span/div[1]")
         webdriver.ActionChains(driver).move_to_element(city).click(city).send_keys(cityName).perform()
         time.sleep(2)
         
@@ -83,15 +83,15 @@ class UsersPageElements:
         
     def CountryAttributeFieldEnterData(self,countryName):
         wait=WebDriverWait(driver, 60)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"(//div[@class='Select-value'])[3]")))
-        country=driver.find_element_by_xpath("(//div[@class='Select-value'])[3]")
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//label[contains(.,'Country')]/../div/div/span/div[1]")))
+        country=driver.find_element_by_xpath("//label[contains(.,'Country')]/../div/div/span/div[1]")
         webdriver.ActionChains(driver).move_to_element(country).click(country).send_keys(countryName).perform()
         time.sleep(2)
         
     def DepartmentAttributeFieldEnterData(self,deptName):
         wait=WebDriverWait(driver, 60)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"(//div[@class='Select-value'])[4]")))
-        dept=driver.find_element_by_xpath("(//div[@class='Select-value'])[4]")
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//label[contains(.,'Department')]/../div/div/span/div[1]")))
+        dept=driver.find_element_by_xpath("//label[contains(.,'Department')]/../div/div/span/div[1]")
         webdriver.ActionChains(driver).move_to_element(dept).click(dept).send_keys(deptName).perform()
         time.sleep(2)
         
@@ -107,40 +107,40 @@ class UsersPageElements:
         time.sleep(2)
       
     def selectedDate(self):
-        return "html/body/div[1]/div/div[3]/div[2]/div/div[3]/div/div/div[2]/div[2]/div/div/div[1]/input"
+        return "//input[@id='create-edit-user-search-hireDate']"
     
     def jobTitleAttributeFieldEnterData(self,jobtitle):
         wait=WebDriverWait(driver, 60)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"(//div[@class='Select-value'])[5]")))
-        dept=driver.find_element_by_xpath("(//div[@class='Select-value'])[5]")
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//label[contains(.,'Job Title')]/../div/div/span/div[1]")))
+        dept=driver.find_element_by_xpath("//label[contains(.,'Job Title')]/../div/div/span/div[1]")
         webdriver.ActionChains(driver).move_to_element(dept).click(dept).send_keys(jobtitle).perform()
         time.sleep(2)
     
     def LocationAttributeFieldEnterData(self,location):
         wait=WebDriverWait(driver, 60)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"(//div[@class='Select-value'])[6]")))
-        loc=driver.find_element_by_xpath("(//div[@class='Select-value'])[6]")
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//label[contains(.,'Location')]/../div/div/span/div[1]")))
+        loc=driver.find_element_by_xpath("//label[contains(.,'Location')]/../div/div/span/div[1]")
         webdriver.ActionChains(driver).move_to_element(loc).click(loc).send_keys(location).perform()
         time.sleep(2)  
         
     def RegionAttributeFieldEnterData(self,region):
         wait=WebDriverWait(driver, 60)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"(//div[@class='Select-value'])[7]")))
-        reg=driver.find_element_by_xpath("(//div[@class='Select-value'])[7]")
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//label[contains(.,'Region')]/../div/div/span/div[1]")))
+        reg=driver.find_element_by_xpath("//label[contains(.,'Region')]/../div/div/span/div[1]")
         webdriver.ActionChains(driver).move_to_element(reg).click(reg).send_keys(region).perform()
         time.sleep(2)  
         
     def StateAttributeFieldEnterData(self,state):
         wait=WebDriverWait(driver, 60)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"//label[contains(.,'State')]/../div/div")))
-        st=driver.find_element_by_xpath("//label[contains(.,'State')]/../div/div")
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//label[contains(.,'State')]/../div/div/span/div[1]")))
+        st=driver.find_element_by_xpath("//label[contains(.,'State')]/../div/div/span/div[1]")
         webdriver.ActionChains(driver).move_to_element(st).click(st).send_keys(state).perform()
         time.sleep(2)  
         
     def ReportsToAttributeFieldEnterData(self,reportsTo):
         wait=WebDriverWait(driver, 60)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"(//div[@class='Select-placeholder'])[2]")))
-        report=driver.find_element_by_xpath("(//div[@class='Select-placeholder'])[2]")
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//label[contains(.,'Reports To')]/../../div[2]/div/span/div[1]")))
+        report=driver.find_element_by_xpath("//label[contains(.,'Reports To')]/../../div[2]/div/span/div[1]")
         webdriver.ActionChains(driver).move_to_element(report).click(report).send_keys(reportsTo).perform()
         time.sleep(2)
         
