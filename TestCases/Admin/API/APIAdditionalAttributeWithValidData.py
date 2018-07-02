@@ -37,8 +37,8 @@ class APIAdditionalAttributeWithValidData():
         wait.until(EC.visibility_of_element_located((By.ID,"search-users")))
         driver.find_element_by_id("search-users").send_keys(searchlastName)
         #To click on FirstName link
-        wait.until(EC.visibility_of_element_located((By.XPATH,".//*[@id='content']/div/div[3]/div[2]/div/div/div[4]/table/tbody/tr[1]/td[1]/a")))
-        driver.find_element_by_xpath(".//*[@id='content']/div/div[3]/div[2]/div/div/div[4]/table/tbody/tr[1]/td[1]/a").click()
+        wait.until(EC.visibility_of_element_located((By.XPATH,".//*[@id='content']/div/div[3]/div[2]/div/div/div[4]/table/tbody/tr[1]/td[2]/a")))
+        driver.find_element_by_xpath(".//*[@id='content']/div/div[3]/div[2]/div/div/div[4]/table/tbody/tr[1]/td[2]/a").click()
         #To verify FirstName field 
         print"Verify FirstName field"
         wait.until(EC.visibility_of_element_located((By.ID,"create-edit-user-search-firstName")))
