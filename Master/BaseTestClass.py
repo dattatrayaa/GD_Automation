@@ -13,13 +13,15 @@ from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
 
 import sys
-projectPath=sys.path.append('/Users/automation/Desktop/Grovo_Automation/POM')
-excelPath=sys.path.append('/Users/automation/Desktop/Grovo_Automation/Test_Data')
-mPath=sys.path.append('/Users/automation/Desktop/Grovo_Automation/Master')
+import sys, os
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Common'))
+projectPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'POM'))
+excelPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Test_Data'))
+mPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Master'))
 
-emailPath=sys.path.append('/Users/automation/Desktop/Grovo_Automation/Test_Results')
-lesnPath=sys.path.append('/Users/automation/Desktop/Grovo_Automation/TestCases/Create/Lesson')
-driver=webdriver.Chrome("/Users/automation/Desktop/Grovo_Automation/Setup/chromedriver")
+emailPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Test_Results'))
+lesnPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', '/TestCases/Create/Lesson'))
+driver=webdriver.Chrome("../Setup/chromedriver")
 
 class BaseTestClass:
 
