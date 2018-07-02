@@ -23,7 +23,7 @@ from BaseTestClass import driver
 from DeleteRole import DeleteRole
 from BaseTestClass import projectPath
 from RoleXpathElements import RoleXpathElements
-from BaseTestClass import excelPath
+
 class RoleReportAdministratorRoleTagBrandIntegrate():
     
     def createReportAdministratorRoleTagBrandIntegrate(self,RoleName,Description):
@@ -74,6 +74,7 @@ class RoleReportAdministratorRoleTagBrandIntegrate():
         print "Searching for the Created Role in the List"
         createrole.roleSearch(RoleName)
     def createReportAdministratorRoleTagBrandIntegrateMain(self):  
+        from BaseTestClass import excelPath
         try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')

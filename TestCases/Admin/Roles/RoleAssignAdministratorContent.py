@@ -17,7 +17,7 @@ from BaseTestClass import driver
 from DeleteRole import DeleteRole
 from RoleXpathElements import RoleXpathElements
 from BaseTestClass import projectPath
-from BaseTestClass import excelPath
+
 class RoleAssignAdministratorContent():
     
     def createAssignAdministratorContent(self,RoleName,Description):
@@ -71,6 +71,7 @@ class RoleAssignAdministratorContent():
         print "Clicked on Save Role Button"
         createrole.roleSearch(RoleName)
     def createAssignAdministratorContentMain(self):  
+        from BaseTestClass import excelPath
         try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')
