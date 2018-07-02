@@ -22,8 +22,8 @@ mPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Master'))
 emailPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Test_Results'))
 
 lesnPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', '/TestCases/Create/Lesson'))
-chromepath=sys.path.insert(os.path.join(os.path.dirname(__file__), '..', 'Setup'))
-driver=webdriver.Chrome(chromepath+'/chromedriver')
+chromepath=os.path.join(os.path.dirname(__file__), '..', 'Setup/chromedriver')
+driver=webdriver.Chrome(chromepath)
 
 class BaseTestClass:
 
