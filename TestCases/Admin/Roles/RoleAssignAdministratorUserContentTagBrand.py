@@ -19,7 +19,7 @@ from BaseTestClass import projectPath
 from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
 from DeleteRole import DeleteRole
-from BaseTestClass import excelPath
+
 from RoleXpathElements import RoleXpathElements
 class RoleAssignAdministratorUserContentTagBrand():
     
@@ -71,7 +71,8 @@ class RoleAssignAdministratorUserContentTagBrand():
         print "Searching for the Created Role in the List"
         createrole.roleSearch(RoleName)
         
-    def maincreateUserContentTagBrandAssignAdministrator(self):  
+    def maincreateUserContentTagBrandAssignAdministrator(self):
+        from BaseTestClass import excelPath  
         try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')

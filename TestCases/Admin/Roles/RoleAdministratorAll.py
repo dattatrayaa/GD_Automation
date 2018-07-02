@@ -11,12 +11,13 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import xlrd
+
 from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
 from DeleteRole import DeleteRole
 from RoleXpathElements import RoleXpathElements
 from BaseTestClass import projectPath
-from BaseTestClass import excelPath
+
 class RoleAdministratorAll():
     def createAdministratorAllRole(self,RoleName,Description):
         createrole =RoleXpathElements()
@@ -58,6 +59,7 @@ class RoleAdministratorAll():
         print "Searching for the Created Role in the List"
         createrole.roleSearch(RoleName)
     def createAdministratorAllMain(self):  
+        from BaseTestClass import excelPath 
         try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')

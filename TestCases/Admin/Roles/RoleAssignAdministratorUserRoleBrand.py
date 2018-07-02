@@ -19,7 +19,7 @@ import xlrd
 from BaseTestClass import projectPath
 from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
-from BaseTestClass import excelPath
+
 from DeleteRole import DeleteRole
 from RoleXpathElements import RoleXpathElements
 class RoleAssignAdministratorUserRoleBrand():
@@ -73,7 +73,8 @@ class RoleAssignAdministratorUserRoleBrand():
         print "Searching for the Created Role in the List"
         time.sleep(4)
         createrole.roleSearch(RoleName)
-    def createAssignAdministratorUserRoleBrandMain(self):  
+    def createAssignAdministratorUserRoleBrandMain(self):
+        from BaseTestClass import excelPath  
         try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')

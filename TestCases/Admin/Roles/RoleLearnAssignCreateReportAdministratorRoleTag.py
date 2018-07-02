@@ -16,7 +16,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import xlrd
-from BaseTestClass import excelPath
+
 from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
 from DeleteRole import DeleteRole
@@ -76,7 +76,8 @@ class RoleLearnAssignCreateReportAdministratorRoleTag():
         print "Clicked on Save Role Button"
         print "Searching for the Created Role in the List"
         createrole.roleSearch(RoleName)
-    def mainLearnAssignCreateReportAdministratorRoleTag(self):  
+    def mainLearnAssignCreateReportAdministratorRoleTag(self): 
+        from BaseTestClass import excelPath 
         try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')
