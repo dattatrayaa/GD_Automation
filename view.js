@@ -72,15 +72,15 @@ function addStatistics() {
         '<th class="stats-col-graph">Pass / Fail</th>';
     var statTable =
         '<h2>Test Statistics</h2>' +
-		//'<table class="statistics" id="total-stats"><thead><tr>' +
-        //'<th class="stats-col-name">Total Statistics</th>' + statHeaders +
-        //'</tr></thead></table>' +
-        '<table class="statistics" id="tag-stats"><thead><tr>' +
-        '<th class="stats-col-name">Module</th>' + statHeaders +
+        '<table class="statistics" id="total-stats"><thead><tr>' +
+        '<th class="stats-col-name">Total Statistics</th>' + statHeaders +
         '</tr></thead></table>' +
-        //'<table class="statistics" id="suite-stats"><thead><tr>' +
-        //'<th class="stats-col-name">Statistics by Suite</th>' + statHeaders +
-        //'</tr></thead></table>';
+        '<table class="statistics" id="tag-stats"><thead><tr>' +
+        '<th class="stats-col-name">Statistics by Tag</th>' + statHeaders +
+        '</tr></thead></table>' +
+        '<table class="statistics" id="suite-stats"><thead><tr>' +
+        '<th class="stats-col-name">Statistics by Suite</th>' + statHeaders +
+        '</tr></thead></table>';
     $(statTable).appendTo('#statistics-container');
     util.map(['total', 'tag', 'suite'], addStatTable);
     addTooltipsToElapsedTimes();
