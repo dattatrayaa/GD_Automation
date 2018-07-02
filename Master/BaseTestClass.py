@@ -20,9 +20,10 @@ excelPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Test_Da
 mPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Master'))
 
 emailPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Test_Results'))
-chromepath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Setup/chromedriver'))
+
 lesnPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', '/TestCases/Create/Lesson'))
-driver=webdriver.Chrome(chromepath)
+sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Setup'))
+driver=webdriver.Chrome('chromedriver')
 
 class BaseTestClass:
 
