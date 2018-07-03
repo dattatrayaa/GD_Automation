@@ -69,7 +69,7 @@ class LearnSearching():
         else:
             print "time Not found"
             raise Exception
-    def mainhomeDisplay(self):
+    def mainSearch(self):
         book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet =book.sheet_by_name("PersonalSettings")
         
