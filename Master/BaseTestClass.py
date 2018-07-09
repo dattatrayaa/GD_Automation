@@ -23,7 +23,7 @@ emailPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Test_Re
 
 lesnPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', '/TestCases/Create/Lesson'))
 #chromepath=os.path.join(os.path.dirname(__file__), '..', 'Setup')
-driver=webdriver.Chrome("chromedriver")
+driver=webdriver.Chrome("/Users/automation/Downloads/TeamCity/buildAgent/work/764a857d3ed1a731/Setup/chromedriver")
 
 class BaseTestClass:
 
