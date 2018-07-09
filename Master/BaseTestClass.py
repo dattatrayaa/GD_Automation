@@ -11,7 +11,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-
 import sys
 import sys, os
 sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Common'))
@@ -20,7 +19,6 @@ excelPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Test_Da
 mPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Master'))
 
 emailPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', 'Test_Results'))
-
 lesnPath=sys.path.append(os.path.join(os.path.dirname(__file__), '..', '/TestCases/Create/Lesson'))
 chromepath=os.path.join(os.path.dirname(__file__), '..', 'Setup')
 driver=webdriver.Chrome(chromepath+"/chromedriver")
