@@ -6,14 +6,13 @@ Created on Jul 2, 2018
 from Tkinter import Tk
 from os.path import os
 import time
-import traceback
 
 from openpyxl.reader.excel import load_workbook
 from selenium import webdriver
-from selenium.common.exceptions import TimeoutException
+
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import wait, expected_conditions as EC
+
+from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import xlrd
 
@@ -22,12 +21,9 @@ from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
 
 
-class BambooHR:
-    
-
+class BambooHRIS:
     
     def settingup_bamboohr_integration(self):
-        
         bamboohr= BambooHR_Elements()
         
         wait=WebDriverWait(driver, 60)
@@ -396,7 +392,7 @@ class BambooHR:
         # Enter Work email
         element= wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.employee_workemail_field())))
         element.send_keys(Work_Email)
-        print "Entering employee work email as "+ Work_Email
+        print "Entering employee work email as "+Work_Email
         
         # Clicking on SAVE button
         driver.find_element_by_xpath(bamboohr.employee_form_save()).click()
@@ -460,9 +456,6 @@ class BambooHR:
    
         
         
-        #For Original User
-        book=xlrd.open_workbook(os.path.join('E:/NewWorkspace/FirstProjectInPython/TestData.xlsx'))
-        s_sheet = book.sheet_by_name('BambooHR')
         
         
         #updating user values
@@ -483,7 +476,7 @@ class BambooHR:
         print "All User Data Updated in Excel"
         
         
-        obj13= BambooHR ()
+        obj13= BambooHRIS ()
         #obj13.createuser_in_bamboohr(Employee_Number, Employee_FirstName, Employee_LastName, Work_Email)
         obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
         
@@ -494,15 +487,12 @@ class BambooHR:
      
 if __name__ == '__main__':
     
-    obj11= BambooHR ()
+    obj11= BambooHRIS ()
     obj12= BaseTestClass()
         
     obj11.updating_the_employee_values_and_startmain()
     obj12.UserLogin()
     obj11.settingup_bamboohr_integration()
-    
-    
-  
     
 
     print "Test executed successfully"
