@@ -1,9 +1,9 @@
 echo "Starting Robot suite"
 
-#pybot -n non-critical -d Test_Results -o lesson.xml -l loglesson.html -r lessonreport.html  ./Test_Suite/TestSuiteLessons.robot 
+pybot -n non-critical -d Test_Results -o lesson.xml -l loglesson.html -r lessonreport.html  ./Test_Suite/TestSuiteLessons.robot 
 #pybot -n non-critical -d Test_Results -o cmp.xml -l logcmp.html -r cmpreport.html ./Test_Suite/TestSuiteCampaigns.robot
 
-pybot -n non-critical -d Test_Results -o lesson.xml -l loglesson.html -r reportlesson.html  ./Test_Suite/TestSuiteLesson.robot 
+#pybot -n non-critical -d Test_Results -o lesson.xml -l loglesson.html -r reportlesson.html  ./Test_Suite/TestSuiteLesson.robot 
 
 #pybot -n non-critical -d Test_Results -o track.xml -l logtrack.html -r reporttrack.html  ./Test_Suite/TestSuiteTrack.robot
 
