@@ -2,12 +2,12 @@
 Force Tags      Lesson
 
 #Config
-Library   ../Master/BaseTestClass.py
+Library   /Users/automation/Downloads/TeamCity/buildAgent/work/764a857d3ed1a731/Master/BaseTestClass.py
 
 #Functions to create Lessons
-Library   ../TestCases/Create/Lesson/LessonCreateText.py
-Library           ../Master/DeleteLesson.py
-Library           ../Master/CloseBrowser.py
+Library   /Users/automation/Downloads/TeamCity/buildAgent/work/764a857d3ed1a731/TestCases/Create/Lesson/LessonCreateText.py
+Library           /Users/automation/Downloads/TeamCity/buildAgent/work/764a857d3ed1a731/Master/DeleteLesson.py
+Library           /Users/automation/Downloads/TeamCity/buildAgent/work/764a857d3ed1a731/Master/CloseBrowser.py
 
 
 
