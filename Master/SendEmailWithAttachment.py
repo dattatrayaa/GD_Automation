@@ -2,12 +2,13 @@ from email import Encoders
 from email.MIMEBase import MIMEBase
 from email.MIMEMultipart import MIMEMultipart
 from email.MIMEText import MIMEText
+from email.MIMEImage import MIMEImage
 import glob
 import os
 import smtplib
 from time import strftime
 #from BaseTestClass import emailPath
-
+from BaseTestClass import driver
 
 class SendEmailWithAttachment:
 
@@ -22,6 +23,7 @@ class SendEmailWithAttachment:
 
         msg.attach(MIMEText(text))
 
+
         part = MIMEBase('application', 'octet-stream')
         part.set_payload(open(attach, 'rb').read())
         Encoders.encode_base64(part)
@@ -30,9 +32,6 @@ class SendEmailWithAttachment:
         
         msg.attach(part)
         
-        
-        
-        msg.attach(MIMEText(text))
 
         part = MIMEBase('application', 'octet-stream')
         part.set_payload(open(attach1, 'rb').read())
@@ -60,11 +59,16 @@ class SendEmailWithAttachment:
     def sendMail(self,reportfile,logfile):
         #sf=strftime("%Y%m%d-%H%M")
         #print sf
-        g=glob.glob(r'/Users/automation/Desktop/Grovo_Automation/Test_Results/'+reportfile+'.html') 
-        g1=glob.glob(r'/Users/automation/Desktop/Grovo_Automation/Test_Results/'+logfile+'.html') 
+        
+
+ 
+        emailBody="Please find the Automation test execution results in the attached file. Download the file and open to view the attachment."
+        subject="Robot Results - Test summary as on "+strftime("%d"+'/'+"%m"+'/'+"%Y")
+        g=glob.glob(r'../Test_Results/'+reportfile+'.html') 
+        g1=glob.glob(r'../Test_Results/'+logfile+'.html') 
         s=SendEmailWithAttachment()
-        s.send_mail_with_attachment("dattatrayaa@datatemplate.in", "Akash_123", "jibim@datatemplate.com", 
-                            "Robot results trial", "This is Sample attachment", g[0],g1[0])
+        s.send_mail_with_attachment("gdtestautomation@gmail.com","Grovo123!", "gdtestautomation@gmail.com", subject,
+                            emailBody, g[0],g1[0])
 
 if __name__ == '__main__':
     
@@ -72,7 +76,7 @@ if __name__ == '__main__':
     print sf
     g=glob.glob(r'../RobotSuite/report-'+sf+ '*.html') 
     #s=SendEmailUtility()
-    #s.send_mail_with_attachment("dattatrayaa@datatemplate.in", "Akash_123", "sheethuc@datatemplate.in", 
+    #s.send_mail_with_attachment("dattatrayaa@datatemplate.in", "password", "sheethuc@datatemplate.in", 
                             #"Robot results trial", "This is Sample attachment", g[0])
         
         
