@@ -57,7 +57,6 @@ class BambooHR_Elements:
         return syncbutton_confirmscreen
     
     def checknow_link(self):
-        
         checknow_link= ".//*[@id='content']/div/div[2]/div/div/a"
         return checknow_link
     
