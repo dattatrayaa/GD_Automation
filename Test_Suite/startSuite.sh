@@ -35,7 +35,8 @@ pybot -n noncritical -d Test_Results -o lesson.xml -l loglesson.html -r lessonre
 
 #echo “Starting Library suite”
 #pybot -n Library -d Test_Results -o library.xml -l logtlibrary.html -r reportlibrary.html  ./Test_Suite/TestSuiteLibrary.robot
-
+#echo "starting bamboo"
+pybot -n noncritical -d Test_Results -o bamboo.xml -l logbamboo.html -r bambooreport.html  ./Test_Suite/TestSuiteBamboo.robot 
 
 #echo “Starting Home suite”
 #pybot -n Home -d Test_Results -o home.xml -l loghome.html -r reporthome.html  ./Test_Suite/TestSuiteHome.robot
