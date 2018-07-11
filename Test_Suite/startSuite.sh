@@ -1,6 +1,6 @@
 echo "Starting Robot suite"
 
-pybot -n noncritical -d Test_Results -o lesson.xml -l loglesson.html -r lessonreport.html  ./Test_Suite/TestSuiteLessons.robot 
+#pybot -n noncritical -d Test_Results -o lesson.xml -l loglesson.html -r lessonreport.html  ./Test_Suite/TestSuiteLessons.robot 
 
 #pybot -n noncritical -d Test_Results -o cmp.xml -l logcmp.html -r cmpreport.html ./Test_Suite/TestSuiteCampaigns.robot
 
@@ -36,7 +36,7 @@ pybot -n noncritical -d Test_Results -o lesson.xml -l loglesson.html -r lessonre
 #echo “Starting Library suite”
 #pybot -n Library -d Test_Results -o library.xml -l logtlibrary.html -r reportlibrary.html  ./Test_Suite/TestSuiteLibrary.robot
 #echo "starting bamboo"
-pybot -n noncritical -d Test_Results -o bamboo.xml -l logbamboo.html -r bambooreport.html  ./Test_Suite/TestSuiteBamboo.robot 
+
 
 #echo “Starting Home suite”
 #pybot -n Home -d Test_Results -o home.xml -l loghome.html -r reporthome.html  ./Test_Suite/TestSuiteHome.robot
@@ -49,10 +49,12 @@ pybot -n noncritical -d Test_Results -o bamboo.xml -l logbamboo.html -r bamboore
 
 
 #robot -n Admin -n Create -n Campaign -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
-
+pybot -n noncritical -d Test_Results -o bamboo.xml -l logbamboo.html -r bambooreport.html  ./Test_Suite/TestSuiteBamboo.robot 
+robot -n Admin -n Create -n Campaign -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
+rebot -n Campaign -n Admin -n Lesson -n Tracks -n Library -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/demoouput.xml  ./Test_Results/bamboo.xml
 
 echo “Sending mail”
-robot -v report:lessonreport -v log:loglesson -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
+robot -v report:finalreport -v log:logfinal -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
 
 
 
