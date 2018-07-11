@@ -89,7 +89,7 @@ class ADPIntegration:
         
         #adding Discount code
         print "Reading data from excel sheet"
-        book=xlrd.open_workbook(os.path.join('TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet = book.sheet_by_name('ADP User details')
         # read a cell
         cell = first_sheet.cell(1,2)
@@ -129,11 +129,11 @@ class ADPIntegration:
         # Writing the copied API key in to Excel 
         data = Tk().clipboard_get()
         #Pasting the copied API key in to excel
-        wb = load_workbook(os.path.join('D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx'))
+        wb = load_workbook(os.path.join('Test_Data/TestData.xlsx'))
         #print (wb.sheetnames)
         sheet = wb['ADP User details']
         sheet.cell(row=2, column=5).value=data
-        wb.save(os.path.join('D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx'))
+        wb.save(os.path.join('Test_Data/TestData.xlsx'))
         print "Pasting the copied  Grovo Organization ID in to Test Data Excel"
         
         window_after = driver.window_handles[1]
@@ -145,7 +145,7 @@ class ADPIntegration:
         driver.find_element_by_xpath(ADPIntegrations.adpuserid()).clear()
         #adding user_id
         print "Reading data from excel sheet"
-        book=xlrd.open_workbook(os.path.join('TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet = book.sheet_by_name('ADP User details')
         # read a cell
         cell = first_sheet.cell(1,3)
@@ -159,7 +159,7 @@ class ADPIntegration:
         driver.find_element_by_xpath(ADPIntegrations.enterpriseid()).clear()
         #adding enterprise_id
         print "Reading data from excel sheet"
-        book=xlrd.open_workbook(os.path.join('TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet = book.sheet_by_name('ADP User details')
         # read a cell
         cell = first_sheet.cell(1,4)
@@ -396,7 +396,7 @@ class ADPIntegration:
         print "Going to create a user in ADP account"
         
         
-        book=xlrd.open_workbook(os.path.join('TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet = book.sheet_by_name('ADP User details')
         
         cell4= first_sheet.cell(1,5)
@@ -604,7 +604,7 @@ class ADPIntegration:
         
     def updating_the_employee_values_and_startmain(self):
             
-            book=xlrd.open_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__),'D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx')))
+            book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             first_sheet = book.sheet_by_name('ADP User details')
             
             #Firstname 
@@ -644,7 +644,7 @@ class ADPIntegration:
             file_nu_updated= file_nu+file_nu_lastdigit
             
             #updating user values
-            wb = load_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__),'D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx')))
+            wb = load_workbook(os.path.join('Test_Data/TestData.xlsx'))
             #print (wb.sheetnames)
             
             sheet = wb['ADP User details']
@@ -654,7 +654,7 @@ class ADPIntegration:
             sheet.cell(row=2, column=13).value =EmailIdUpdated
             sheet.cell(row=2, column=24).value =file_nu_updated
             
-            wb.save(os.path.abspath(os.path.join(os.path.dirname(__file__),'D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx')))
+            wb.save(os.path.join('Test_Data/TestData.xlsx'))
             
             print "All User Data Updated in Excel"
             
