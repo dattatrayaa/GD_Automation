@@ -1,5 +1,4 @@
 echo "Starting Robot suite"
-osascript -e 'tell application "QuickTime Player" to activate' -e 'tell application "QuickTime Player" to start (new movie recording)'
 
 #pybot -n noncritical -d Test_Results -o lesson.xml -l loglesson.html -r lessonreport.html  ./Test_Suite/TestSuiteLessons.robot 
 
