@@ -757,13 +757,19 @@ class BambooHRISIntegration:
             
         print "All User Data Updated in Excel"
         
-        
-        obj13= BambooHRISIntegration()
-        #obj13.createuser_in_bamboohr(Employee_Number, Employee_FirstName, Employee_LastName, Work_Email)
-        obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
-        
-        
-        
+        try:
+            obj13= BambooHRISIntegration()
+            #obj13.createuser_in_bamboohr(Employee_Number, Employee_FirstName, Employee_LastName, Work_Email)
+            obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
+            obj12= BaseTestClass()
+            obj12.UserLogin()
+            obj13.settingup_bamboohr_integration()
+        finally:
+            book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
+            second_sheet = book.sheet_by_name('Login_Credentials')
+            cell = second_sheet.cell(1,1)
+            url = cell.value
+            driver.get(url)
            
     
      
