@@ -418,16 +418,16 @@ class BambooHRISIntegration:
         user_firstname = cell3.value 
         
         print "The First name of synced user is "+" "+user_firstname
-        
+        time.sleep(15)
         webdriver.ActionChains(driver).move_to_element(driver.find_element_by_xpath(bamboohr.search_users_field())).click( driver.find_element_by_xpath(bamboohr.search_users_field())).perform()
         
         driver.find_element_by_xpath(bamboohr.search_users_field()).send_keys(user_firstname)
         
         # Going to Click and open the created users
-        time.sleep(10)
+        #time.sleep(15)
         
-        wait.until(EC.visibility_of_element_located((By.XPATH,"//table/tbody/tr[1]/td[1]/a[.='"+user_firstname+"']")))
-        driver.find_element_by_xpath("//table/tbody/tr[1]/td[1]/a[.='"+user_firstname+"']").click()
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//table/tbody/tr[1]/td[2]/a[.='"+user_firstname+"']")))
+        driver.find_element_by_xpath("//table/tbody/tr[1]/td[2]/a[.='"+user_firstname+"']").click()
         print "Clicking on the synced user"
         
         # Going to get the First name
@@ -758,11 +758,15 @@ class BambooHRISIntegration:
         print "All User Data Updated in Excel"
         
         try:
+            book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
+            second_sheet = book.sheet_by_name('Login_Credentials')
+            cell = second_sheet.cell(1,1)
+            url = cell.value
+            driver.get(url)
             obj13= BambooHRISIntegration()
             #obj13.createuser_in_bamboohr(Employee_Number, Employee_FirstName, Employee_LastName, Work_Email)
             obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
-            obj12= BaseTestClass()
-            obj12.UserLogin()
+            driver.get(url)
             obj13.settingup_bamboohr_integration()
         finally:
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
