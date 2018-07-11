@@ -22,7 +22,7 @@ from ADPElements import ADPXpath
 from BaseTestClass import BaseTestClass
 from BaseTestClass import WebDriverWait
 from BaseTestClass import driver
-
+from BaseTestClass import projectPath
 
 class ADPIntegration:
     def adpIntegration(self):
@@ -591,7 +591,7 @@ class ADPIntegration:
         
     def updating_the_employee_values_and_startmain(self):
             
-            book=xlrd.open_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__),'D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx')))
+            book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             first_sheet = book.sheet_by_name('ADP User details')
             
             #Firstname 
@@ -624,7 +624,7 @@ class ADPIntegration:
             
             
             #updating user values
-            wb = load_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__),'D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx')))
+            wb = load_workbook(os.path.join('Test_Data/TestData.xlsx'))
             #print (wb.sheetnames)
             
             sheet = wb['ADP User details']
@@ -633,7 +633,7 @@ class ADPIntegration:
             sheet.cell(row=2, column=10).value = LastNameUpdated
             sheet.cell(row=2, column=11).value =EmailIdUpdated
             
-            wb.save(os.path.abspath(os.path.join(os.path.dirname(__file__),'D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx')))
+           wb.save(os.path.join('Test_Data/TestData.xlsx'))
             
             print "All User Data Updated in Excel"
             
