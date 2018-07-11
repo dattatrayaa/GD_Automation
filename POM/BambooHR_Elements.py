@@ -3,18 +3,10 @@ Created on Jul 2, 2018
 
 @author: Shavinlal E
 '''
-from os.path import os
-import time
-import traceback
+import os
 
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.support import wait, expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
 import xlrd
 
-from BaseTestClass import BaseTestClass
-from BaseTestClass import driver
 
 class BambooHR_Elements:
     
@@ -200,7 +192,48 @@ class BambooHR_Elements:
         grovo_attributres_subtab = ".//*[@id='content']/div/div[3]/div[2]/div/div/ul/li[2]"
         return grovo_attributres_subtab  
     
+    def view_instructions_link(self):
+        
+        view_instructions_link = ".//*[@id='content']/div/div[3]/div[2]/div/div/section[1]/div/div[2]/div[3]/div/a"
+        return view_instructions_link 
     
+    def authentication_errormessage(self):
+        
+        authentication_errormessage = "html/body/div[4]/div/div/div[2]/div/div[2]/div[1]"
+        return authentication_errormessage 
+    
+        
+    def search_attributes_field(self):
+        
+        search_attributes_field = ".//*[@id='attributes-search']"
+        return search_attributes_field 
+    
+            
+    def search_attributes_field_checkbox(self):
+        
+        book=xlrd.open_workbook(os.path.join('E:\NewWorkspace\FirstProjectInPython\TestData.xlsx'))
+        first_sheet = book.sheet_by_name('BambooHR')
+        cell1= first_sheet.cell(4,3)
+        suggested_attribute_name = cell1.value
+        print "Suggested attribute name is"+suggested_attribute_name
+        
+        search_attributes_field_checkbox = "//table/tbody/tr/td[1]/div/label/span[.='"+suggested_attribute_name+"']/../../../div/label/span[2]"
+        return search_attributes_field_checkbox 
+        
+    def confirm_attributes_count(self):
+        
+        confirm_attributes_count = "html/body/div[4]/div/div/div[2]/div/h3"
+        return confirm_attributes_count 
+    
+    def edit_button_in_confirm_screen(self):
+        
+        edit_button_in_confirm_screen = "html/body/div[4]/div/div/div[2]/div/h3/button"
+        return edit_button_in_confirm_screen 
+    
+    
+     
+     
+     
     
     
     
