@@ -17,7 +17,7 @@ TC0 - User Login
 
 #Test cases for Bamboo  
 TC12 -BambooHRIS
-   Settingup Bamboohr Integration
+   Updating The Employee Values And Startmain
 
 Close Browser
     Close Browser Suite
