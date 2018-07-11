@@ -64,8 +64,8 @@ class SendEmailWithAttachment:
  
         emailBody="Please find the Automation test execution results in the attached file. Download the file and open to view the attachment."
         subject="Robot Results - Test summary as on "+strftime("%d"+'/'+"%m"+'/'+"%Y")
-        g=glob.glob(r'/Users/automation/Downloads/TeamCity/buildAgent/work/764a857d3ed1a731/Test_Results/'+reportfile+'.html') 
-        g1=glob.glob(r'/Users/automation/Downloads/TeamCity/buildAgent/work/764a857d3ed1a731/Test_Results/'+logfile+'.html') 
+        g=glob.glob(r'/Users/automation/Downloads/TeamCity/buildAgent/work/a27c680be862cb8f/Test_Results/'+reportfile+'.html') 
+        g1=glob.glob(r'/Users/automation/Downloads/TeamCity/buildAgent/work/a27c680be862cb8f/Test_Results/'+logfile+'.html') 
         s=SendEmailWithAttachment()
         s.send_mail_with_attachment("gdtestautomation@gmail.com","Grovo123!", "gdtestautomation@gmail.com", subject,
                             emailBody, g[0],g1[0])
