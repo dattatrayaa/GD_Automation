@@ -5,16 +5,9 @@ Created on 02-Jul-2018
 '''
 import time
 
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.support.ui import WebDriverWait
-import xlrd
-
-from BaseTestClass import driver
 
 class ADPXpath:
+    
     def adminMenu(self):
         time.sleep(2)
         return "(//a[@href='/admin/users'])[1]"
@@ -340,101 +333,3 @@ class ADPXpath:
     def donecancelsubscription(self):
         time.sleep(2)
         return"//*[@id='posLabel']/span"
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-
-    
-    
-
-    
-    
-    
-      
-    
-    
-    
-    
-    
-   
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-        
-    
-    
-    
-    
-        
-        
-        
-    
-    
-    
-        
-    
-    
-    
-    
-    
-    
