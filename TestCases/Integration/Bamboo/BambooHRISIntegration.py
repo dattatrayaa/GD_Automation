@@ -608,7 +608,7 @@ class BambooHRISIntegration:
         
         #Pasting the copied API key in to excel
         
-        wb = load_workbook(os.path.join('E:/NewWorkspace/FirstProjectInPython/TestData.xlsx'))
+        wb = load_workbook(os.path.join('Test_Data/TestData.xlsx'))
             
         #print (wb.sheetnames)
         
