@@ -25,4 +25,4 @@ cd TeamCity/bin
 - The suite will run based on robot triggers in startSuite.sh
 
 ## Report Generation
-- To find report in Artifacts tab, Goto Build Configuration>General settings give Artifacts path which will be stored in TeamCity/buildAgent/work/abc123/TestResults. or just type ```pah```
+- To find report in Artifacts tab, Goto Build Configuration>General settings give Artifacts path which will be stored in TeamCity/buildAgent/work/abc123/TestResults. or just type ```Test_Results => Test_Results```
