@@ -4,7 +4,6 @@ Library           ../Master/BaseTestClass.py
 Library           ../TestCases/Create/Tracks/TrackWithTextLesson.py
 Library           ../TestCases/Create/Lesson/LessonCreateQuestion.py
 Library           ../TestCases/Campaign/CreateCampaignForImageLesson.py
-Library           ../TestCases/Admin/Users/UserCreateCreator.py
 Library           ../Master/CloseBrowser.py
 
 #Suite setup for setting up login environment 
@@ -30,10 +29,6 @@ TC - CreateCampaignForImageLesson
     [Tags]    Campaign
     Create Campaign Image Lesson 
  
-TC - CreateCreator
-    [Documentation]    This test validates creation of user with Creator permission
-    [Tags]    Admin
-    Create Creator User And Validation 
 
 
 
