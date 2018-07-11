@@ -73,7 +73,7 @@ class ADPDisconnect:
         driver.switch_to.window(window_after)
         wait.until(EC.visibility_of_element_located((By.XPATH,ADPDisconnect.adpLoginusename())))
         print "Reading data from excel sheet"
-        book=xlrd.open_workbook(os.path.join('TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         
         first_sheet = book.sheet_by_name('ADP User details')
 
