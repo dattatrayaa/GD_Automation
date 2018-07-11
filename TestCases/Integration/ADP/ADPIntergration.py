@@ -602,7 +602,7 @@ class ADPIntegration:
         driver.find_element_by_xpath(ADPIntegrations.doneemail()).click()
         print"click on Done button"   
         
-    def updating_the_employee_values_and_startmain(self):
+    def updating_the_employee_values(self):
             
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             first_sheet = book.sheet_by_name('ADP User details')
