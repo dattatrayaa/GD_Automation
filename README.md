@@ -5,15 +5,15 @@ This is Project repositary for Grovo Automation Framework
 - Install Python 2.7.14  You can download latest version from https://www.python.org/getit/
 - To install Robot Framework, Download [installer.sh](Setup/installer.sh) from Setup folder, and run in Terminal/Command line
 - Download [TeamCity](https://www.jetbrains.com/teamcity/download/) latest version for MAC
-- Untar downloaded file in specific folder by using command 
+- Untar downloaded file in specific folder by using command:
 '''
 tar xvf TeamCity-9.1.6.tar
 '''
-after untar type
+after untar type:
 '''
 cd TeamCity/bin
 '''
-and to start TeamCity in browser window
+and to start TeamCity in browser window:
 '''
 ./runAll.sh start
 '''
