@@ -40,6 +40,7 @@ TC -BambooHRISIntegration
  TC -ADP
     [Documentation]    This test will integrate BambooHRIS to Grovo and validates in employees from ADP Market Place
     [Tags]    Admin
+    User Login With Url     https://optislabs-playpen.grovo.com/     mymaster@gmail.com     Data@123
     Updating The Employee Values
     
     [Documentation]    This test will cancel the subscription from ADP Market Place
