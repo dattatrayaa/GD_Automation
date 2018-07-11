@@ -73,3 +73,31 @@ class BaseTestClass:
         
         print "Successfully LogIn to Grovo Application"
         time.sleep(5)
+        
+    def UserLoginWithUrl(self,url,username,password):
+    
+        print "Opening Browser"
+        
+        driver.maximize_window()
+        
+        driver.get(url)
+        element = WebDriverWait(driver, 120).until(EC.presence_of_element_located((By.ID, "password")))
+        if driver.title == "Grovo":
+            print("Grovo Application URL Opened")
+        else:
+            raise Exception.message
+
+        print "Grovo Sign-In page is displayed"
+        
+        print "Entering User name"
+        driver.find_element_by_xpath(".//*[@id='username']").send_keys(username)
+       
+        print "Entering Password"
+        element.send_keys(password)
+        
+        element.send_keys(Keys.TAB)
+        print "Clicking on Sign_In button"
+        driver.find_element_by_xpath("//*[@id='submitButton']").click()
+        
+        print "Successfully Loged Into Grovo Application"
+        time.sleep(5)
