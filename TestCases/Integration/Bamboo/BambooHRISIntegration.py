@@ -34,7 +34,7 @@ class BambooHRISIntegration:
         wait=WebDriverWait(driver, 60)
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.admin_tab())))
         
-        book=xlrd.open_workbook(os.path.join('E:\NewWorkspace\FirstProjectInPython\TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet = book.sheet_by_name('BambooHR')
         
         # Click on Admin from side menu
@@ -530,7 +530,7 @@ class BambooHRISIntegration:
         print "Going to create a user in bamboohr sand box account"
         
         
-        book=xlrd.open_workbook(os.path.join('E:\NewWorkspace\FirstProjectInPython\TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet = book.sheet_by_name('BambooHR')
         
         cell4= first_sheet.cell(1,3)
@@ -616,7 +616,7 @@ class BambooHRISIntegration:
             
         sheet.cell(row=2, column=2).value=data
                         
-        wb.save(os.path.join('E:/NewWorkspace/FirstProjectInPython/TestData.xlsx'))
+        wb.save(os.path.join('Test_Data/TestData.xlsx'))
         
         print "Pasting the copied API-Key in to Test Data Excel"
         
@@ -689,7 +689,7 @@ class BambooHRISIntegration:
     def updating_the_employee_values_and_startmain(self):
         
         
-        book=xlrd.open_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__),'E:/NewWorkspace/FirstProjectInPython/TestData.xlsx')))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet = book.sheet_by_name('BambooHR')
         
         
@@ -736,12 +736,12 @@ class BambooHRISIntegration:
         
         
         #For Original User
-        book=xlrd.open_workbook(os.path.join('E:/NewWorkspace/FirstProjectInPython/TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         s_sheet = book.sheet_by_name('BambooHR')
         
         
         #updating user values
-        wb = load_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__),'E:/NewWorkspace/FirstProjectInPython/TestData.xlsx')))
+        wb = load_workbook(os.path.join('Test_Data/TestData.xlsx'))
         #print (wb.sheetnames)
         
         sheet = wb['BambooHR']
@@ -753,7 +753,7 @@ class BambooHRISIntegration:
         
         
         
-        wb.save(os.path.abspath(os.path.join(os.path.dirname(__file__),'E:/NewWorkspace/FirstProjectInPython/TestData.xlsx')))
+        wb.save(os.path.join('Test_Data/TestData.xlsx'))
             
         print "All User Data Updated in Excel"
         
