@@ -761,7 +761,8 @@ class BambooHR:
         obj13= BambooHR()
         #obj13.createuser_in_bamboohr(Employee_Number, Employee_FirstName, Employee_LastName, Work_Email)
         obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
-        
+        obj13.UserLogin()
+        obj13.settingup_bamboohr_integration()
         
         
            
