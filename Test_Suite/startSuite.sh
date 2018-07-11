@@ -1,4 +1,5 @@
 echo "Starting Robot suite"
+osascript -e 'tell application "QuickTime Player" to activate' -e 'tell application "QuickTime Player" to start (new movie recording)'
 
 #pybot -n noncritical -d Test_Results -o lesson.xml -l loglesson.html -r lessonreport.html  ./Test_Suite/TestSuiteLessons.robot 
 
@@ -45,13 +46,12 @@ echo "Starting Robot suite"
 #echo “Generating report and log files”
 #rebot -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/api.xml ./Test_Results/Final_output.xml 
 
-#rebot -n Campaign -n Admin -n Lesson -n Tracks -n Library -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/lesson.xml  ./Test_Results/track.xml ./Test_Results/user.xml ./Test_Results/attribute.xml ./Test_Results/campaign.xml ./Test_Results/assigncampaign.xml ./Test_Results/campaigntrack.xml ./Test_Results/tag.xml ./Test_Results/group.xml ./Test_Results/library.xml
+#rebot -n Campaign -n Admin -n Lesson -n Tracks -n Library -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/lesson.xml  ./Test_Results/track.xml ./Test_Results/user.xml ./Test_Results/attribute.xml ./Test_Results/campaign.xml ./Test_Results/assigncampaign.xml ./Test_Results/campaigntrack.xml ./Test_Results/tag.xml ./Test_Results/group.xml ./Test_Results/library.xml 
 
+robot -n Create -n Campaign -n Admin -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
 
-#robot -n Admin -n Create -n Campaign -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
-
-robot -n Create -n Campaign -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
-rebot -n Create -n Campaign -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/demoouput.xml  ./Test_Results/bamboo.xml
+#Collecting Robot results
+rebot -n Create -n Campaign -n Admin -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/demoouput.xml  ./Test_Results/bamboo.xml
 
 echo “Sending mail”
 robot -v report:finalreport -v log:logfinal -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
