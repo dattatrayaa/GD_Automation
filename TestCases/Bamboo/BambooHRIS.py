@@ -19,11 +19,16 @@ import xlrd
 from BambooHR_Elements import BambooHR_Elements
 from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
+from __builtin__ import Exception
 
 
-class BambooHRIS:
+
+class BambooHR:
+    
+
     
     def settingup_bamboohr_integration(self):
+        
         bamboohr= BambooHR_Elements()
         
         wait=WebDriverWait(driver, 60)
@@ -51,11 +56,28 @@ class BambooHRIS:
         # wait for Configure button
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.configure_button())))
         
+        
+        # Going to validate the UI elements in the BambooHR configuration screen
+        print"Going to verify the display of View instructions link in configure screen"
+        
+        cell7= first_sheet.cell(4,0)
+        expected_viewinstructrion_link_name= cell7.value 
+        
+        actual_viewinstructrion_link_name = driver.find_element_by_xpath(bamboohr.view_instructions_link()).text
+        
+        if (expected_viewinstructrion_link_name == actual_viewinstructrion_link_name):
+            
+            print "The view instruction link is displaying in BambooHR configure screen"
+            
+        else:
+            print "Failed to find the view instructions link in Bamboohr configuration screen"
+            raise Exception 
+        
         # Clicking on Configure button
         driver.find_element_by_xpath(bamboohr.configure_button()).click()
         print "Clicking on Configure button"
         
-        # Getting the sub domain name from excel
+        # Getting the proper sub domain name from excel
         
         cell1= first_sheet.cell(1,0)
         subdomain = cell1.value 
@@ -66,26 +88,162 @@ class BambooHRIS:
         print "The bamboo hr sub-domain is"+" "+subdomain
         print "The bamboo hr API key is"+" "+api_key
         
-        # Enter the sub domain 
+        # Enter the invalid sub domain and valid api key and click on connect
+        
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys("invalid_subdomain")
+        print "Entering invalid sub domain in BambooHR authentication page"
+        
+                
+        # Enter valid api key keys
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.apikey_field()).send_keys(api_key)
+        print "Entering the valid api keys in BambooHR authentication page"
+        
+        # Clicking on Connect button button
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
+            driver.find_element_by_xpath(bamboohr.connect_button()).click()
+            print "Clicking on Connect button"
+            
+        else:
+            print "Failed to find the Connect button"
+            raise Exception
+            
+        
+        
+       
+     
+        cell8= first_sheet.cell(4,1)
+        expected_error_message = cell8.value 
+        
+        # Wait for the error message to display
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.authentication_errormessage())))
+        actual_error_message= driver.find_element_by_xpath(bamboohr.authentication_errormessage()).text
+        print "actual_error_message is" +" "+ actual_error_message
+        
+        if (actual_error_message == expected_error_message):
+            
+            print " Authentication error is displaying for wrong sub domain"
+        
+        else:
+            print "No authentication error is displaying for wrong sub domain"
+            raise Exception 
+        
+        
+                
+        # Enter the valid sub domain 
+        
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
+        print "Entering valid sub domain in BambooHR authentication page"
+        
+                
+        # Enter in valid api key keys
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.apikey_field()).clear()
+        driver.find_element_by_xpath(bamboohr.apikey_field()).send_keys("invalid api key")
+        print "Entering in valid api keys in BambooHR authentication page"
+        
+        #Clicking on Connect button
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
+            driver.find_element_by_xpath(bamboohr.connect_button()).click()
+            print "Clicking on Connect button"
+            
+        else:
+            print "Failed to find the Connect button"
+            raise Exception
+            
+        
+        actual_error_message= driver.find_element_by_xpath(bamboohr.authentication_errormessage()).text
+       
+        if (actual_error_message ==expected_error_message):
+            
+            print " Authentication error is displaying for in valid api key"
+        
+        else:
+            print "No authentication error is displaying for invalid api keys"
+            raise Exception  
+        
+ 
+        # Enter the in valid sub domain 
+        
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys("invalid subdomain")
+        print "Entering valid sub domain in BambooHR authentication page"
+        
+                
+        # Enter in valid api key keys
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.apikey_field()).clear()
+        driver.find_element_by_xpath(bamboohr.apikey_field()).send_keys("invalid api key")
+        print "Entering in valid api keys in BambooHR authentication page"
+        
+        #Clicking on Connect button
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
+            driver.find_element_by_xpath(bamboohr.connect_button()).click()
+            print "Clicking on Connect button"
+            
+        else:
+            print "Failed to find the Connect button"
+            raise Exception
+        
+        actual_error_message= driver.find_element_by_xpath(bamboohr.authentication_errormessage()).text
+       
+        if (actual_error_message ==expected_error_message):
+            
+            print " Authentication error is displaying for in valid api key and invalid subdomain entry"
+        
+        else:
+            print "No authentication error is displaying for invalid api keys and invalid subdomain entry"
+            raise Exception  
+        
+        
+        
+        
+        # Enter the valid sub domain 
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
         driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
         print "Entering the sub domain in BambooHR authentication page"
         
         
-        # Enter the API keys
+        # Enter the valid API keys
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.apikey_field()).clear()
         driver.find_element_by_xpath(bamboohr.apikey_field()).send_keys(api_key)
         print "Entering the api keys in BambooHR authentication page"
         
         
-        # Clicking on Connect button button
-        driver.find_element_by_xpath(bamboohr.connect_button()).click()
-        print "Clicking on Connect button"
+        #Clicking on Connect button
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
+            driver.find_element_by_xpath(bamboohr.connect_button()).click()
+            print "Clicking on Connect button"
+            
+        else:
+            print "Failed to find the Connect button"
+            raise Exception
         
         time.sleep(2)
         
         # wait for the select screen
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.select_scree_summary())))
+        
+        select_screen_element = driver.find_element_by_xpath(bamboohr.select_scree_summary())
+        
+        if(select_screen_element.is_displayed()):
+            
+            print 'Authorization is successful with valid sub domain and valid api key and select screen is displayed'
+        else:
+            print "Failed to authenticate with valid sub domain and valid api key"
+            raise Exception
+        
+            
         
         # select check box for user field name
         
@@ -97,16 +255,115 @@ class BambooHRIS:
         
         time.sleep(2)
         
-        # Clicking on Next Button
+        # Going to enter a suggested attribute value in search attribute field
+        print "Going to enter a suggested attribute value in search attribute field"
         
-        driver.find_element_by_xpath(bamboohr.nextbutton_selectscreen()).click()
-        print "Clicking on Next button from select screen"
+        
+        cell10= first_sheet.cell(4,3)
+        suggested_attribute_name = cell10.value
+        
+        print "Suggested attribute name is"+" "+suggested_attribute_name
+        
+        
+        driver.find_element_by_xpath(bamboohr.search_attributes_field()).send_keys(suggested_attribute_name)
+        
+        print "Entered the suggested attribute name is the search attribute field"
+        
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.search_attributes_field_checkbox())))
+        driver.find_element_by_xpath(bamboohr.search_attributes_field_checkbox()).click()
+        print "Clicking on the check box for the suggested attribute"
+        
+        
+        # Going to validate the user attribute value displayed in the summary text
+        
+        print "Going to get the count of user attributes selected from summary text"
+        summary_text= driver.find_element_by_xpath(bamboohr.select_scree_summary()).text
+        
+        
+        splitted_summary= summary_text.split(" ")
+        splitted_summary_count =  splitted_summary[0]
+        
+        
+        cell9= first_sheet.cell(4,2)
+        selected_attribute_count = cell9.value 
+        
+        
+        if (int(splitted_summary_count) == int(selected_attribute_count)):
+            
+            print "The count displayed in summary is matching with the selected attribute count"
+            
+        else:
+            print "The count displayed in select summary is not matching with the actual selection of attributes"
+            raise Exception
+            
+        
+    
+
         
         time.sleep(2)
+        # Clicking on Next Button
         
+        if (driver.find_element_by_xpath(bamboohr.nextbutton_selectscreen()).is_displayed()):
+            
+            driver.find_element_by_xpath(bamboohr.nextbutton_selectscreen()).click()
+        else:
+            
+            print 'Failed to find the Sync button'
+            raise Exception
+        
+        
+        
+        print "Clicking on Next button from select screen"
+        
+        #wait for Sync button
+        wait.until(EC.element_to_be_clickable((By.XPATH, bamboohr.syncbutton_confirmscreen())))
+        
+        # Going to validate the count of selected attributes 
+        
+        print "Going to validate the count of attributes displayed in the confirm pop up screen"
+        confirm_screen_text= driver.find_element_by_xpath(bamboohr.confirm_attributes_count()).text
+        
+        confirm_screen_text_split = confirm_screen_text.split(" ")
+        attribute_count_in_confirm_page = confirm_screen_text_split[5]
+        
+        if (int(attribute_count_in_confirm_page) == int (selected_attribute_count)):
+            
+            print "The attribute count displayed in the confirm page is matching with count of selected attributes"
+            
+        else:
+            
+            print "The count of attributes in conform page is not matching with the attribute count in select screen"
+            raise Exception
+        
+        
+        
+        
+        #Going to check if the edit link is displayed and is clickable
+        
+        print "Going to check if the edit button is displaying in the confirm screen"
+        
+        edit_button_select= driver.find_element_by_xpath(bamboohr.edit_button_in_confirm_screen())
+        
+        if (edit_button_select.is_displayed()):
+            if (edit_button_select.is_enabled()): 
+                print "Edit button is displaying in confirm screen and its clickable"
+            
+        else:
+            
+            print "Unable to find the click button in confirm screen"
+            raise Exception
+
+        time.sleep(2)
         # Clicking on Sync button from Confirm screen
-        driver.find_element_by_xpath(bamboohr.syncbutton_confirmscreen()).click()
-        print "Clicking on Sync button from select screen"
+        if (driver.find_element_by_xpath(bamboohr.syncbutton_confirmscreen()).is_displayed()):
+            
+            driver.find_element_by_xpath(bamboohr.syncbutton_confirmscreen()).click()
+            print "Clicking on Sync button from select screen"
+            
+        else:
+            
+            print 'Failed to find the Sync button in Confirm pop up screen'
+            raise Exception
         
         time.sleep(2)
         
@@ -114,17 +371,34 @@ class BambooHRIS:
         
         while True:
             try:
-                element = wait.until(EC.element_to_be_clickable((By.XPATH, bamboohr.checknow_link())))
-                time.sleep(2)
-                element.click()
+                
+                wait.until(EC.visibility_of_element_located((By.XPATH, bamboohr.connected_status())))
+                # time.sleep(2)
+                webdriver.ActionChains(driver).move_to_element(driver.find_element_by_xpath(bamboohr.checknow_link())).click(driver.find_element_by_xpath(bamboohr.checknow_link())).perform()
                 
             except:
+                print "Failed to find check now link"
                 break                  
         #driver.find_element_by_xpath(bamboohr.checknow_link()).click()
         print "Clicking on Check now link"
         
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connected_status())))
-        print "Wait until the status Connected is displayed"
+                   
+        actual_connected_status = driver.find_element_by_xpath(bamboohr.connected_status()).text
+        
+        
+        cell11= first_sheet.cell(4,4)
+        expected_connected_status = cell11.value 
+        print actual_connected_status
+        print expected_connected_status
+        
+        if (actual_connected_status == expected_connected_status):
+        
+            print "The HRIS Sync is successful" 
+        else:
+            
+            print "Failed to connect to HRIS System"
+            raise Exception
         
         time.sleep(5)
         
@@ -206,6 +480,8 @@ class BambooHRIS:
         
         # Going to Click on User Attributes tab from side menu
         
+        time.sleep(2)
+        
         driver.find_element_by_xpath(bamboohr.user_attributes_tab()).click()
         print "Clicking on User attributes tab"
         
@@ -223,6 +499,7 @@ class BambooHRIS:
         Last_name_source= driver.find_element_by_xpath(".//table/tbody/tr/td[1]/a[.='Last Name']/../../td[2]").text
         Employeeid_source= driver.find_element_by_xpath(".//table/tbody/tr/td[1]/a[.='Employee ID']/../../td[2]").text
         Primary_email= driver.find_element_by_xpath(".//table/tbody/tr/td[1]/a[.='Primary Email']/../../td[2]").text
+        City= driver.find_element_by_xpath(".//table/tbody/tr/td[1]/a[.='City']/../../td[2]").text
         
         
         
@@ -234,7 +511,9 @@ class BambooHRIS:
                     
                     if(Primary_email == "HRIS Integration"):
                         
-                        print "The source for synced attributes are displaying as HRIS Integration"
+                        if(City == "HRIS Integration"):
+                        
+                            print "The source for synced attributes are displaying as HRIS Integration"
                         
         else:
                          
@@ -392,7 +671,7 @@ class BambooHRIS:
         # Enter Work email
         element= wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.employee_workemail_field())))
         element.send_keys(Work_Email)
-        print "Entering employee work email as "+Work_Email
+        print "Entering employee work email as "+ Work_Email
         
         # Clicking on SAVE button
         driver.find_element_by_xpath(bamboohr.employee_form_save()).click()
@@ -456,11 +735,14 @@ class BambooHRIS:
    
         
         
+        #For Original User
+        book=xlrd.open_workbook(os.path.join('E:/NewWorkspace/FirstProjectInPython/TestData.xlsx'))
+        s_sheet = book.sheet_by_name('BambooHR')
         
         
         #updating user values
         wb = load_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__),'E:/NewWorkspace/FirstProjectInPython/TestData.xlsx')))
-            #print (wb.sheetnames)
+        #print (wb.sheetnames)
         
         sheet = wb['BambooHR']
         
@@ -476,7 +758,7 @@ class BambooHRIS:
         print "All User Data Updated in Excel"
         
         
-        obj13= BambooHRIS ()
+        obj13= BambooHR()
         #obj13.createuser_in_bamboohr(Employee_Number, Employee_FirstName, Employee_LastName, Work_Email)
         obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
         
@@ -487,10 +769,10 @@ class BambooHRIS:
      
 if __name__ == '__main__':
     
-    obj11= BambooHRIS ()
+    obj11= BambooHR()
     obj12= BaseTestClass()
         
-    obj11.updating_the_employee_values_and_startmain()
+    #obj11.updating_the_employee_values_and_startmain()
     obj12.UserLogin()
     obj11.settingup_bamboohr_integration()
     
