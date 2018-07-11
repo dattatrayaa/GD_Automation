@@ -21,5 +21,5 @@ cd TeamCity/bin
 - Create a New Project, Set Project Name, Project ID and click on Create
 - This leads to the “Project Settings” page where we need to create a new build configuration, Give name, id and click on Create
 - Version Control Settings (VCS) leads you to connect TeamCity to Github follow these [Steps](https://confluence.jetbrains.com/display/TCD10/Integrating+TeamCity+with+VCS+Hosting+Services)
-- Now in Build steps we can add our Robot suite command : ./Test_Suite/startSuite.sh
+- Now in Build steps we can add our Robot suite command : ```./Test_Suite/startSuite.sh```
 - The suite will run based on robot triggers in startSuite.sh
