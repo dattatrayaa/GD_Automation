@@ -426,8 +426,8 @@ class BambooHR:
         # Going to Click and open the created users
         time.sleep(10)
         
-        wait.until(EC.visibility_of_element_located((By.XPATH,"//table/tbody/tr[1]/td[1]/a[.='"+user_firstname+"']")))
-        driver.find_element_by_xpath("//table/tbody/tr[1]/td[1]/a[.='"+user_firstname+"']").click()
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//table/tbody/tr/td[2]/a[.='"+user_firstname+"']")))
+        driver.find_element_by_xpath("//table/tbody/tr/td[2]/a[.='"+user_firstname+"']").click()
         print "Clicking on the synced user"
         
         # Going to get the First name
