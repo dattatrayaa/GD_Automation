@@ -4,6 +4,7 @@ Library           ../Master/BaseTestClass.py
 Library           ../TestCases/Create/Tracks/TrackWithTextLesson.py
 Library           ../TestCases/Create/Lesson/LessonCreateQuestion.py
 Library           ../TestCases/Campaign/CreateCampaignForImageLesson.py
+Library       ../TestCases/Integration/Bamboo/BambooHRISIntegration.py
 Library           ../Master/CloseBrowser.py
 
 #Suite setup for setting up login environment 
@@ -29,7 +30,10 @@ TC - CreateCampaignForImageLesson
     [Tags]    Campaign
     Create Campaign Image Lesson 
  
-
+TC -BambooHRISIntegration
+    [Documentation]    This test will integrate BambooHRIS to Grovo and validates in employees from BambooHR SandBox Account
+    [Tags]    Admin
+   Updating The Employee Values And Startmain
 
 
     
