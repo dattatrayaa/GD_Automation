@@ -296,10 +296,15 @@ class ADPXpath:
         time.sleep(2)
         return"//*[@id='revit_layout_ContentPane_4']/table/tbody/tr[1]/td[1]/span/a/span"
     
+    def waitcontacts(self):
+        time.sleep(2)
+        return"//*[@id='PersonalProfile20.Contact.header.Text']"
     
     def clickoncontacts(self):
         time.sleep(2)
         return"//*[@id='PersonalProfile20.Contact.header.ActionIconInner']"
+    
+   
     
     def enteremail(self):
         time.sleep(2)
@@ -309,11 +314,32 @@ class ADPXpath:
         time.sleep(2)
         return"//*[@id='ContactInfo20.Save.icon']"
     
-    #######Disconnect Subscribtion##################
+
     
-    def doneemail(self):
+    def editsetting(self):
         time.sleep(2)
-        return"//*[@id='ContactInfo20.Save.icon']"
+        return"//*[@id='content']/div/div[3]/div[2]/div/div/section[1]/div/div[1]/div[3]/div/span/button"
+    
+    
+    def disconnectlink(self):
+        time.sleep(2)
+        return"html/body/div[4]/div/div/div[2]/div/div[1]/div[2]/div/span[1]"
+    
+    def disconnectbutton(self):
+        time.sleep(2)
+        return"html/body/div[4]/div/div/div[2]/div/div/button[1]"
+    
+    def updatesubscription(self):
+        time.sleep(2)
+        return"//*[@id='idf']"
+    
+    def cancelsubscription(self):
+        time.sleep(2)
+        return"//*[@id='cancel']/span"
+    
+    def donecancelsubscription(self):
+        time.sleep(2)
+        return"//*[@id='posLabel']/span"
     
     
     
@@ -321,6 +347,16 @@ class ADPXpath:
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
     
     
     
