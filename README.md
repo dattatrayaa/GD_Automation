@@ -6,15 +6,17 @@ This is Project repositary for Grovo Automation Framework
 - To install Robot Framework, Download [installer.sh](Setup/installer.sh) from Setup folder, and run in Terminal/Command line
 - Download [TeamCity](https://www.jetbrains.com/teamcity/download/) latest version for MAC
 - Untar downloaded file in specific folder by using command:
-
-'''
+```
 tar xvf TeamCity-9.1.6.tar
-'''
-
+```
 - after untar type:
-> cd TeamCity/bin
+```
+cd TeamCity/bin
+```
 - and to start TeamCity in browser window use:
-> ./runAll.sh start
+```
+./runAll.sh start
+```
 - After starting set up an Admin Username and Password for future login
 - Create a New Project, Set Project Name, Project ID and click on Create
 - This leads to the “Project Settings” page where we need to create a new build configuration, Give name, id and click on Create
