@@ -4,18 +4,13 @@ Created on 02-Jul-2018
 @author: geethukn
 '''
 from Tkinter import Tk
-from operator import contains
 import os.path
 import time
-import traceback
 
 from openpyxl.reader.excel import load_workbook
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import wait, expected_conditions as EC
-from selenium.webdriver.support.select import Select
+from selenium.webdriver.support import expected_conditions as EC
 import xlrd
 
 from ADPElements import ADPXpath
@@ -602,7 +597,7 @@ class ADPIntegration:
         driver.find_element_by_xpath(ADPIntegrations.doneemail()).click()
         print"click on Done button"   
         
-    def updating_the_employee_values(self):
+    def adpUserMain(self):
             
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             first_sheet = book.sheet_by_name('ADP User details')
@@ -661,7 +656,7 @@ class ADPIntegration:
             obj1= ADPIntegration()
             obj1.adpIntegration()
             obj1.createuser_in_adp(FirstNameUpdated, LastNameUpdated, EmailIdUpdated,file_nu_updated)
-                  
+                 
 if __name__ == '__main__':
     
     

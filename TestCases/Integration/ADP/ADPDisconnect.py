@@ -3,18 +3,10 @@ Created on 11-Jul-2018
 
 @author: geethukn
 '''
-from operator import contains
 import os.path
-import time
-import traceback
-
-from openpyxl.reader.excel import load_workbook
 from selenium import webdriver
-from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.support import wait, expected_conditions as EC
-from selenium.webdriver.support.select import Select
+from selenium.webdriver.support import expected_conditions as EC
 import xlrd
 
 from ADPElements import ADPXpath
