@@ -11,7 +11,6 @@ echo "Starting Robot suite"
 #pybot -n Tracks -d Test_Results -o track.xml -l logtrack.html -r reporttrack.html  ./Test_Suite/TestSuiteTrack.robot
 
 
-
 #echo “Starting Campaign suite”
 #pybot -n Campaign -d Test_Results -o campaign.xml -l logcampaign.html -r reportcampaign.html  ./Test_Suite/TestSuiteCampaign.robot
 
