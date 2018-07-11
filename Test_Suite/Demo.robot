@@ -30,10 +30,10 @@ TC - CreateCampaignForImageLesson
     [Tags]    Campaign
     Create Campaign Image Lesson 
  
-#TC - CreateCreator
-    #[Documentation]    This test validates creation of user with Creator permission
-    #[Tags]    Admin
-    #Create Creator User And Validation 
+TC - CreateCreator
+    [Documentation]    This test validates creation of user with Creator permission
+    [Tags]    Admin
+    Create Creator User And Validation 
 
 
 
