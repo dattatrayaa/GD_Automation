@@ -659,6 +659,7 @@ class ADPIntegration:
             print "All User Data Updated in Excel"
             
             obj1= ADPIntegration()
+            obj1.adpIntegration()
             obj1.createuser_in_adp(FirstNameUpdated, LastNameUpdated, EmailIdUpdated,file_nu_updated)
                   
 if __name__ == '__main__':
