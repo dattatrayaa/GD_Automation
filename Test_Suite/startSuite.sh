@@ -51,7 +51,7 @@ echo "Starting Robot suite"
 #robot -n Admin -n Create -n Campaign -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
 pybot -n noncritical -d Test_Results -o bamboo.xml -l logbamboo.html -r bambooreport.html  ./Test_Suite/TestSuiteBamboo.robot 
 robot -n Create -n Campaign -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
-rebot -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/demoouput.xml  ./Test_Results/bamboo.xml
+rebot -n Create -n Campaign -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/demoouput.xml  ./Test_Results/bamboo.xml
 
 echo “Sending mail”
 robot -v report:finalreport -v log:logfinal -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
