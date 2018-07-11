@@ -23,7 +23,7 @@ from __builtin__ import Exception
 
 
 
-class BambooHR:
+class BambooHRIS:
     
 
     
