@@ -55,8 +55,6 @@ robot -n Create -n Campaign -n Admin -d Test_Results -o demoouput.xml -l demolog
 echo “Sending mail”
 robot -v report:demoreport -v log:demolog -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
 
-
-
 echo "Suite ended" 
  
  
