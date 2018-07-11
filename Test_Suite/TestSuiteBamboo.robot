@@ -5,7 +5,7 @@
 Library   ../Master/BaseTestClass.py
 
 #Functions to create Lessons
-Library   ../TestCases/Bamboo/BambooHRIS.py
+Library   ../TestCases/Integration/Bamboo/BambooHRISIntegration.py
 Library           ../Master/CloseBrowser.py
 
 
@@ -16,7 +16,7 @@ TC0 - User Login
     
 
 #Test cases for Bamboo  
-TC12 -BambooHRIS
+TC12 -BambooHRISIntegration
    Updating The Employee Values And Startmain
 
 Close Browser
