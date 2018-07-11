@@ -66,7 +66,7 @@ class ADPIntegration:
         #login to ADPMarket place
         wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.adpLoginusename())))
         print "Reading data from excel sheet"
-        book=xlrd.open_workbook(os.path.join('TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         
         first_sheet = book.sheet_by_name('ADP User details')
 
@@ -116,11 +116,11 @@ class ADPIntegration:
         # Writing the copied API key in to Excel 
         data = Tk().clipboard_get()
         #Pasting the copied API key in to excel
-        wb = load_workbook(os.path.join('D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx'))
+        wb = load_workbook(os.path.join('Test_Data/TestData.xlsx'))
         #print (wb.sheetnames)
         sheet = wb['ADP User details']
         sheet.cell(row=2, column=4).value=data
-        wb.save(os.path.join('D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx'))
+        wb.save(os.path.join('Test_Data/TestData.xlsx'))
         print "Pasting the copied Grovo ID in to Test Data Excel"
         
         #Fetching - Your Grovo Organization ID and saving in Excel
