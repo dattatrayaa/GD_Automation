@@ -5,6 +5,8 @@ Library           ../TestCases/Create/Tracks/TrackWithTextLesson.py
 Library           ../TestCases/Create/Lesson/LessonCreateQuestion.py
 Library           ../TestCases/Campaign/CreateCampaignForImageLesson.py
 Library       ../TestCases/Integration/Bamboo/BambooHRISIntegration.py
+Library       ../TestCases/Integration/ADP/ADPIntergration.py
+Library       ../TestCases/Integration/ADP/ADPDisconnect.py
 Library           ../Master/CloseBrowser.py
 
 #Suite setup for setting up login environment 
@@ -34,7 +36,16 @@ TC -BambooHRISIntegration
     [Documentation]    This test will integrate BambooHRIS to Grovo and validates in employees from BambooHR SandBox Account
     [Tags]    Admin
    Updating The Employee Values And Startmain
-
+   
+ TC -ADP
+    [Documentation]    This test will integrate BambooHRIS to Grovo and validates in employees from ADP Market Place
+    [Tags]    Admin
+    Updating The Employee Values
+    
+    [Documentation]    This test will cancel the subscription from ADP Market Place
+    [Tags]    Admin
+    Adp Disconnecting
+    
 
     
 
