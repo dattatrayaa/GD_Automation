@@ -50,7 +50,7 @@ echo "Starting Robot suite"
 
 #robot -n Admin -n Create -n Campaign -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
 pybot -n noncritical -d Test_Results -o bamboo.xml -l logbamboo.html -r bambooreport.html  ./Test_Suite/TestSuiteBamboo.robot 
-robot -n Admin -n Create -n Campaign -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
+robot -n Create -n Campaign -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
 rebot -n Campaign -n Admin -n Lesson -n Tracks -n Library -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/demoouput.xml  ./Test_Results/bamboo.xml
 
 echo “Sending mail”
