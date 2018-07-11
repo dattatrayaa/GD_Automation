@@ -7,9 +7,9 @@ This is Project repositary for Grovo Automation Framework
 - Download [TeamCity](https://www.jetbrains.com/teamcity/download/) latest version for MAC
 - Untar downloaded file in specific folder by using command:
 > tar xvf TeamCity-9.1.6.tar
-after untar type:
+- after untar type:
 > cd TeamCity/bin
-and to start TeamCity in browser window:
+- and to start TeamCity in browser window use:
 > ./runAll.sh start
 - After starting set up an Admin Username and Password for future login
 - Create a New Project, Set Project Name, Project ID and click on Create
