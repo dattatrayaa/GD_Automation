@@ -20,7 +20,7 @@ from BambooHR_Elements import BambooHR_Elements
 from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
 from __builtin__ import Exception
-
+from BaseTestClass import projectPath
 
 
 class BambooHRISIntegration:
