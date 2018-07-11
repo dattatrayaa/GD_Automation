@@ -50,10 +50,10 @@ echo "Starting Robot suite"
 robot -n Create -n Campaign -n Admin -d Test_Results -o demoouput.xml -l demolog.html -r demoreport.html  ./Test_Suite/Demo.robot 
 
 #Collecting Robot results
-rebot -n Create -n Campaign -n Admin -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/demoouput.xml  ./Test_Results/bamboo.xml
+#rebot -n Create -n Campaign -n Admin -d Test_Results --output Final_output.xml -l logfinal.html -r  finalreport.html ./Test_Results/demoouput.xml  ./Test_Results/bamboo.xml
 
 echo “Sending mail”
-robot -v report:finalreport -v log:logfinal -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
+robot -v report:demoreport -v log:demolog -l none -r none -o none ./Test_Suite/TestSuiteEmailAttach.robot
 
 
 
