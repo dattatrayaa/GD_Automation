@@ -388,7 +388,7 @@ class ADPIntegration:
             raise Exception
         
         
-    def createuser_in_adp(self,Employee_FirstName,Employee_LastName,Work_Email):
+    def createuser_in_adp(self,Employee_FirstName,Employee_LastName,Work_Email,file_number):
         
           
         ADPIntegrations = ADPXpath()
@@ -438,14 +438,24 @@ class ADPIntegration:
         cell16= first_sheet.cell(1,22)
         zipcodes = cell16.value
         
-        cell17= first_sheet.cell(1,23)
-        file_number = cell17.value
+        #cell17= first_sheet.cell(1,23)
+        #file_number = cell17.value
         
         cell18= first_sheet.cell(1,24)
         regularpayrate = cell18.value
         
         cell19= first_sheet.cell(1,25)
         federalsq = cell19.value
+        
+        #cell20= first_sheet.cell(1,10)
+        #Employee_FirstName = cell20.value
+        
+        #cell21= first_sheet.cell(1,11)
+        #Employee_LastName = cell21.value
+        
+        #cell22= first_sheet.cell(1,12)
+        #Work_Email = cell22.value
+        
         
         print "Going to access ADP account url"+" "+adpmarketplaceurl
         driver.get(adpmarketplaceurl)
@@ -550,6 +560,8 @@ class ADPIntegration:
         #Federal
         federals = driver.find_element_by_xpath(ADPIntegrations.federal())
         webdriver.ActionChains(driver).move_to_element(federals).click(federals).perform()
+      
+        driver.find_element_by_xpath(ADPIntegrations.federal()).clear()
         driver.find_element_by_xpath(ADPIntegrations.federal()).send_keys(int(federalsq))
         #print "Enter Federals as "+federalsq
         
@@ -577,7 +589,8 @@ class ADPIntegration:
         driver.find_element_by_xpath(ADPIntegrations.personaldetails()).click()
         print"Click on Personal profile link"
         
-        wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.clickoncontacts())))
+        wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.waitcontacts())))
+        driver.find_element_by_xpath(ADPIntegrations.waitcontacts()).click()
         driver.find_element_by_xpath(ADPIntegrations.clickoncontacts()).click()
         print"click on Edit contacts"
         
@@ -597,8 +610,8 @@ class ADPIntegration:
             #Firstname 
             cell = first_sheet.cell(1,10)
             Employee_FirstName = cell.value
-            FirstNameId = Employee_FirstName.split("_")
-            emp = FirstNameId[0]+"_"
+            FirstNameId = Employee_FirstName.split(" ")
+            emp = FirstNameId[0]+" "
             ids = FirstNameId[1]
             empId = int(ids)+1
             FirstNameUpdated= emp+str(empId)
@@ -606,8 +619,8 @@ class ADPIntegration:
             #Lastname
             cell = first_sheet.cell(1,11)
             Employee_LastName = cell.value
-            LastNameID = Employee_LastName.split("_")
-            emp = LastNameID[0]+"_"
+            LastNameID = Employee_LastName.split(" ")
+            emp = LastNameID[0]+" "
             ids = LastNameID[1]
             empId = int(ids)+1
             LastNameUpdated= emp+str(empId)
@@ -622,6 +635,13 @@ class ADPIntegration:
             empId = int(ids)+1
             EmailIdUpdated= emp+str(empId)+remaining
             
+            #file 
+            cell = first_sheet.cell(1,23)
+            file_number = cell.value
+            file_nu = int(file_number)
+            ids = 1
+            file_nu_lastdigit = ids+1
+            file_nu_updated= file_nu+file_nu_lastdigit
             
             #updating user values
             wb = load_workbook(os.path.abspath(os.path.join(os.path.dirname(__file__),'D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx')))
@@ -629,16 +649,17 @@ class ADPIntegration:
             
             sheet = wb['ADP User details']
             
-            sheet.cell(row=2, column=9).value = FirstNameUpdated
-            sheet.cell(row=2, column=10).value = LastNameUpdated
-            sheet.cell(row=2, column=11).value =EmailIdUpdated
+            sheet.cell(row=2, column=11).value = FirstNameUpdated
+            sheet.cell(row=2, column=12).value = LastNameUpdated
+            sheet.cell(row=2, column=13).value =EmailIdUpdated
+            sheet.cell(row=2, column=24).value =file_nu_updated
             
             wb.save(os.path.abspath(os.path.join(os.path.dirname(__file__),'D:/_WorkSpace/EclipseWS/PythonAutomation/src/TestData.xlsx')))
             
             print "All User Data Updated in Excel"
             
             obj1= ADPIntegration()
-            obj1.createuser_in_adp(FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
+            obj1.createuser_in_adp(FirstNameUpdated, LastNameUpdated, EmailIdUpdated,file_nu_updated)
                   
 if __name__ == '__main__':
     
@@ -646,7 +667,7 @@ if __name__ == '__main__':
     ob= BaseTestClass()
     ob.UserLogin()
     obj1= ADPIntegration()
-    #obj1.adpIntegration()
+    obj1.adpIntegration()
     obj1.updating_the_employee_values_and_startmain()
   
    
