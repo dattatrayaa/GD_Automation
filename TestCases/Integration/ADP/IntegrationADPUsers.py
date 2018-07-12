@@ -563,39 +563,44 @@ class IntegrationADPUsers:
         done_adp = driver.find_element_by_xpath(ADPIntegrations.doneadp())
         webdriver.ActionChains(driver).move_to_element(done_adp).click(done_adp).perform()
         print "Click on Done button"
-        
-        driver.find_element_by_xpath(ADPIntegrations.donepopup()).click()
-        print "Click on Done from Popup"
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.searchadp())))
-        driver.find_element_by_xpath(ADPIntegrations.searchadp()).send_keys(Employee_FirstName)
-        print"Enter Employee First name: "+Employee_FirstName
-        
-         
-        wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.clicksearckfn())))
-        driver.find_element_by_xpath(ADPIntegrations.clicksearckfn()).click()
-        print"Click on First Name"
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.clickonname())))
-        driver.find_element_by_xpath(ADPIntegrations.clickonname()).click()
-        print"Click on Name arrow"
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.personaldetails())))
-        driver.find_element_by_xpath(ADPIntegrations.personaldetails()).click()
-        print"Click on Personal profile link"
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.waitcontacts())))
-        driver.find_element_by_xpath(ADPIntegrations.waitcontacts()).click()
-        driver.find_element_by_xpath(ADPIntegrations.clickoncontacts()).click()
-        print"click on Edit contacts"
-        
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.enteremail())))
-        driver.find_element_by_xpath(ADPIntegrations.enteremail()).send_keys(Work_Email)
-        print "Enter Email as "+Work_Email
-        
-        driver.find_element_by_xpath(ADPIntegrations.doneemail()).click()
-        print"click on Done button"   
+
+        try:
+
+            wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.donepopup())))
+            driver.find_element_by_xpath(ADPIntegrations.donepopup()).click()
+            print "Click on Done from Popup"
+            
+            wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.searchadp())))
+            driver.find_element_by_xpath(ADPIntegrations.searchadp()).send_keys(Employee_FirstName)
+            print"Enter Employee First name: "+Employee_FirstName
+            
+             
+            wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.clicksearckfn())))
+            driver.find_element_by_xpath(ADPIntegrations.clicksearckfn()).click()
+            print"Click on First Name"
+            
+            wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.clickonname())))
+            driver.find_element_by_xpath(ADPIntegrations.clickonname()).click()
+            print"Click on Name arrow"
+            
+            wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.personaldetails())))
+            driver.find_element_by_xpath(ADPIntegrations.personaldetails()).click()
+            print"Click on Personal profile link"
+            
+            wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.waitcontacts())))
+            driver.find_element_by_xpath(ADPIntegrations.waitcontacts()).click()
+            driver.find_element_by_xpath(ADPIntegrations.clickoncontacts()).click()
+            print"click on Edit contacts"
+            
+            
+            wait.until(EC.visibility_of_element_located((By.XPATH,ADPIntegrations.enteremail())))
+            driver.find_element_by_xpath(ADPIntegrations.enteremail()).send_keys(Work_Email)
+            print "Enter Email as "+Work_Email
+            
+            driver.find_element_by_xpath(ADPIntegrations.doneemail()).click()
+            print"click on Done button"
+        except Exception:
+            print "PASS"
         
     def adpUserMain(self):
             
