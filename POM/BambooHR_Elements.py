@@ -211,7 +211,7 @@ class BambooHR_Elements:
             
     def search_attributes_field_checkbox(self):
         
-        book=xlrd.open_workbook(os.path.join('E:\NewWorkspace\FirstProjectInPython\TestData.xlsx'))
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
         first_sheet = book.sheet_by_name('BambooHR')
         cell1= first_sheet.cell(4,3)
         suggested_attribute_name = cell1.value
@@ -228,7 +228,23 @@ class BambooHR_Elements:
     def edit_button_in_confirm_screen(self):
         
         edit_button_in_confirm_screen = "html/body/div[4]/div/div/div[2]/div/h3/button"
-        return edit_button_in_confirm_screen 
+        return edit_button_in_confirm_screen
+    
+    def edit_settings_link(self):
+        
+        edit_settings_link = ".//*[@id='content']/div/div[3]/div[2]/div/div/section[1]/div/div[2]/div[3]/div/span/button"
+        return edit_settings_link 
+    
+        
+    def disconnect_link(self):
+        
+        disconnect_link = "html/body/div[4]/div/div/div[2]/div/div[1]/div[2]/div[2]/span[1]"
+        return disconnect_link 
+    
+    def disconnect_button(self):
+        
+        disconnect_button = "html/body/div[4]/div/div/div[2]/div/div/button[1]"
+        return disconnect_button
     
     
      
