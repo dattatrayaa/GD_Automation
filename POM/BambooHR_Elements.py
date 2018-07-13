@@ -22,7 +22,7 @@ class BambooHR_Elements:
     
     def configure_button(self):
         
-        congigure_link = ".//*[@id='content']/div/div[3]/div[2]/div/div/section[1]/div/div[2]/div[1]/button"
+        congigure_link = '//*[@id="content"]/div/div[3]/div[2]/div/div/section[1]/div/div[2]/div[1]/button'
         return congigure_link
      
     def subdomain_field(self):
