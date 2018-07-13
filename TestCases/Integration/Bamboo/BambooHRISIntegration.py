@@ -147,6 +147,11 @@ class BambooHRISIntegration:
         
         time.sleep(10)
         #wait for the login
+        cell5= first_sheet.cell(1,4)
+        sandbox_username = cell5.value 
+        
+        cell6= first_sheet.cell(1,5)
+        sandbox_password = cell6.value
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.sandbox_username())))
         driver.find_element_by_xpath(bamboohr.sandbox_username()).send_keys(sandbox_username)
         print "Enter sandbox email for login"
