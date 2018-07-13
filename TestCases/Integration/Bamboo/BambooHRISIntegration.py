@@ -42,6 +42,9 @@ class BambooHRISIntegration:
         cell6= first_sheet.cell(1,5)
         sandbox_password = cell6.value
         
+        cell1= first_sheet.cell(1,0)
+        subdomain = cell1.value 
+        
         wait=WebDriverWait(driver, 60)
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.admin_tab())))
         
@@ -65,7 +68,7 @@ class BambooHRISIntegration:
         
         
         #wait for Configure button
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.configure_button()))
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.configure_button())))
         #Going to validate the UI elements in the BambooHR configuration screen
                    
         #print "Going to verify the display of View instructions link in configure screen"
