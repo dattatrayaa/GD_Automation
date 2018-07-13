@@ -6,7 +6,7 @@ Created on Jul 2, 2018
 from Tkinter import Tk
 from os.path import os
 import time
-
+import traceback
 from openpyxl.reader.excel import load_workbook
 from selenium import webdriver
 
@@ -15,7 +15,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 import xlrd
-
+import traceback
 from BambooHR_Elements import BambooHR_Elements
 from BaseTestClass import BaseTestClass
 from BaseTestClass import driver
@@ -30,6 +30,17 @@ class BambooHRISIntegration:
     def settingup_bamboohr_integration(self):
         
         bamboohr= BambooHR_Elements()
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
+        first_sheet = book.sheet_by_name('BambooHR')
+        
+        cell4= first_sheet.cell(1,3)
+        bamboohr_sandbox_url = cell4.value 
+        
+        cell5= first_sheet.cell(1,4)
+        sandbox_username = cell5.value 
+        
+        cell6= first_sheet.cell(1,5)
+        sandbox_password = cell6.value
         
         wait=WebDriverWait(driver, 60)
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.admin_tab())))
@@ -53,12 +64,11 @@ class BambooHRISIntegration:
         print "Clicking on Integrations"
         
         
-        # wait for Configure button
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.configure_button())))
-        
-        
-        # Going to validate the UI elements in the BambooHR configuration screen
-        print"Going to verify the display of View instructions link in configure screen"
+        #wait for Configure button
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.configure_button()))
+        #Going to validate the UI elements in the BambooHR configuration screen
+                   
+        #print "Going to verify the display of View instructions link in configure screen"
         
         cell7= first_sheet.cell(4,0)
         expected_viewinstructrion_link_name= cell7.value 
@@ -72,11 +82,81 @@ class BambooHRISIntegration:
         else:
             print "Failed to find the view instructions link in Bamboohr configuration screen"
             raise Exception 
+
         
         # Clicking on Configure button
-        driver.find_element_by_xpath(bamboohr.configure_button()).click()
+        time.sleep(4)
+        wait.until(EC.element_to_be_clickable((By.XPATH,bamboohr.configure_button())))
+        ele=driver.find_element_by_xpath(bamboohr.configure_button())
+        driver.execute_script("arguments[0].click();", ele)
         print "Clicking on Configure button"
+
+        # wait for sand box fiedl and enter invalid subdomain
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys("invalid_subdomain")
+        print "Entering invalid sub domain in BambooHR authentication page"
         
+        # Enter the invalid sub domain and valid api key and click on connect
+        
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
+        print "Entering the sub domain in BambooHR authentication page"
+        
+        # Clicking on Connect button button
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
+            driver.find_element_by_xpath(bamboohr.connect_button()).click()
+            print "Clicking on Connect button"
+         
+        cell8= first_sheet.cell(4,1)
+        expected_error_message = cell8.value 
+        
+        # Wait for the error message to display
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.authentication_errormessage())))
+        actual_error_message= driver.find_element_by_xpath(bamboohr.authentication_errormessage()).text
+        print "actual_error_message is" +" "+ actual_error_message
+        
+        if (actual_error_message == expected_error_message):
+            
+            print " Authentication error is displaying for wrong sub domain"
+        
+        else:
+            print "No authentication error is displaying for wrong sub domain"
+            raise Exception
+
+        # Enter the valid sub domain 
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
+        print "Entering the sub domain in BambooHR authentication page"
+
+        #Clicking on Connect button
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+        
+        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
+            driver.find_element_by_xpath(bamboohr.connect_button()).click()
+            print "Clicking on Connect button"
+            
+        else:
+            print "Failed to find the Connect button"
+            raise Exception
+        
+        time.sleep(10)
+        #wait for the login
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.sandbox_username())))
+        driver.find_element_by_xpath(bamboohr.sandbox_username()).send_keys(sandbox_username)
+        print "Enter sandbox email for login"
+        
+        
+        driver.find_element_by_xpath(bamboohr.sandbox_password()).send_keys(sandbox_password)
+        print "Enter sandbox password for login"
+        
+        
+        driver.find_element_by_xpath(bamboohr.sandbox_login()).click()
+        print "Clicking on Login button"
+        
+
         # Getting the proper sub domain name from excel
         
         cell1= first_sheet.cell(1,0)
@@ -96,7 +176,8 @@ class BambooHRISIntegration:
         
                 
         # Enter valid api key keys
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.apikey_field())))
         driver.find_element_by_xpath(bamboohr.apikey_field()).send_keys(api_key)
         print "Entering the valid api keys in BambooHR authentication page"
         
@@ -148,6 +229,7 @@ class BambooHRISIntegration:
         
         #Clicking on Connect button
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+        
         if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
             driver.find_element_by_xpath(bamboohr.connect_button()).click()
             print "Clicking on Connect button"
@@ -520,6 +602,37 @@ class BambooHRISIntegration:
             print "Failed to validate the attribute source details"
             raise Exception
         
+        # Click on Integrations
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.integrations_subtab())))
+        driver.find_element_by_xpath(bamboohr.integrations_subtab()).click()
+        print "Clicking on Integrations"
+        
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connected_status())))
+        #Click on edit settings link
+        driver.find_element_by_xpath(bamboohr.edit_settings_link()).click()
+        print "Clicking on edit settings link"  
+        
+        # Going to click on Disconnect link
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.disconnect_link())))
+        driver.find_element_by_xpath(bamboohr.disconnect_link()).click()
+        print "Clicking on disconnect link"
+        
+        # Going to click on Disconnect button from the displayed pop up
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.disconnect_button())))
+        driver.find_element_by_xpath(bamboohr.disconnect_button()).click()
+        print "Clicking on disconnect button"
+        
+        #wait for Configure link
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.configure_button())))
+        if (bamboohr.configure_button().is_displayed()):
+            
+            print "Successfully disconnected BambooHR"
+            
+        else:
+            print "Failed to disconnect BambooHR"
+            raise Exception
+            
+        
         
     def createuser_in_bamboohr(self,Employee_Number,Employee_FirstName,Employee_LastName,Work_Email):
         
@@ -675,12 +788,12 @@ class BambooHRISIntegration:
         
         # Clicking on SAVE button
         driver.find_element_by_xpath(bamboohr.employee_form_save()).click()
-        
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.employee_personal_tab())))
-        driver.find_element_by_xpath(bamboohr.employee_personal_tab()).click()
-        
         time.sleep(3)
+        
+    
+        """wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.employee_personal_tab())))
+        driver.find_element_by_xpath(bamboohr.employee_personal_tab()).click()"""
+        
         
         
         
@@ -762,12 +875,15 @@ class BambooHRISIntegration:
             second_sheet = book.sheet_by_name('Login_Credentials')
             cell = second_sheet.cell(1,1)
             url = cell.value
-            driver.get(url)
             obj13= BambooHRISIntegration()
             #obj13.createuser_in_bamboohr(Employee_Number, Employee_FirstName, Employee_LastName, Work_Email)
-            obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
+            #obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
             driver.get(url)
             obj13.settingup_bamboohr_integration()
+        except Exception as e:
+            traceback.print_exc()
+            print (e)
+            raise Exception 
         finally:
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             second_sheet = book.sheet_by_name('Login_Credentials')
