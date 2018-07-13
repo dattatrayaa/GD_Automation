@@ -43,7 +43,15 @@ class BambooHRISIntegration:
         sandbox_password = cell6.value
         
         cell1= first_sheet.cell(1,0)
-        subdomain = cell1.value 
+        subdomain = cell1.value
+        
+        cell1= first_sheet.cell(6,1)
+        bambboURL = cell1.value
+
+        book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
+        second_sheet = book.sheet_by_name('Login_Credentials')
+        cell = second_sheet.cell(1,1)
+        url = cell.value
         
         wait=WebDriverWait(driver, 60)
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.admin_tab())))
@@ -98,36 +106,25 @@ class BambooHRISIntegration:
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
         driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys("invalid_subdomain")
         print "Entering invalid sub domain in BambooHR authentication page"
-        
-        # Enter the invalid sub domain and valid api key and click on connect
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
-        print "Entering the sub domain in BambooHR authentication page"
-        
-        # Clicking on Connect button button
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
-        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
-            driver.find_element_by_xpath(bamboohr.connect_button()).click()
-            print "Clicking on Connect button"
-         
-        cell8= first_sheet.cell(4,1)
-        expected_error_message = cell8.value 
-        
-        # Wait for the error message to display
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.authentication_errormessage())))
-        actual_error_message= driver.find_element_by_xpath(bamboohr.authentication_errormessage()).text
-        print "actual_error_message is" +" "+ actual_error_message
-        
-        if (actual_error_message == expected_error_message):
-            
-            print " Authentication error is displaying for wrong sub domain"
-        
+        driver.find_element_by_xpath(bamboohr.connect_button()).click()
+        time.sleep(4)
+        currentURL = driver.current_url
+        if bambboURL == currentURL :
+            print "Bamboo URL is loaded"
         else:
-            print "No authentication error is displaying for wrong sub domain"
+            print "Bamboo URL is not loaded"
             raise Exception
-
+        driver.get(url+"admin/integrations")
+        time.sleep(4)
+        
+        # Clicking on Configure button
+        time.sleep(4)
+        wait.until(EC.element_to_be_clickable((By.XPATH,bamboohr.configure_button())))
+        ele=driver.find_element_by_xpath(bamboohr.configure_button())
+        driver.execute_script("arguments[0].click();", ele)
+        print "Clicking on Configure button"
+        
         # Enter the valid sub domain 
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
         driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
@@ -147,6 +144,7 @@ class BambooHRISIntegration:
         
         time.sleep(10)
         #wait for the login
+        time.sleep(6)
         cell5= first_sheet.cell(1,4)
         sandbox_username = cell5.value 
         
@@ -176,137 +174,18 @@ class BambooHRISIntegration:
         print "The bamboo hr sub-domain is"+" "+subdomain
         print "The bamboo hr API key is"+" "+api_key
         
-        # Enter the invalid sub domain and valid api key and click on connect
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys("invalid_subdomain")
-        print "Entering invalid sub domain in BambooHR authentication page"
-        
-                
-        # Enter valid api key keys
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.apikey_field())))
-        driver.find_element_by_xpath(bamboohr.apikey_field()).send_keys(api_key)
-        print "Entering the valid api keys in BambooHR authentication page"
-        
-        # Clicking on Connect button button
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
-        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
-            driver.find_element_by_xpath(bamboohr.connect_button()).click()
-            print "Clicking on Connect button"
-            
-        else:
-            print "Failed to find the Connect button"
-            raise Exception
-            
-        
-        
-       
-     
-        cell8= first_sheet.cell(4,1)
-        expected_error_message = cell8.value 
-        
-        # Wait for the error message to display
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.authentication_errormessage())))
-        actual_error_message= driver.find_element_by_xpath(bamboohr.authentication_errormessage()).text
-        print "actual_error_message is" +" "+ actual_error_message
-        
-        if (actual_error_message == expected_error_message):
-            
-            print " Authentication error is displaying for wrong sub domain"
-        
-        else:
-            print "No authentication error is displaying for wrong sub domain"
-            raise Exception 
-        
-        
-                
-        # Enter the valid sub domain 
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
-        print "Entering valid sub domain in BambooHR authentication page"
-        
-                
-        # Enter in valid api key keys
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
-        driver.find_element_by_xpath(bamboohr.apikey_field()).clear()
-        driver.find_element_by_xpath(bamboohr.apikey_field()).send_keys("invalid api key")
-        print "Entering in valid api keys in BambooHR authentication page"
-        
-        #Clicking on Connect button
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
-        
-        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
-            driver.find_element_by_xpath(bamboohr.connect_button()).click()
-            print "Clicking on Connect button"
-            
-        else:
-            print "Failed to find the Connect button"
-            raise Exception
-            
-        
-        actual_error_message= driver.find_element_by_xpath(bamboohr.authentication_errormessage()).text
-       
-        if (actual_error_message ==expected_error_message):
-            
-            print " Authentication error is displaying for in valid api key"
-        
-        else:
-            print "No authentication error is displaying for invalid api keys"
-            raise Exception  
-        
- 
-        # Enter the in valid sub domain 
-        
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys("invalid subdomain")
-        print "Entering valid sub domain in BambooHR authentication page"
-        
-                
-        # Enter in valid api key keys
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
-        driver.find_element_by_xpath(bamboohr.apikey_field()).clear()
-        driver.find_element_by_xpath(bamboohr.apikey_field()).send_keys("invalid api key")
-        print "Entering in valid api keys in BambooHR authentication page"
-        
-        #Clicking on Connect button
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
-        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
-            driver.find_element_by_xpath(bamboohr.connect_button()).click()
-            print "Clicking on Connect button"
-            
-        else:
-            print "Failed to find the Connect button"
-            raise Exception
-        
-        actual_error_message= driver.find_element_by_xpath(bamboohr.authentication_errormessage()).text
-       
-        if (actual_error_message ==expected_error_message):
-            
-            print " Authentication error is displaying for in valid api key and invalid subdomain entry"
-        
-        else:
-            print "No authentication error is displaying for invalid api keys and invalid subdomain entry"
-            raise Exception  
-        
-        
-        
         
         # Enter the valid sub domain 
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+        driver.find_element_by_xpath(bamboohr.subdomain_field()).click()
         driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
         driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
         print "Entering the sub domain in BambooHR authentication page"
         
         
-        # Enter the valid API keys
+        """# Enter the valid API keys
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
-        driver.find_element_by_xpath(bamboohr.apikey_field()).clear()
-        driver.find_element_by_xpath(bamboohr.apikey_field()).send_keys(api_key)
-        print "Entering the api keys in BambooHR authentication page"
+        print "Entering the api keys in BambooHR authentication page"""
         
         
         #Clicking on Connect button
