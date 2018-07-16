@@ -181,14 +181,24 @@ class BambooHRISIntegration:
         driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
         driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
         print "Entering the sub domain in BambooHR authentication page"
-        
-        
-        """# Enter the valid API keys
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
-        print "Entering the api keys in BambooHR authentication page"""
-        
-        
+
         #Clicking on Connect button
+        time.sleep(4)
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+        wait.until(EC.element_to_be_clickable((By.XPATH,bamboohr.connect_button())))
+        ele=driver.find_element_by_xpath(bamboohr.connect_button())
+        webdriver.ActionChains(driver).move_to_element(ele).click(ele).perform()
+        time.sleep(4)
+
+
+
+        
+        # Verifying valid API keys
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.apikey_field())))
+        print "Waiting for the the api keys in BambooHR authentication page"""
+        
+        
+         #Clicking on Connect button
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
         if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
             driver.find_element_by_xpath(bamboohr.connect_button()).click()
@@ -212,11 +222,14 @@ class BambooHRISIntegration:
             print "Failed to authenticate with valid sub domain and valid api key"
             raise Exception
         
-            
+ 
+        
+                
         
         # select check box for user field name
-        
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.userfield_checkbox())))
         driver.find_element_by_xpath(bamboohr.userfield_checkbox()).click()
+ 
         
         time.sleep(2)
         driver.find_element_by_xpath(bamboohr.userfield_checkbox()).click()
