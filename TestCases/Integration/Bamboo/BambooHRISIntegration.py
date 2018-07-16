@@ -175,40 +175,38 @@ class BambooHRISIntegration:
         print "The bamboo hr API key is"+" "+api_key
         
         
-        # Enter the valid sub domain 
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).click()
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
-        driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
-        print "Entering the sub domain in BambooHR authentication page"
-
+        # Enter the valid sub domain
         #Clicking on Connect button
-        time.sleep(4)
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
-        wait.until(EC.element_to_be_clickable((By.XPATH,bamboohr.connect_button())))
-        ele=driver.find_element_by_xpath(bamboohr.connect_button())
-        webdriver.ActionChains(driver).move_to_element(ele).click(ele).perform()
-        time.sleep(4)
-
-
-
-        
-        # Verifying valid API keys
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.apikey_field())))
-        print "Waiting for the the api keys in BambooHR authentication page"""
-        
-        
-         #Clicking on Connect button
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
-        if (driver.find_element_by_xpath(bamboohr.connect_button()).is_displayed()):
-            driver.find_element_by_xpath(bamboohr.connect_button()).click()
-            print "Clicking on Connect button"
+        if (wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="api-key"]')))):
             
+            wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+            driver.find_element_by_xpath(bamboohr.subdomain_field()).click()
+            
+            driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
+            driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
+            time.sleep(4)
+            print "Entering the sub domain in BambooHR authentication page"
+            wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+            connectbutton=wait.until(EC.element_to_be_clickable((By.XPATH,bamboohr.connect_button())))
+            driver.execute_script("arguments[0].click();",connectbutton)
+            time.sleep(4)
         else:
-            print "Failed to find the Connect button"
-            raise Exception
+            wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.subdomain_field())))
+            #driver.find_element_by_xpath(bamboohr.subdomain_field()).click()
         
-        time.sleep(2)
+            #driver.find_element_by_xpath(bamboohr.subdomain_field()).clear()
+            driver.find_element_by_xpath(bamboohr.subdomain_field()).send_keys(subdomain)
+            #click on Connect BUtton
+            wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+            connectbutton=wait.until(EC.element_to_be_clickable((By.XPATH,bamboohr.connect_button())))
+            driver.execute_script("arguments[0].click();",connectbutton)
+            time.sleep(4)
+            #Waiting for the API key and Click on Connect
+            wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="api-key"]')))
+            wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
+            connectbutton=wait.until(EC.element_to_be_clickable((By.XPATH,bamboohr.connect_button())))
+            driver.execute_script("arguments[0].click();",connectbutton)
+            time.sleep(4) 
         
         # wait for the select screen
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.select_scree_summary())))
@@ -253,24 +251,28 @@ class BambooHRISIntegration:
         
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.search_attributes_field_checkbox())))
         driver.find_element_by_xpath(bamboohr.search_attributes_field_checkbox()).click()
-        print "Clicking on the check box for the suggested attribute"
         
+        print "Clicking on the check box for the suggested attribute"
+        time.sleep(6)
         
         # Going to validate the user attribute value displayed in the summary text
         
         print "Going to get the count of user attributes selected from summary text"
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.select_scree_summary())))
         summary_text= driver.find_element_by_xpath(bamboohr.select_scree_summary()).text
         
         
         splitted_summary= summary_text.split(" ")
-        splitted_summary_count =  splitted_summary[0]
+        splitted_summary_count =splitted_summary[0]
         
         
         cell9= first_sheet.cell(4,2)
-        selected_attribute_count = cell9.value 
-        
-        
-        if (int(splitted_summary_count) == int(selected_attribute_count)):
+        selected_attribute_count = cell9.value
+        print "str(splitted_summary_count" +str(splitted_summary_count)
+        print "str(selected_attribute_count" +str(selected_attribute_count) 
+                                                     
+                                               
+        if (str(splitted_summary_count) == str(selected_attribute_count)):
             
             print "The count displayed in summary is matching with the selected attribute count"
             
