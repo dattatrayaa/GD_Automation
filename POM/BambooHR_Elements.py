@@ -37,17 +37,18 @@ class BambooHR_Elements:
            
     def connect_button(self):
         
-        connect_button = "html/body/div[4]/div/div/div[2]/div/div[1]/button"
+        connect_button = "/html/body/div[4]/div/div/div[2]/div/div/button"
         return connect_button
     
     def select_scree_summary(self):
         
-        select_screen_summary = "html/body/div[4]/div/div/div[2]/div/div[2]/small"
+        select_screen_summary = "/html/body/div[4]/div/div/div[2]/div/div/button"
         return select_screen_summary
     
     def userfield_checkbox(self):
         
-        userfield_checkbox = "html/body/div[4]/div/div/div[2]/div/div[1]/table/thead/tr/th[1]/div/label/span[2]"
+        userfield_checkbox = "/html/body/div[4]/div/div/div[2]/div/div[1]/table/thead/tr/th[1]/div/label/span[2]"
+                            
         return userfield_checkbox
     
     def nextbutton_selectscreen(self):
