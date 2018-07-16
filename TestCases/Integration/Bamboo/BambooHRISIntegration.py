@@ -187,7 +187,7 @@ class BambooHRISIntegration:
             time.sleep(4)
             print "Entering the sub domain in BambooHR authentication page"
             wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
-            connectbutton=wait.until(EC.element_to_be_clickable((By.XPATH,bamboohr.connect_button())))
+            connectbutton=wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
             driver.execute_script("arguments[0].click();",connectbutton)
             time.sleep(4)
         else:
@@ -203,8 +203,7 @@ class BambooHRISIntegration:
             time.sleep(4)
             #Waiting for the API key and Click on Connect
             wait.until(EC.visibility_of_element_located((By.XPATH,'//*[@id="api-key"]')))
-            wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
-            connectbutton=wait.until(EC.element_to_be_clickable((By.XPATH,bamboohr.connect_button())))
+            connectbutton=wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.connect_button())))
             driver.execute_script("arguments[0].click();",connectbutton)
             time.sleep(4) 
         
@@ -263,7 +262,7 @@ class BambooHRISIntegration:
         
         
         splitted_summary= summary_text.split(" ")
-        splitted_summary_count =splitted_summary[0]
+        splitted_summary_count = splitted_summary[0]
         
         
         cell9= first_sheet.cell(4,2)
@@ -272,7 +271,7 @@ class BambooHRISIntegration:
         print "str(selected_attribute_count" +str(selected_attribute_count) 
                                                      
                                                
-        if (str(splitted_summary_count) == str(selected_attribute_count)):
+        if int(splitted_summary_count) == int(selected_attribute_count):
             
             print "The count displayed in summary is matching with the selected attribute count"
             
@@ -280,10 +279,6 @@ class BambooHRISIntegration:
             print "The count displayed in select summary is not matching with the actual selection of attributes"
             raise Exception
             
-        
-    
-
-        
         time.sleep(2)
         # Clicking on Next Button
         
@@ -389,7 +384,8 @@ class BambooHRISIntegration:
         # Clicking on Users link in side menu tab
         
         print "Going to view the users managed by BambooHRIS"
-        
+        wait.until(EC.visibility_of_element_located((By.XPATH,"(//a[@href='/admin/users'])[1]")))
+        driver.find_element_by_xpath("(//a[@href='/admin/users'])[1]").click()
         driver.find_element_by_xpath(bamboohr.users_tab()).click()
         print "Clicking on Users link"
         
@@ -579,72 +575,13 @@ class BambooHRISIntegration:
         
         wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.sandbox_dashboard())))
         
-        print "Going to create an API key"
-        
-        # Clicking on Account icon in the top right corner of home page
-        
-        driver.find_element_by_xpath(bamboohr.sandbox_accounticon()).click()
-        print "Clicking on account icon in the top right corner of sandbox dashboard header"
-        
-        time.sleep(2)
-        
-        # Click on API_KEYS sub link
-        driver.find_element_by_xpath(bamboohr.api_key_link()).click()
-        print "Clicking on API Keys sub-link"
-        
-        
-        # Click on Add New Key button
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.add_new_apikey())))
-        driver.find_element_by_xpath(bamboohr.add_new_apikey()).click()
-        print "Clicking on Add New Key button"
-        
-        # Enter the API Key name
-        
-        cell7= first_sheet.cell(1,6)
-        API_key_name = cell7.value
-     
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.api_key_name())))
-        driver.find_element_by_xpath(bamboohr.api_key_name()).send_keys(API_key_name)
-        print "Entering the API Key name in the provided field"
-        
-        
-        # Clicking on Generate Key Button
-        
-        driver.find_element_by_xpath(bamboohr.generate_key_button()).click()
-        print "Clicking on Generate Key Button"
-        
-        # Wait for COPY KEY link
-        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.copy_key_link())))
-        driver.find_element_by_xpath(bamboohr.copy_key_link()).click()
-        print "Clicking on Copy-Key link"
-        
-        # Writing the copied API key in to Excel 
-        data = Tk().clipboard_get()
-        
-        #Pasting the copied API key in to excel
-        
-        wb = load_workbook(os.path.join('Test_Data/TestData.xlsx'))
-            
-        #print (wb.sheetnames)
-        
-        sheet = wb['BambooHR']
-            
-        sheet.cell(row=2, column=2).value=data
-                        
-        wb.save(os.path.join('Test_Data/TestData.xlsx'))
-        
-        print "Pasting the copied API-Key in to Test Data Excel"
-        
-        # Clicking on Done button
-        driver.find_element_by_xpath(bamboohr.apikey_done_button()).click()
-        print "Clicking on Done button on Add New API Key pop up"
-        time.sleep(2)
-        
+ 
         # Going to create a new Employee with Required attrubute values
         print "Going to create a new employee with required attribute values"
         
         
         #Clicking on Employees link
+        wait.until(EC.visibility_of_element_located((By.XPATH,bamboohr.employees_link())))
         driver.find_element_by_xpath(bamboohr.employees_link()).click()
         print "Clicking on Employees link"
         
@@ -779,7 +716,7 @@ class BambooHRISIntegration:
             url = cell.value
             obj13= BambooHRISIntegration()
             #obj13.createuser_in_bamboohr(Employee_Number, Employee_FirstName, Employee_LastName, Work_Email)
-            #obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
+            obj13.createuser_in_bamboohr(EmployeeIdUpdated, FirstNameUpdated, LastNameUpdated, EmailIdUpdated)
             driver.get(url)
             obj13.settingup_bamboohr_integration()
         except Exception as e:
