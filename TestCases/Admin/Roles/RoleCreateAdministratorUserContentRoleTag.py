@@ -68,8 +68,9 @@ class RoleCreateAdministratorUserContentRoleTag():
         print "Searching for the Created Role in the List"
         createrole.roleSearch(RoleName)
     def createCreateAdministratorUserContentRoleTagMain(self):
+        
         from BaseTestClass import excelPath  
-         try:   
+        try:   
             book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
             sheet=book.sheet_by_name('Role')
             cell = sheet.cell(251,1)
@@ -92,11 +93,11 @@ class RoleCreateAdministratorUserContentRoleTag():
      
             #if any alert box occurs it will accept the alert
             #if any alert box occurs it will accept the alert
-         except Exception as e:
+        except Exception as e:
             traceback.print_exc()
             print (e)
             raise Exception   
-         finally:
+        finally:
             User=RoleXpathElements() 
             User.updateUserCreator()    
             second_sheet = book.sheet_by_name('Login_Credentials')
