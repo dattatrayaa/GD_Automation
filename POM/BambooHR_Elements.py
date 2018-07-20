@@ -246,6 +246,80 @@ class BambooHR_Elements:
         
         disconnect_button = "html/body/div[4]/div/div/div[2]/div/div/button[1]"
         return disconnect_button
+    def userslabel_in_userlist(self):
+        
+        userslabel_in_userlist = ".//*[@id='content']/div/div[3]/div[2]/div/div/div[2]/h3/span"
+        return userslabel_in_userlist 
+    
+    def wait_searcheduser(self):
+        
+        book=xlrd.open_workbook(os.path.join('E:\NewWorkspace\FirstProjectInPython\TestData.xlsx'))
+        first_sheet = book.sheet_by_name('BambooHR')
+        cell2= first_sheet.cell(1,8)
+        user_firstname = cell2.value 
+        
+        wait_searcheduser = "//table/tbody/tr[1]/td[2]/a[.='"+user_firstname+"']"
+        return wait_searcheduser 
+    
+    def searchuser_deactivatelink(self):
+        book=xlrd.open_workbook(os.path.join('E:\NewWorkspace\FirstProjectInPython\TestData.xlsx'))
+        first_sheet = book.sheet_by_name('BambooHR')
+        cell3= first_sheet.cell(1,8)
+        user_firstname = cell3.value 
+        
+        searchuser_deactivatelink = "//table/tbody/tr[1]/td[2]/a[.='"+user_firstname+"']/../../td[7]/button"
+        return searchuser_deactivatelink 
+    
+    def deactivatebutton_in_popup(self):
+        
+        deactivatebutton_in_popup = "html/body/div[4]/div/div/div[2]/div[2]/button[1]"
+        return deactivatebutton_in_popup 
+    
+    def clearsearch_link(self):
+        
+        clearsearch_link = ".//*[@id='content']/div/div[3]/div[2]/div/div/div[2]/h3/span/button"
+        return clearsearch_link 
+    
+    def sorry_noresultfound(self):
+        
+        sorry_noresultfound = ".//*[@id='content']/div/div[3]/div[2]/div/div/div[3]"
+        return sorry_noresultfound 
+    
+    def api_field(self):
+        
+        api_field = ".//*[@id='api-key']"
+        return api_field
+    
+    def searchemployee_field(self):
+        
+        searchemployee_field = ".//*[@id='quicksearchquery']"
+        return searchemployee_field
+    
+    def search_icon(self):
+        
+        search_icon = ".//*[@id='search-inside']/button"
+        return search_icon
+    
+    def search_result_grid(self):
+        
+        search_result_grid = ".//*[@id='reportTable']/thead/tr/th[1]/a"
+        return search_result_grid
+    
+    def clickon_searcheduser(self):
+        
+        clickon_searcheduser = ".//*[@id='reportTable']/tbody/tr/td[2]/a"
+        return clickon_searcheduser
+    
+    
+    def wait_updatedsearcheduser(self):
+        
+        book=xlrd.open_workbook(os.path.join('E:\NewWorkspace\FirstProjectInPython\TestData.xlsx'))
+        first_sheet = book.sheet_by_name('BambooHR')
+        cell2= first_sheet.cell(1,8)
+        user_firstname = cell2.value 
+        
+        wait_updatedsearcheduser = "//table/tbody/tr[1]/td[2]/a[.='"+user_firstname+"']"
+        return wait_updatedsearcheduser 
     
     
      
