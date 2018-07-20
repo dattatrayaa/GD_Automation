@@ -22,7 +22,7 @@ class BambooHR_Elements:
     
     def configure_button(self):
         
-        congigure_link = '//*[@id="content"]/div/div[3]/div[2]/div/div/section[1]/div/div[2]/div[1]/button'
+        congigure_link = "//*[@id='content']/div/div[3]/div[2]/div/div/section[1]/div/div[2]/div[1]/button"
         return congigure_link
      
     def subdomain_field(self):
@@ -42,7 +42,7 @@ class BambooHR_Elements:
     
     def select_scree_summary(self):
         
-        select_screen_summary = "/html/body/div[4]/div/div/div[2]/div/div/button"
+        select_screen_summary = "/html/body/div[4]/div/div/div[2]/div/div[2]/small"
         return select_screen_summary
     
     def userfield_checkbox(self):
