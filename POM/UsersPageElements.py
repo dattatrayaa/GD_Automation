@@ -27,9 +27,9 @@ class UsersPageElements:
     
     def AddOrEditUserButtonClick(self):
         wait=WebDriverWait(driver, 120)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"//*[@id='content']/div/div[3]/div[2]/div/header/div/div/a")))
-        wait.until(EC.element_to_be_clickable((By.XPATH,"//*[@id='content']/div/div[3]/div[2]/div/header/div/div/a")))
-        driver.find_element_by_xpath("//*[@id='content']/div/div[3]/div[2]/div/header/div/div/a").click()
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//a[@class='btn primary-cta-branding']")))
+        wait.until(EC.element_to_be_clickable((By.XPATH,"//a[@class='btn primary-cta-branding']")))
+        driver.find_element_by_xpath("//a[@class='btn primary-cta-branding']").click()
         
         
     def AddAnIndividualUserButtonClick(self):
@@ -167,7 +167,7 @@ class UsersPageElements:
         wait.until(EC.visibility_of_element_located((By.XPATH,"//tbody/tr[1]/td[2]/a")))
         
     def CheckUserDisplayedInGrid(self,FirstName):
-        wait=WebDriverWait(driver, 80)
+        wait=WebDriverWait(driver, 60)
         wait.until(EC.visibility_of_element_located((By.XPATH,"//tbody/tr[1]/td[2]/a")))
         ele =driver.find_element_by_xpath("//tbody/tr[1]/td[2]/a").text
         if(ele==FirstName):
@@ -222,6 +222,12 @@ class UsersPageElements:
         else:
             print "Check-box successfully unchecked"
     
+    def deactivateLinkAtBottomElement(self):
+        wait=WebDriverWait(driver, 60)
+        wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[1]/div/div[3]/div[3]/div/div/div[2]/div[3]/button")))
+        return driver.find_element_by_xpath("html/body/div[1]/div/div[3]/div[3]/div/div/div[2]/div[3]/button")
+        
+            
     
     def deactivateLinkAtBottom(self):
         wait=WebDriverWait(driver, 60)
@@ -233,12 +239,38 @@ class UsersPageElements:
         driver.find_element_by_xpath("html/body/div[1]/div/div[3]/div[3]/div/div/div[2]/div[3]/button").click()
         
         wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[4 or 2]/div/div/div[2]/div[2]/button[2]")))
-            
+    
+    
+    def DeactivateUserPopupHeader(self):
+        wait=WebDriverWait(driver, 60)
+        ele=wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[4 or 2]/div/div/div[1]/h3")))
+        return ele
+        
+        
+        
     def deactivateButtonFromPopup(self):
         wait=WebDriverWait(driver, 60)
         deact=wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[4 or 2]/div/div/div[2]/div[2]/button[2]")))
         deact.click()
+    def deactivateButtonFromPopupXpath(self):
+        wait=WebDriverWait(driver, 60)
+        wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[4 or 2]/div/div/div[2]/div[2]/button[2]")))
+        deact=driver.find_element_by_xpath("html/body/div[4 or 2]/div/div/div[2]/div[2]/button[2]")
+        return deact
         
+    def CloseButtonDeactivateUserPopup(self):
+        wait=WebDriverWait(driver, 60)
+        wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[4 or 2]/div/div/div[1]/button")))
+        close=driver.find_element_by_xpath("html/body/div[4 or 2]/div/div/div[1]/button")
+        return close 
+    
+    def CloseButtonOfPopup(self):
+        wait=WebDriverWait(driver, 60)
+        wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[1]/div/div[3]/div[3]/div/div/div[1]/button")))
+        wait.until(EC.element_to_be_clickable((By.XPATH,"html/body/div[1]/div/div[3]/div[3]/div/div/div[1]/button")))
+        close=driver.find_element_by_xpath("html/body/div[1]/div/div[3]/div[3]/div/div/div[1]/button")
+        return close    
+    
         
     def successMessageForDeactivatedUser(self,count):
         wait=WebDriverWait(driver, 60)
@@ -255,7 +287,8 @@ class UsersPageElements:
     
     def seeDeactivatedUsersLink(self):
         wait=WebDriverWait(driver, 60)
-        deact=wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[1]/div/div[3]/div[2]/div/div/div[2]/a")))
+        wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[1]/div/div[3]/div[2]/div/div/div[2]/a")))
+        deact=wait.until(EC.element_to_be_clickable((By.XPATH,"html/body/div[1]/div/div[3]/div[2]/div/div/div[2]/a")))
         deact.click()
         wait.until(EC.visibility_of_element_located((By.XPATH,"//input[@id='search-users']")))
         
@@ -319,11 +352,11 @@ class UsersPageElements:
         return "//table/tbody/tr"
 
     def Pagination(self):
-        return "html/body/div[1]/div/div[3]/div[2]/div/div/div[5]/small/span[1]/span[.='100']/../span[.='|']/../../../small[contains(.,'per page')]"
+        return "//span[.='100']/../span[.='|']/../../../small[contains(.,'per page')]"
         
     def FilterUsersPopUpHeaderText(self):
         wait=WebDriverWait(driver, 60)
-        filterText=wait.until(EC.visibility_of_element_located((By.XPATH,"/html/body/div[4]/div/div/div[1]/h3")))
+        filterText=wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[4 or 2]/div/div/div[1]/h3")))
         return filterText.text
     
 
@@ -336,13 +369,23 @@ class UsersPageElements:
         wait=WebDriverWait(driver, 60)
         cancel=wait.until(EC.visibility_of_element_located((By.XPATH,"//button[@class='btn btn-transparent-no-border']")))
         cancel.click()
+           
+    def allcheckboxesSelectedCount(self):
+        wait=WebDriverWait(driver, 60)
+        count=wait.until(EC.visibility_of_all_elements_located((By.XPATH,"//table/tbody/tr/td[1]/div/label/span/span")))
+        return len(count)
+           
+    def PopupDisplayedAtBottom(self):
+        wait=WebDriverWait(driver, 60)
+        popup=wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[1]/div/div[3]/div[3]/div/div/div[2]"))) 
+        return popup
         
-        
-        
-        
-        
-        
-        
+         
+    def BulkUncheckedCheckBoxElement(self):
+        wait=WebDriverWait(driver, 60)
+        row1=wait.until(EC.visibility_of_element_located((By.XPATH,"//table/thead/tr/th[1]")))
+        webdriver.ActionChains(driver).move_to_element(row1).perform()
+        return driver.find_element_by_xpath("//table/thead/tr/th[1]/div/label/span")
         
         
         
