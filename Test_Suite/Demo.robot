@@ -17,10 +17,10 @@ Suite Teardown	  Close Browser Suite
 
 *** Test Cases ***
     
-#TC - LessonCreateQuestion
-    #[Documentation]    This test validates Question card in lesson and publish it
-    #[Tags]    Create
-    #LessonCreateQuestion.Lesson With Question Answer Card
+TC - LessonCreateQuestion
+    [Documentation]    This test validates Question card in lesson and publish it
+    [Tags]    Create
+    LessonCreateQuestion.Lesson With Question Answer Card
     
 #TC- TrackWithTextLesson
     #[Documentation]    This test validates the creation of track with one lesson
@@ -32,10 +32,10 @@ Suite Teardown	  Close Browser Suite
     #[Tags]    Campaign
     #Create Campaign Image Lesson 
  
-TC -BambooHRISIntegration
-    [Documentation]    This test will integrate BambooHRIS to Grovo and validates in employees from BambooHR SandBox Account
-    [Tags]    Admin
-    Updating The Employee Values And Startmain
+#TC -BambooHRISIntegration
+    #[Documentation]    This test will integrate BambooHRIS to Grovo and validates in employees from BambooHR SandBox Account
+    #[Tags]    Admin
+    #Updating The Employee Values And Startmain
    
 #TC -ADP1
     #[Documentation]    This test will integrate BambooHRIS to Grovo and validates in employees from ADP Market Place
