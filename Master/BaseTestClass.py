@@ -29,7 +29,7 @@ class BaseTestClass:
     def userLogin(self):
     
         print "Opening Browser"
-        driver.maximize_window()
+        #driver.maximize_window()
         
         print "Reading Login Credentials from excel sheet"
         book=xlrd.open_workbook(os.path.join('Test_Data/TestData.xlsx'))
