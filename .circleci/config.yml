@@ -1,0 +1,29 @@
+version: 2
+jobs:
+  build:
+    docker: 
+      - image: circleci/python:2.7.14 
+      
+    
+    steps:
+      - checkout
+     
+
+     # deploy the image
+      
+      - run: sudo pip install robotframework
+      - run: sudo pip install robotframework-selenium2library
+      - run: sudo pip install robotframework-requests
+      - run: sudo pip install xlrd==1.1.0
+      - run: sudo pip install selenium
+      - run: sudo pip install openpyxl
+      - run: sudo pip install coverage
+      - run: sudo pip install codecov
+     
+      
+      
+      - run: robot -T -d "robot_results" -n noncritical ./TestSuiteLesson.robot
+      #- run: py.test TestCases/AssignAdministratorUser.py --cov=codecov
+      #- run: codecov
+      - store_artifacts:
+          path: "robot_results"
