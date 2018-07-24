@@ -26,4 +26,4 @@ jobs:
       #- run: py.test TestCases/AssignAdministratorUser.py --cov=codecov
       #- run: codecov
       - store_artifacts:
-          path: "robot_results"
+          path: "Test_Results"
