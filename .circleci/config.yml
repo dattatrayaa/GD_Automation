@@ -22,7 +22,7 @@ jobs:
      
       
       
-      - run: robot -T -d "robot_results" -n noncritical ./TestSuiteLesson.robot
+      - run: robot -T -d "robot_results" -n noncritical ./Test_Suite/TestSuiteLessons.robot
       #- run: py.test TestCases/AssignAdministratorUser.py --cov=codecov
       #- run: codecov
       - store_artifacts:
