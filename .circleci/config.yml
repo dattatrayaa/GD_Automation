@@ -10,7 +10,7 @@ jobs:
      
 
      # deploy the image
-      
+      - run: sudo apt-get install chromium-chromedriver
       - run: sudo pip install robotframework
       - run: sudo pip install robotframework-selenium2library
       - run: sudo pip install robotframework-requests
