@@ -21,6 +21,7 @@ jobs:
       - run: wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip
       - run: unzip chromedriver_linux64.zip
       - run: sudo cp chromedriver /usr/local/bin/chromedriver
+      - run: sudo apt install libfontconfig
      
       
       
