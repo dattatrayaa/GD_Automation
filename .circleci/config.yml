@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker: 
-      - image: circleci/python:2.7.14 
+      - image: circleci/python:2.7.14-stretch-browsers 
       
             
     steps:
@@ -10,7 +10,6 @@ jobs:
      
 
      # deploy the image
-      - run: sudo apt-get install -y chromium-browser
       - run: sudo pip install robotframework
       - run: sudo pip install robotframework-selenium2library
       - run: sudo pip install robotframework-requests
@@ -19,10 +18,7 @@ jobs:
       - run: sudo pip install openpyxl
       - run: sudo pip install coverage
       - run: sudo pip install codecov
-      - run: wget https://chromedriver.storage.googleapis.com/2.40/chromedriver_linux64.zip
-      - run: unzip chromedriver_linux64.zip
-      - run: sudo cp chromedriver /usr/local/bin/chromedriver
-      - run: sudo apt install libfontconfig
+      
      
       
       
