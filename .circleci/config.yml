@@ -4,12 +4,7 @@ jobs:
     docker: 
       - image: circleci/python:2.7.14 
       
-    dependencies:
-    override:
-        #new chromedriver
-        - wget https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip
-        - unzip chromedriver_linux64.zip
-        - sudo cp chromedriver /usr/local/bin/chromedriver
+            
     steps:
       - checkout
      
@@ -24,6 +19,9 @@ jobs:
       - run: sudo pip install openpyxl
       - run: sudo pip install coverage
       - run: sudo pip install codecov
+      - run: wget https://chromedriver.storage.googleapis.com/2.29/chromedriver_linux64.zip
+      - run: unzip chromedriver_linux64.zip
+      - run: sudo cp chromedriver /usr/local/bin/chromedriver
      
       
       
