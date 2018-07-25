@@ -19,7 +19,7 @@ jobs:
       - run: sudo pip install coverage
       - run: sudo pip install codecov
       - run: sudo apt-get install openvpn
-      - run: sudo openvpn --config client_dev_shavin.ovpn
+      - run: sudo openvpn --config client_dev_shavin.ovpn --auth-retry interact
       
      
       
