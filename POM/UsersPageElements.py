@@ -287,8 +287,8 @@ class UsersPageElements:
     
     def seeDeactivatedUsersLink(self):
         wait=WebDriverWait(driver, 60)
-        wait.until(EC.visibility_of_element_located((By.XPATH,"html/body/div[1]/div/div[3]/div[2]/div/div/div[2]/a")))
-        deact=wait.until(EC.element_to_be_clickable((By.XPATH,"html/body/div[1]/div/div[3]/div[2]/div/div/div[2]/a")))
+        wait.until(EC.visibility_of_element_located((By.XPATH,"//a[.='See deactivated users']")))
+        deact=wait.until(EC.element_to_be_clickable((By.XPATH,"//a[.='See deactivated users']")))
         deact.click()
         wait.until(EC.visibility_of_element_located((By.XPATH,"//input[@id='search-users']")))
         
