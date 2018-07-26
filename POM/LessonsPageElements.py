@@ -532,8 +532,8 @@ class LessonsPageElements:
     def everyoneToggle(self):
         try:
             wait=WebDriverWait(driver, 60)
-            wait.until(EC.visibility_of_element_located((By.XPATH,"//div[@class='slide-toggle is-on']")))
-            toggle=wait.until(EC.element_to_be_clickable((By.XPATH,"//div[@class='slide-toggle is-on']")))
+            wait.until(EC.visibility_of_element_located((By.XPATH,"//h3[contains(.,'Everyone')]/../div/div[@class='slide-toggle is-on']")))
+            toggle=wait.until(EC.element_to_be_clickable((By.XPATH,"//h3[contains(.,'Everyone')]/../div/div[@class='slide-toggle is-on']")))
             toggle.click()
             wait.until(EC.visibility_of_element_located((By.XPATH,"//div[@class='Select-placeholder']")))
         except Exception as e:
@@ -634,13 +634,20 @@ class LessonsPageElements:
             print e
             raise Exception("Failed to click on Next Card")
 
+    def validationMessageForDuplicateTitle(self):
+        return "//div[@class='lesson-validation-header']"
 
+    def titleEditButton(self):
+        return "//button[@class='u-float-right u-cursor-pointer u-text-link-blue']"
+    
+    def groupNameForPublish(self):
+        return "//div[@class='Select-placeholder']"
+    
+    def SelectGroupFromPublishPopup(self,groupName):
+        return "//div[@role='option']/span[contains(.,'"+groupName+"')]"
 
-
-
-
-
-
+    def groupInGridDisplay(self,groupName):
+        return "//div[@class='content-access-flex' and contains(.,'"+groupName+"')]"
 
 
 
