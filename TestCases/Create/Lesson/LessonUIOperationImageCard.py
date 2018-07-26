@@ -180,10 +180,10 @@ class LessonUIOperationImageCard:
         
         lessons.DesktopPreviewOfImageCard()
         
-        lessons.mobilePreviewButton()
+        #lessons.mobilePreviewButton()
         print "Clicked on Mobile preview button"
         
-        lessons.MobilePreviewOfImageCard()
+        #lessons.MobilePreviewOfImageCard()
         
         print "Clicking on Close Preview button"
         close=wait.until(EC.visibility_of_element_located((By.XPATH,lessons.closePreview())))
