@@ -2,31 +2,31 @@
 Suite Setup       User Login
 Suite Teardown    Close Browser Suite
 Force Tags        Admin
-Library           ../Master/BaseTestClass.py    
-Library           ../TestCases/Admin/Users/UserCreateCreator.py    
+Library           ../Master/BaseTestClass.py    #Config
+Library           ../TestCases/Admin/Users/UserCreateCreator.py    #Functions for User Creation with standard roles
 Library           ../TestCases/Admin/Users/UserCreateLearner.py
 Library           ../TestCases/Admin/Users/UserCreateLearnerAdministrator.py
 Library           ../TestCases/Admin/Users/UserCreateMasterAdmin.py
 Library           ../TestCases/Admin/Users/UpdatingUserDetails.py
 Library           ../Master/CloseBrowser.py
-Library           C:/Python27/Lib/site-packages/GrovoTC/UserDeactivateCheckForCampaign.py
-Library           C:/Python27/Lib/site-packages/GrovoTC/UserDeactivatedCheck.py
-Library           C:/Python27/Lib/site-packages/GrovoTC/UserDeactivateFromCampTriggered.py
-Library           C:/Python27/Lib/site-packages/GrovoTC/UserDeactivateFromGroup.py
-Library           C:/Python27/Lib/site-packages/GrovoTC/UsersPageDefaultActions.py
-Library           C:/Python27/Lib/site-packages/GrovoTC/UsersPageDefaultView.py
+Library           ../TestCases/Admin/Users/UserDeactivateCheckForCampaign.py
+Library           ../TestCases/Admin/Users/UserDeactivatedCheck.py
+Library           ../TestCases/Admin/Users/UserDeactivateFromCampTriggered.py
+Library           ../TestCases/Admin/Users/UserDeactivateFromGroup.py
+Library           ../TestCases/Admin/Users/UsersPageDefaultActions.py
+Library           ../TestCases/Admin/Users/UsersPageDefaultView.py
 
 *** Test Cases ***
-TC1- UpdatingUserDetails
+TC2- UpdatingUserDetails
     Updation Of Excel Values
 
-TC2 - CreateCreator
+TC3 - CreateCreator
     Create Creator User And Validation
 
-TC3 - CreateLearner
+TC4 - CreateLearner
     Create Learner User And Validation
 
-TC4 - CreateMasterAdmin
+TC6 - CreateMasterAdmin
     Create Master Admin User And Validation
 
 TC5 - CreateLearnerAdministrator
